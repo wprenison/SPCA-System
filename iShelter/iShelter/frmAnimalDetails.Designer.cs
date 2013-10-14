@@ -64,6 +64,8 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.picbAgroRatingInfo = new System.Windows.Forms.PictureBox();
             this.ttAgroRatingInfo = new System.Windows.Forms.ToolTip(this.components);
+            this.procedureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ownersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpbGender.SuspendLayout();
@@ -75,6 +77,8 @@
             // 
             this.mnsAnimal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.ownersToolStripMenuItem,
+            this.procedureToolStripMenuItem,
             this.reportsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.mnsAnimal.Location = new System.Drawing.Point(0, 0);
@@ -318,6 +322,7 @@
             this.btnProceed.TabIndex = 20;
             this.btnProceed.Text = "Proceed";
             this.btnProceed.UseVisualStyleBackColor = true;
+            this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
             // lblAgroRating
             // 
@@ -359,6 +364,18 @@
             this.ttAgroRatingInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttAgroRatingInfo.ToolTipTitle = "Info about Agro Rating";
             // 
+            // procedureToolStripMenuItem
+            // 
+            this.procedureToolStripMenuItem.Name = "procedureToolStripMenuItem";
+            this.procedureToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.procedureToolStripMenuItem.Text = "Procedures";
+            // 
+            // ownersToolStripMenuItem
+            // 
+            this.ownersToolStripMenuItem.Name = "ownersToolStripMenuItem";
+            this.ownersToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.ownersToolStripMenuItem.Text = "Owners";
+            // 
             // iShelter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,8 +406,11 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.mnsAnimal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnsAnimal;
             this.Name = "iShelter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iShelter";
             this.mnsAnimal.ResumeLayout(false);
             this.mnsAnimal.PerformLayout();
@@ -440,6 +460,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.PictureBox picbAgroRatingInfo;
         private System.Windows.Forms.ToolTip ttAgroRatingInfo;
+        private System.Windows.Forms.ToolStripMenuItem procedureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ownersToolStripMenuItem;
     }
 }
 

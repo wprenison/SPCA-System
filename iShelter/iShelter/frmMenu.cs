@@ -9,18 +9,11 @@ using System.Windows.Forms;
 
 namespace iShelter
 {
-    public partial class iShelter : Form
+    public partial class frmMenu : Form
     {
-        public iShelter()
+        public frmMenu()
         {
             InitializeComponent();
-        }
-
-        private void btnProceed_Click(object sender, EventArgs e)
-        {
-            frmMenu menu = new frmMenu();
-            this.Visible = false;
-            menu.ShowDialog();
         }
     }
 }
