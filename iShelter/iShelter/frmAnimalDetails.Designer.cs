@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(iShelter));
             this.mnsAnimal = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtbName = new System.Windows.Forms.TextBox();
@@ -53,13 +56,19 @@
             this.lblAge = new System.Windows.Forms.Label();
             this.btnTakePic = new System.Windows.Forms.Button();
             this.grpbGender = new System.Windows.Forms.GroupBox();
-            this.rabM = new System.Windows.Forms.RadioButton();
             this.rabF = new System.Windows.Forms.RadioButton();
+            this.rabM = new System.Windows.Forms.RadioButton();
             this.btnProceed = new System.Windows.Forms.Button();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblAgroRating = new System.Windows.Forms.Label();
+            this.probAnimal = new System.Windows.Forms.ProgressBar();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.picbAgroRatingInfo = new System.Windows.Forms.PictureBox();
+            this.ttAgroRatingInfo = new System.Windows.Forms.ToolTip(this.components);
             this.mnsAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpbGender.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbAgroRatingInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // mnsAnimal
@@ -82,6 +91,18 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -94,20 +115,14 @@
             // abouToolStripMenuItem
             // 
             this.abouToolStripMenuItem.Name = "abouToolStripMenuItem";
-            this.abouToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.abouToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.abouToolStripMenuItem.Text = "About";
             // 
             // helpF1ToolStripMenuItem
             // 
             this.helpF1ToolStripMenuItem.Name = "helpF1ToolStripMenuItem";
-            this.helpF1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpF1ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.helpF1ToolStripMenuItem.Text = "Help F1";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // pictureBox1
             // 
@@ -136,6 +151,10 @@
             // cmbSpecies
             // 
             this.cmbSpecies.FormattingEnabled = true;
+            this.cmbSpecies.Items.AddRange(new object[] {
+            "Canine",
+            "Feline",
+            "Bird"});
             this.cmbSpecies.Location = new System.Drawing.Point(61, 66);
             this.cmbSpecies.Name = "cmbSpecies";
             this.cmbSpecies.Size = new System.Drawing.Size(121, 21);
@@ -262,23 +281,12 @@
             // 
             this.grpbGender.Controls.Add(this.rabF);
             this.grpbGender.Controls.Add(this.rabM);
-            this.grpbGender.Location = new System.Drawing.Point(192, 216);
+            this.grpbGender.Location = new System.Drawing.Point(192, 209);
             this.grpbGender.Name = "grpbGender";
             this.grpbGender.Size = new System.Drawing.Size(107, 30);
             this.grpbGender.TabIndex = 19;
             this.grpbGender.TabStop = false;
             this.grpbGender.Text = "Gender";
-            // 
-            // rabM
-            // 
-            this.rabM.AutoSize = true;
-            this.rabM.Location = new System.Drawing.Point(18, 12);
-            this.rabM.Name = "rabM";
-            this.rabM.Size = new System.Drawing.Size(34, 17);
-            this.rabM.TabIndex = 0;
-            this.rabM.TabStop = true;
-            this.rabM.Text = "M";
-            this.rabM.UseVisualStyleBackColor = true;
             // 
             // rabF
             // 
@@ -291,6 +299,17 @@
             this.rabF.Text = "F";
             this.rabF.UseVisualStyleBackColor = true;
             // 
+            // rabM
+            // 
+            this.rabM.AutoSize = true;
+            this.rabM.Location = new System.Drawing.Point(18, 12);
+            this.rabM.Name = "rabM";
+            this.rabM.Size = new System.Drawing.Size(34, 17);
+            this.rabM.TabIndex = 0;
+            this.rabM.TabStop = true;
+            this.rabM.Text = "M";
+            this.rabM.UseVisualStyleBackColor = true;
+            // 
             // btnProceed
             // 
             this.btnProceed.Location = new System.Drawing.Point(209, 252);
@@ -300,17 +319,55 @@
             this.btnProceed.Text = "Proceed";
             this.btnProceed.UseVisualStyleBackColor = true;
             // 
-            // reportsToolStripMenuItem
+            // lblAgroRating
             // 
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
+            this.lblAgroRating.AutoSize = true;
+            this.lblAgroRating.Location = new System.Drawing.Point(58, 257);
+            this.lblAgroRating.Name = "lblAgroRating";
+            this.lblAgroRating.Size = new System.Drawing.Size(66, 13);
+            this.lblAgroRating.TabIndex = 21;
+            this.lblAgroRating.Text = "Agro Rating:";
+            // 
+            // probAnimal
+            // 
+            this.probAnimal.Location = new System.Drawing.Point(0, 297);
+            this.probAnimal.Name = "probAnimal";
+            this.probAnimal.Size = new System.Drawing.Size(317, 12);
+            this.probAnimal.TabIndex = 22;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(131, 254);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(28, 20);
+            this.numericUpDown1.TabIndex = 23;
+            // 
+            // picbAgroRatingInfo
+            // 
+            this.picbAgroRatingInfo.Image = ((System.Drawing.Image)(resources.GetObject("picbAgroRatingInfo.Image")));
+            this.picbAgroRatingInfo.Location = new System.Drawing.Point(162, 257);
+            this.picbAgroRatingInfo.Name = "picbAgroRatingInfo";
+            this.picbAgroRatingInfo.Size = new System.Drawing.Size(17, 17);
+            this.picbAgroRatingInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picbAgroRatingInfo.TabIndex = 24;
+            this.picbAgroRatingInfo.TabStop = false;
+            this.ttAgroRatingInfo.SetToolTip(this.picbAgroRatingInfo, "AgroRating on a scale 0 - 5\r\nNo agro = 0\r\nagro towards other animals = 1 or 2\r\nag" +
+                    "ro towards people = 3 or 4\r\nagro towards everyone = 5");
+            // 
+            // ttAgroRatingInfo
+            // 
+            this.ttAgroRatingInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ttAgroRatingInfo.ToolTipTitle = "Info about Agro Rating";
             // 
             // iShelter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 283);
+            this.ClientSize = new System.Drawing.Size(317, 308);
+            this.Controls.Add(this.picbAgroRatingInfo);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.probAnimal);
+            this.Controls.Add(this.lblAgroRating);
             this.Controls.Add(this.btnProceed);
             this.Controls.Add(this.grpbGender);
             this.Controls.Add(this.btnTakePic);
@@ -340,6 +397,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpbGender.ResumeLayout(false);
             this.grpbGender.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbAgroRatingInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,6 +435,11 @@
         private System.Windows.Forms.RadioButton rabM;
         private System.Windows.Forms.Button btnProceed;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.Label lblAgroRating;
+        private System.Windows.Forms.ProgressBar probAnimal;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.PictureBox picbAgroRatingInfo;
+        private System.Windows.Forms.ToolTip ttAgroRatingInfo;
     }
 }
 
