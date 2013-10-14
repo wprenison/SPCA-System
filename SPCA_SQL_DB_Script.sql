@@ -13,6 +13,7 @@ LastName varchar(30),
 DateOfBirth date,
 Tel int,
 ResAddress varchar(100)
+--RecievePatientID int FOREIGN KEY REFERENCES tblRecievePatient(RecievePatientID)
 )
 
 INSERT INTO tblGuardians (FirstName, LastName, DateOfBirth, Tel, ResAddress)
@@ -24,7 +25,7 @@ VALUES('Ashleigh', 'Croucher', '19900918', '0782647507', '804 Dockside Aparments
 
 CREATE TABLE tblProcedures
 (
-ProcedureID int IDENTITY(1,1),
+ProcedureID int IDENTITY(1,1) PRIMARY KEY,
 Name varchar(20),
 ProcedureDescription varchar(100)
 )
@@ -41,7 +42,7 @@ VALUES ('Amputation', 'Removal of a limb'),
 
 CREATE TABLE tblAnimals
 (
-AnimalID int IDENTITY(1,1),
+AnimalID int IDENTITY(1,1) PRIMARY KEY,
 Name varchar(20),
 Species varchar(20),
 Breed varchar(20),
@@ -61,7 +62,7 @@ AgroRating int
 -- agro towards people = 3 or 4
 -- agro towards everyone = 5
 
-INSERT INTO tblAnimals (Name, Species, Breed, DateRecieved, Illnesses, Injuries, Notes, RoomNo, Neutered, EstimatedAge, AgroRating)
+INSERT INTO tblAnimals(Name, Species, Breed, DateRecieved, Illnesses, Injuries, Notes, RoomNo, Neutered, EstimatedAge, AgroRating)
 VALUES ('Cloe', 'Canine', 'Dushond', '20131012', null, 'Broken Leg', null, 105, 1,3,0),
 ('Rocket', 'Canine', 'Rotviler', '20120517', 'Malnutrition', null,null,207,0,2,2),
 ('Storm', 'Feline', 'Savana', '20100416', null, null, 'Neutering required', 201, 0,1,0),
@@ -73,26 +74,12 @@ VALUES ('Cloe', 'Canine', 'Dushond', '20131012', null, 'Broken Leg', null, 105, 
 ('Chanel', 'Canine', 'Labradour', '20120510', 'Cancer', null, 'Leg cancer', 201, 1, 9, 0),
 ('Pepper', 'Canine', 'Labradour Mix', '20130621', null, null, 'Very cold', 101, 0, 3, 1),
 ('Charlie', 'Bird', 'Ring Neck', '20130308', null, null, 'Afraid of bags', 103, null, 1, 3),
-('Elu', ' Bird', 'Electus', '20130704', null, 'Broken Wing', 106, null, 3, 5),
-(('Lumen', 'Bird', 'Ring Neck', 
-
-CREATE TABLE tblProcedureOp
-(
-ProcedureID int FOREIGN KEY REFERENCES tblProcedures(ProcedureID),
-AnimalID int FOREIGN KEY REFERENCES	tblAnimals(AnimalID),
-ProcedureOpID int PRIMARY KEY(ProcedureID, AnimalID)
-)
-
-CREATE TABLE tblRecievePatient
-(
-GuardianID int FOREIGN KEY REFERENCES tblGuardian(GuardianID) NOT NULL,
-AnimalID int FOREIGN KEY REFERENCES tblAnimals(AnimalID) NOT NULL,
-PRIMARY KEY(GuardianID, AnimalID)
-)
+('Elu', ' Bird', 'Electus', '20130704', null, 'Broken Wing', null, 106, null, 3, 5),
+('Lumen', 'Bird', 'Ring Neck', '20130411', null, null, 'Tendancy to pluck', 144, null, 1, 0) 
 
 CREATE TABLE tblVets
 (
-VetID int IDENTITY(1,1),
+VetID int IDENTITY(1,1) PRIMARY KEY,
 FirstName varchar(20),
 LastName varchar(30),
 DateOfBirth date,
@@ -100,3 +87,46 @@ Tel int,
 ResAddress varchar(50),
 Qualification varchar(30)
 )
+
+INSERT INTO tblVets(FirstName, LastName, DateOfBirth, Tel, ResAddress, Qualification)
+VALUES('Danni', 'Benoure', '19900712', '0781697540', '97 Kromboom Rd, Rondebosch, 7754', 'Bsc Med'),
+('Alecia', 'Stenhouse', '19870501', '0836337521', '12 Keurkjtie Close, Vredekloof, 7942', 'Bsc Vet'),
+('Alexsis', 'Berminger', '19660612', '0785423691', '42 Clear Water Drive, Somerset West 2256', 'Masters Vet'),
+('Rhonwen', 'Renison', '19780410', '0825641792', '101 Loop St, Cape Town, 8001', 'Dip Med') 
+
+CREATE TABLE tblRecievePatient
+(
+GuardianID int FOREIGN KEY REFERENCES tblGuardians(GarduianID) NOT NULL,
+AnimalID int FOREIGN KEY REFERENCES tblAnimals(AnimalID) NOT NULL,
+RecievePatientID int PRIMARY KEY(GuardianID, AnimalID)
+)
+
+INSERT INTO tblRecievePatient(GuardianID, AnimalID)
+VALUES(1,1),
+(2,4),
+(3,5),
+(4,7),
+(5,9),
+(2,11)
+
+CREATE TABLE tblProcedureOp
+(
+ProcedureID int FOREIGN KEY REFERENCES tblProcedures(ProcedureID),
+AnimalID int FOREIGN KEY REFERENCES	tblAnimals(AnimalID),
+VetID int FOREIGN KEY REFERENCES tblVets(VetID),
+ProcedureOpID int PRIMARY KEY(AnimalID, VetID)
+)
+select *
+from tblVets
+
+INSERT INTO tblProcedureOp(ProcedureID, AnimalID, VetID)
+VALUES(1,2,1),
+(2,2,1),
+(2,3,2),
+(2,6,3),
+(2,8,4),
+(2,10,1),
+(3,2,2),
+(7,7,3),
+(7,12,4)
+
