@@ -18,7 +18,7 @@ namespace iShelter
 
         private void btnAdopt_Click(object sender, EventArgs e)
         {
-            DialogResult result = DialogResult.OK;
+            //DialogResult result = DialogResult.OK;
             this.Dispose();
         }
 

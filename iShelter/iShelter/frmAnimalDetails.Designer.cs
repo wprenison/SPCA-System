@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(iShelter));
             this.mnsAnimal = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ownersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editDelGuardiansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editDelAnimalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.procedureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editDelProceduresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editDelProcedureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpF1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuGuardians = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiEditGuardians = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAnimals = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiEditAnimals = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuProcedures = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiRecordProcedure = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiEditProcedure = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuReports = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtbName = new System.Windows.Forms.TextBox();
@@ -71,17 +71,17 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.picbAgroRatingInfo = new System.Windows.Forms.PictureBox();
             this.ttAgroRatingInfo = new System.Windows.Forms.ToolTip(this.components);
-            this.animalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guardiansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.proceduresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.specificAnimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.animalsAdoptedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.specificGuardianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.animalsPerSpesificToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.monthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.weekToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nonNueteredToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiAnimals = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiGuardians = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiProcedures = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiSpecificAnimal = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiAdopted = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiSpecificGuardian = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiProcessedPer = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiMonth = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiWeek = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiDay = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiNotNuetered = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpbGender.SuspendLayout();
@@ -92,112 +92,112 @@
             // mnsAnimal
             // 
             this.mnsAnimal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.ownersToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.procedureToolStripMenuItem,
-            this.reportsToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+            this.mnuFile,
+            this.mnuGuardians,
+            this.mnuAnimals,
+            this.mnuProcedures,
+            this.mnuReports,
+            this.mnuHelp});
             this.mnsAnimal.Location = new System.Drawing.Point(0, 0);
             this.mnsAnimal.Name = "mnsAnimal";
             this.mnsAnimal.Size = new System.Drawing.Size(359, 24);
             this.mnsAnimal.TabIndex = 0;
             this.mnsAnimal.Text = "menuStrip1";
             // 
-            // fileToolStripMenuItem
+            // mnuFile
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiExit});
+            this.mnuFile.Name = "mnuFile";
+            this.mnuFile.Size = new System.Drawing.Size(37, 20);
+            this.mnuFile.Text = "File";
             // 
-            // exitToolStripMenuItem
+            // mnuiExit
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.mnuiExit.Name = "mnuiExit";
+            this.mnuiExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuiExit.Text = "Exit";
+            this.mnuiExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // ownersToolStripMenuItem
+            // mnuGuardians
             // 
-            this.ownersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editDelGuardiansToolStripMenuItem});
-            this.ownersToolStripMenuItem.Name = "ownersToolStripMenuItem";
-            this.ownersToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.ownersToolStripMenuItem.Text = "Guardians";
+            this.mnuGuardians.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiEditGuardians});
+            this.mnuGuardians.Name = "mnuGuardians";
+            this.mnuGuardians.Size = new System.Drawing.Size(72, 20);
+            this.mnuGuardians.Text = "Guardians";
             // 
-            // editDelGuardiansToolStripMenuItem
+            // mnuiEditGuardians
             // 
-            this.editDelGuardiansToolStripMenuItem.Name = "editDelGuardiansToolStripMenuItem";
-            this.editDelGuardiansToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.editDelGuardiansToolStripMenuItem.Text = "Edit\\Del Guardians";
+            this.mnuiEditGuardians.Name = "mnuiEditGuardians";
+            this.mnuiEditGuardians.Size = new System.Drawing.Size(172, 22);
+            this.mnuiEditGuardians.Text = "Edit\\Del Guardians";
             // 
-            // toolStripMenuItem1
+            // mnuAnimals
             // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editDelAnimalsToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(62, 20);
-            this.toolStripMenuItem1.Text = "Animals";
+            this.mnuAnimals.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiEditAnimals});
+            this.mnuAnimals.Name = "mnuAnimals";
+            this.mnuAnimals.Size = new System.Drawing.Size(62, 20);
+            this.mnuAnimals.Text = "Animals";
             // 
-            // editDelAnimalsToolStripMenuItem
+            // mnuiEditAnimals
             // 
-            this.editDelAnimalsToolStripMenuItem.Name = "editDelAnimalsToolStripMenuItem";
-            this.editDelAnimalsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.editDelAnimalsToolStripMenuItem.Text = "Edit/Del Animals";
+            this.mnuiEditAnimals.Name = "mnuiEditAnimals";
+            this.mnuiEditAnimals.Size = new System.Drawing.Size(162, 22);
+            this.mnuiEditAnimals.Text = "Edit/Del Animals";
             // 
-            // procedureToolStripMenuItem
+            // mnuProcedures
             // 
-            this.procedureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editDelProceduresToolStripMenuItem,
-            this.editDelProcedureToolStripMenuItem});
-            this.procedureToolStripMenuItem.Name = "procedureToolStripMenuItem";
-            this.procedureToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.procedureToolStripMenuItem.Text = "Procedures";
+            this.mnuProcedures.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiRecordProcedure,
+            this.mnuiEditProcedure});
+            this.mnuProcedures.Name = "mnuProcedures";
+            this.mnuProcedures.Size = new System.Drawing.Size(78, 20);
+            this.mnuProcedures.Text = "Procedures";
             // 
-            // editDelProceduresToolStripMenuItem
+            // mnuiRecordProcedure
             // 
-            this.editDelProceduresToolStripMenuItem.Name = "editDelProceduresToolStripMenuItem";
-            this.editDelProceduresToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.editDelProceduresToolStripMenuItem.Text = "Record Procedure";
+            this.mnuiRecordProcedure.Name = "mnuiRecordProcedure";
+            this.mnuiRecordProcedure.Size = new System.Drawing.Size(173, 22);
+            this.mnuiRecordProcedure.Text = "Record Procedure";
             // 
-            // editDelProcedureToolStripMenuItem
+            // mnuiEditProcedure
             // 
-            this.editDelProcedureToolStripMenuItem.Name = "editDelProcedureToolStripMenuItem";
-            this.editDelProcedureToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.editDelProcedureToolStripMenuItem.Text = "Edit\\Del Procedure";
+            this.mnuiEditProcedure.Name = "mnuiEditProcedure";
+            this.mnuiEditProcedure.Size = new System.Drawing.Size(173, 22);
+            this.mnuiEditProcedure.Text = "Edit\\Del Procedure";
             // 
-            // reportsToolStripMenuItem
+            // mnuReports
             // 
-            this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.animalsToolStripMenuItem,
-            this.guardiansToolStripMenuItem,
-            this.proceduresToolStripMenuItem});
-            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportsToolStripMenuItem.Text = "Reports";
+            this.mnuReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiAnimals,
+            this.mnuiGuardians,
+            this.mnuiProcedures});
+            this.mnuReports.Name = "mnuReports";
+            this.mnuReports.Size = new System.Drawing.Size(59, 20);
+            this.mnuReports.Text = "Reports";
             // 
-            // aboutToolStripMenuItem
+            // mnuHelp
             // 
-            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.abouToolStripMenuItem,
-            this.helpF1ToolStripMenuItem});
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.aboutToolStripMenuItem.Text = "Help";
+            this.mnuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiAbout,
+            this.mnuiHelp});
+            this.mnuHelp.Name = "mnuHelp";
+            this.mnuHelp.Size = new System.Drawing.Size(44, 20);
+            this.mnuHelp.Text = "Help";
             // 
-            // abouToolStripMenuItem
+            // mnuiAbout
             // 
-            this.abouToolStripMenuItem.Name = "abouToolStripMenuItem";
-            this.abouToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.abouToolStripMenuItem.Text = "About";
+            this.mnuiAbout.Name = "mnuiAbout";
+            this.mnuiAbout.Size = new System.Drawing.Size(152, 22);
+            this.mnuiAbout.Text = "About";
             // 
-            // helpF1ToolStripMenuItem
+            // mnuiHelp
             // 
-            this.helpF1ToolStripMenuItem.Name = "helpF1ToolStripMenuItem";
-            this.helpF1ToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.helpF1ToolStripMenuItem.Text = "Help F1";
+            this.mnuiHelp.Name = "mnuiHelp";
+            this.mnuiHelp.Size = new System.Drawing.Size(152, 22);
+            this.mnuiHelp.Text = "Help F1";
             // 
             // pictureBox1
             // 
@@ -435,82 +435,82 @@
             this.ttAgroRatingInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttAgroRatingInfo.ToolTipTitle = "Info about Agro Rating";
             // 
-            // animalsToolStripMenuItem
+            // mnuiAnimals
             // 
-            this.animalsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.specificAnimalToolStripMenuItem,
-            this.animalsAdoptedToolStripMenuItem,
-            this.nonNueteredToolStripMenuItem,
-            this.animalsPerSpesificToolStripMenuItem});
-            this.animalsToolStripMenuItem.Name = "animalsToolStripMenuItem";
-            this.animalsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.animalsToolStripMenuItem.Text = "Animals";
+            this.mnuiAnimals.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiSpecificAnimal,
+            this.mnuiAdopted,
+            this.mnuiNotNuetered,
+            this.mnuiProcessedPer});
+            this.mnuiAnimals.Name = "mnuiAnimals";
+            this.mnuiAnimals.Size = new System.Drawing.Size(152, 22);
+            this.mnuiAnimals.Text = "Animals";
             // 
-            // guardiansToolStripMenuItem
+            // mnuiGuardians
             // 
-            this.guardiansToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.specificGuardianToolStripMenuItem});
-            this.guardiansToolStripMenuItem.Name = "guardiansToolStripMenuItem";
-            this.guardiansToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.guardiansToolStripMenuItem.Text = "Guardians";
+            this.mnuiGuardians.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiSpecificGuardian});
+            this.mnuiGuardians.Name = "mnuiGuardians";
+            this.mnuiGuardians.Size = new System.Drawing.Size(152, 22);
+            this.mnuiGuardians.Text = "Guardians";
             // 
-            // proceduresToolStripMenuItem
+            // mnuiProcedures
             // 
-            this.proceduresToolStripMenuItem.Name = "proceduresToolStripMenuItem";
-            this.proceduresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.proceduresToolStripMenuItem.Text = "Procedures";
+            this.mnuiProcedures.Name = "mnuiProcedures";
+            this.mnuiProcedures.Size = new System.Drawing.Size(152, 22);
+            this.mnuiProcedures.Text = "Procedures";
             // 
-            // specificAnimalToolStripMenuItem
+            // mnuiSpecificAnimal
             // 
-            this.specificAnimalToolStripMenuItem.Name = "specificAnimalToolStripMenuItem";
-            this.specificAnimalToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.specificAnimalToolStripMenuItem.Text = "Specific Animal";
+            this.mnuiSpecificAnimal.Name = "mnuiSpecificAnimal";
+            this.mnuiSpecificAnimal.Size = new System.Drawing.Size(190, 22);
+            this.mnuiSpecificAnimal.Text = "Specific Animal";
             // 
-            // animalsAdoptedToolStripMenuItem
+            // mnuiAdopted
             // 
-            this.animalsAdoptedToolStripMenuItem.Name = "animalsAdoptedToolStripMenuItem";
-            this.animalsAdoptedToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.animalsAdoptedToolStripMenuItem.Text = "Adopted";
+            this.mnuiAdopted.Name = "mnuiAdopted";
+            this.mnuiAdopted.Size = new System.Drawing.Size(190, 22);
+            this.mnuiAdopted.Text = "Adopted";
             // 
-            // specificGuardianToolStripMenuItem
+            // mnuiSpecificGuardian
             // 
-            this.specificGuardianToolStripMenuItem.Name = "specificGuardianToolStripMenuItem";
-            this.specificGuardianToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.specificGuardianToolStripMenuItem.Text = "Specific Guardian";
+            this.mnuiSpecificGuardian.Name = "mnuiSpecificGuardian";
+            this.mnuiSpecificGuardian.Size = new System.Drawing.Size(166, 22);
+            this.mnuiSpecificGuardian.Text = "Specific Guardian";
             // 
-            // animalsPerSpesificToolStripMenuItem
+            // mnuiProcessedPer
             // 
-            this.animalsPerSpesificToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.monthToolStripMenuItem,
-            this.weekToolStripMenuItem,
-            this.dayToolStripMenuItem});
-            this.animalsPerSpesificToolStripMenuItem.Name = "animalsPerSpesificToolStripMenuItem";
-            this.animalsPerSpesificToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.animalsPerSpesificToolStripMenuItem.Text = "Processed per specific";
+            this.mnuiProcessedPer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiMonth,
+            this.mnuiWeek,
+            this.mnuiDay});
+            this.mnuiProcessedPer.Name = "mnuiProcessedPer";
+            this.mnuiProcessedPer.Size = new System.Drawing.Size(190, 22);
+            this.mnuiProcessedPer.Text = "Processed per specific";
             // 
-            // monthToolStripMenuItem
+            // mnuiMonth
             // 
-            this.monthToolStripMenuItem.Name = "monthToolStripMenuItem";
-            this.monthToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.monthToolStripMenuItem.Text = "Month";
+            this.mnuiMonth.Name = "mnuiMonth";
+            this.mnuiMonth.Size = new System.Drawing.Size(152, 22);
+            this.mnuiMonth.Text = "Month";
             // 
-            // weekToolStripMenuItem
+            // mnuiWeek
             // 
-            this.weekToolStripMenuItem.Name = "weekToolStripMenuItem";
-            this.weekToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.weekToolStripMenuItem.Text = "Week";
+            this.mnuiWeek.Name = "mnuiWeek";
+            this.mnuiWeek.Size = new System.Drawing.Size(152, 22);
+            this.mnuiWeek.Text = "Week";
             // 
-            // dayToolStripMenuItem
+            // mnuiDay
             // 
-            this.dayToolStripMenuItem.Name = "dayToolStripMenuItem";
-            this.dayToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dayToolStripMenuItem.Text = "Day";
+            this.mnuiDay.Name = "mnuiDay";
+            this.mnuiDay.Size = new System.Drawing.Size(152, 22);
+            this.mnuiDay.Text = "Day";
             // 
-            // nonNueteredToolStripMenuItem
+            // mnuiNotNuetered
             // 
-            this.nonNueteredToolStripMenuItem.Name = "nonNueteredToolStripMenuItem";
-            this.nonNueteredToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.nonNueteredToolStripMenuItem.Text = "Not Nuetered";
+            this.mnuiNotNuetered.Name = "mnuiNotNuetered";
+            this.mnuiNotNuetered.Size = new System.Drawing.Size(190, 22);
+            this.mnuiNotNuetered.Text = "Not Nuetered";
             // 
             // iShelter
             // 
@@ -563,11 +563,11 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip mnsAnimal;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem abouToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpF1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile;
+        private System.Windows.Forms.ToolStripMenuItem mnuiExit;
+        private System.Windows.Forms.ToolStripMenuItem mnuHelp;
+        private System.Windows.Forms.ToolStripMenuItem mnuiAbout;
+        private System.Windows.Forms.ToolStripMenuItem mnuiHelp;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtbName;
@@ -590,30 +590,30 @@
         private System.Windows.Forms.RadioButton rabF;
         private System.Windows.Forms.RadioButton rabM;
         private System.Windows.Forms.Button btnProceed;
-        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuReports;
         private System.Windows.Forms.Label lblAgroRating;
         private System.Windows.Forms.ProgressBar probAnimal;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.PictureBox picbAgroRatingInfo;
         private System.Windows.Forms.ToolTip ttAgroRatingInfo;
-        private System.Windows.Forms.ToolStripMenuItem procedureToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ownersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editDelGuardiansToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem editDelProceduresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editDelAnimalsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editDelProcedureToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem animalsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem specificAnimalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem animalsAdoptedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nonNueteredToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem animalsPerSpesificToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem monthToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem weekToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dayToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem guardiansToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem specificGuardianToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem proceduresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuProcedures;
+        private System.Windows.Forms.ToolStripMenuItem mnuGuardians;
+        private System.Windows.Forms.ToolStripMenuItem mnuiEditGuardians;
+        private System.Windows.Forms.ToolStripMenuItem mnuAnimals;
+        private System.Windows.Forms.ToolStripMenuItem mnuiRecordProcedure;
+        private System.Windows.Forms.ToolStripMenuItem mnuiEditAnimals;
+        private System.Windows.Forms.ToolStripMenuItem mnuiEditProcedure;
+        private System.Windows.Forms.ToolStripMenuItem mnuiAnimals;
+        private System.Windows.Forms.ToolStripMenuItem mnuiSpecificAnimal;
+        private System.Windows.Forms.ToolStripMenuItem mnuiAdopted;
+        private System.Windows.Forms.ToolStripMenuItem mnuiNotNuetered;
+        private System.Windows.Forms.ToolStripMenuItem mnuiProcessedPer;
+        private System.Windows.Forms.ToolStripMenuItem mnuiMonth;
+        private System.Windows.Forms.ToolStripMenuItem mnuiWeek;
+        private System.Windows.Forms.ToolStripMenuItem mnuiDay;
+        private System.Windows.Forms.ToolStripMenuItem mnuiGuardians;
+        private System.Windows.Forms.ToolStripMenuItem mnuiSpecificGuardian;
+        private System.Windows.Forms.ToolStripMenuItem mnuiProcedures;
     }
 }
 

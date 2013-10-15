@@ -70,8 +70,17 @@
     <Compile Include="frmProcedureDetails.Designer.cs">
       <DependentUpon>frmProcedureDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportSpecificAnimal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportSpecificAnimal.Designer.cs">
+      <DependentUpon>frmReportSpecificAnimal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaterMarkTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="frmAnimalDetails.resx">
       <DependentUpon>frmAnimalDetails.cs</DependentUpon>
     </EmbeddedResource>

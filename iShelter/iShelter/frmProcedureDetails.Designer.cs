@@ -32,14 +32,16 @@
             this.btnProceed = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cmbSearchCategory = new System.Windows.Forms.ComboBox();
-            this.txtbSearch = new System.Windows.Forms.TextBox();
             this.lblAnimalID = new System.Windows.Forms.Label();
             this.txtbAnimalID = new System.Windows.Forms.TextBox();
             this.txtbProcedureID = new System.Windows.Forms.TextBox();
             this.lblProcedureID = new System.Windows.Forms.Label();
             this.txtbVetID = new System.Windows.Forms.TextBox();
             this.lblVetID = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.wmtxtbSearchTerm = new wmgCMS.WaterMarkTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCancel
@@ -81,27 +83,12 @@
             this.cmbSearchCategory.Name = "cmbSearchCategory";
             this.cmbSearchCategory.Size = new System.Drawing.Size(121, 21);
             this.cmbSearchCategory.TabIndex = 3;
-            // 
-            // txtbSearch
-            // 
-            this.txtbSearch.AccessibleDescription = "";
-            this.txtbSearch.AutoCompleteCustomSource.AddRange(new string[] {
-            "Bob",
-            "Bane",
-            "Blaze"});
-            this.txtbSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtbSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtbSearch.Location = new System.Drawing.Point(151, 13);
-            this.txtbSearch.Name = "txtbSearch";
-            this.txtbSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtbSearch.Size = new System.Drawing.Size(100, 20);
-            this.txtbSearch.TabIndex = 4;
-            this.txtbSearch.Tag = "";
+            this.cmbSearchCategory.SelectedIndexChanged += new System.EventHandler(this.cmbSearchCategory_SelectedIndexChanged);
             // 
             // lblAnimalID
             // 
             this.lblAnimalID.AutoSize = true;
-            this.lblAnimalID.Location = new System.Drawing.Point(13, 43);
+            this.lblAnimalID.Location = new System.Drawing.Point(14, 121);
             this.lblAnimalID.Name = "lblAnimalID";
             this.lblAnimalID.Size = new System.Drawing.Size(41, 13);
             this.lblAnimalID.TabIndex = 5;
@@ -109,7 +96,7 @@
             // 
             // txtbAnimalID
             // 
-            this.txtbAnimalID.Location = new System.Drawing.Point(78, 40);
+            this.txtbAnimalID.Location = new System.Drawing.Point(79, 118);
             this.txtbAnimalID.Name = "txtbAnimalID";
             this.txtbAnimalID.ReadOnly = true;
             this.txtbAnimalID.Size = new System.Drawing.Size(39, 20);
@@ -118,7 +105,7 @@
             // 
             // txtbProcedureID
             // 
-            this.txtbProcedureID.Location = new System.Drawing.Point(78, 66);
+            this.txtbProcedureID.Location = new System.Drawing.Point(79, 144);
             this.txtbProcedureID.Name = "txtbProcedureID";
             this.txtbProcedureID.ReadOnly = true;
             this.txtbProcedureID.Size = new System.Drawing.Size(39, 20);
@@ -128,7 +115,7 @@
             // lblProcedureID
             // 
             this.lblProcedureID.AutoSize = true;
-            this.lblProcedureID.Location = new System.Drawing.Point(13, 69);
+            this.lblProcedureID.Location = new System.Drawing.Point(14, 147);
             this.lblProcedureID.Name = "lblProcedureID";
             this.lblProcedureID.Size = new System.Drawing.Size(59, 13);
             this.lblProcedureID.TabIndex = 7;
@@ -136,7 +123,7 @@
             // 
             // txtbVetID
             // 
-            this.txtbVetID.Location = new System.Drawing.Point(78, 92);
+            this.txtbVetID.Location = new System.Drawing.Point(79, 170);
             this.txtbVetID.Name = "txtbVetID";
             this.txtbVetID.ReadOnly = true;
             this.txtbVetID.Size = new System.Drawing.Size(39, 20);
@@ -145,24 +132,49 @@
             // lblVetID
             // 
             this.lblVetID.AutoSize = true;
-            this.lblVetID.Location = new System.Drawing.Point(13, 95);
+            this.lblVetID.Location = new System.Drawing.Point(14, 173);
             this.lblVetID.Name = "lblVetID";
             this.lblVetID.Size = new System.Drawing.Size(61, 13);
             this.lblVetID.TabIndex = 9;
             this.lblVetID.Text = "Vetenarian:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(27, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 74);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // wmtxtbSearchTerm
+            // 
+            this.wmtxtbSearchTerm.AutoCompleteCustomSource.AddRange(new string[] {
+            "Bob",
+            "Bane",
+            "Blaze"});
+            this.wmtxtbSearchTerm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.wmtxtbSearchTerm.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.wmtxtbSearchTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.wmtxtbSearchTerm.Location = new System.Drawing.Point(138, 14);
+            this.wmtxtbSearchTerm.Name = "wmtxtbSearchTerm";
+            this.wmtxtbSearchTerm.Size = new System.Drawing.Size(113, 20);
+            this.wmtxtbSearchTerm.TabIndex = 12;
+            this.wmtxtbSearchTerm.WaterMarkColor = System.Drawing.Color.Gray;
+            this.wmtxtbSearchTerm.WaterMarkText = "Search";
             // 
             // frmProcedureDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 222);
+            this.Controls.Add(this.wmtxtbSearchTerm);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtbVetID);
             this.Controls.Add(this.lblVetID);
             this.Controls.Add(this.txtbProcedureID);
             this.Controls.Add(this.lblProcedureID);
             this.Controls.Add(this.txtbAnimalID);
             this.Controls.Add(this.lblAnimalID);
-            this.Controls.Add(this.txtbSearch);
             this.Controls.Add(this.cmbSearchCategory);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnProceed);
@@ -171,7 +183,9 @@
             this.Name = "frmProcedureDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProcedureDetails";
+            this.Load += new System.EventHandler(this.frmProcedureDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,12 +197,13 @@
         private System.Windows.Forms.Button btnProceed;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cmbSearchCategory;
-        private System.Windows.Forms.TextBox txtbSearch;
         private System.Windows.Forms.Label lblAnimalID;
         private System.Windows.Forms.TextBox txtbAnimalID;
         private System.Windows.Forms.TextBox txtbProcedureID;
         private System.Windows.Forms.Label lblProcedureID;
         private System.Windows.Forms.TextBox txtbVetID;
         private System.Windows.Forms.Label lblVetID;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private wmgCMS.WaterMarkTextBox wmtxtbSearchTerm;
     }
 }
