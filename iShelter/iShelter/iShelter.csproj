@@ -52,6 +52,12 @@
     <Compile Include="frmAnimalDetails.Designer.cs">
       <DependentUpon>frmAnimalDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGuardianDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGuardianDetails.Designer.cs">
+      <DependentUpon>frmGuardianDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAnimalDetails.resx">
       <DependentUpon>frmAnimalDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGuardianDetails.resx">
+      <DependentUpon>frmGuardianDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>

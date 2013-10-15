@@ -20,7 +20,18 @@ namespace iShelter
         {
             frmMenu menu = new frmMenu();
             this.Visible = false;
-            menu.ShowDialog();
+            DialogResult result = menu.ShowDialog();
+
+            if (result == DialogResult.OK || result == DialogResult.Cancel)
+            {
+                menu.Dispose();
+                this.Visible = true;
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

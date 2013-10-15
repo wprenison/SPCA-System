@@ -33,6 +33,8 @@
             this.mnsAnimal = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ownersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procedureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,8 +66,11 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.picbAgroRatingInfo = new System.Windows.Forms.PictureBox();
             this.ttAgroRatingInfo = new System.Windows.Forms.ToolTip(this.components);
-            this.procedureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ownersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDelGuardiansToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDelProceduresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDelAnimalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDelProcedureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpbGender.SuspendLayout();
@@ -78,12 +83,13 @@
             this.mnsAnimal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.ownersToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.procedureToolStripMenuItem,
             this.reportsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.mnsAnimal.Location = new System.Drawing.Point(0, 0);
             this.mnsAnimal.Name = "mnsAnimal";
-            this.mnsAnimal.Size = new System.Drawing.Size(317, 24);
+            this.mnsAnimal.Size = new System.Drawing.Size(359, 24);
             this.mnsAnimal.TabIndex = 0;
             this.mnsAnimal.Text = "menuStrip1";
             // 
@@ -98,8 +104,26 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // ownersToolStripMenuItem
+            // 
+            this.ownersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editDelGuardiansToolStripMenuItem});
+            this.ownersToolStripMenuItem.Name = "ownersToolStripMenuItem";
+            this.ownersToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.ownersToolStripMenuItem.Text = "Guardians";
+            // 
+            // procedureToolStripMenuItem
+            // 
+            this.procedureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editDelProceduresToolStripMenuItem,
+            this.editDelProcedureToolStripMenuItem});
+            this.procedureToolStripMenuItem.Name = "procedureToolStripMenuItem";
+            this.procedureToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.procedureToolStripMenuItem.Text = "Procedures";
             // 
             // reportsToolStripMenuItem
             // 
@@ -130,7 +154,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(213, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(242, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(82, 74);
             this.pictureBox1.TabIndex = 1;
@@ -242,7 +266,7 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(250, 183);
+            this.maskedTextBox1.Location = new System.Drawing.Point(279, 183);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(49, 20);
             this.maskedTextBox1.TabIndex = 14;
@@ -250,7 +274,7 @@
             // lblRoomNo
             // 
             this.lblRoomNo.AutoSize = true;
-            this.lblRoomNo.Location = new System.Drawing.Point(189, 186);
+            this.lblRoomNo.Location = new System.Drawing.Point(218, 186);
             this.lblRoomNo.Name = "lblRoomNo";
             this.lblRoomNo.Size = new System.Drawing.Size(55, 13);
             this.lblRoomNo.TabIndex = 15;
@@ -258,7 +282,7 @@
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(250, 157);
+            this.maskedTextBox2.Location = new System.Drawing.Point(279, 157);
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(49, 20);
             this.maskedTextBox2.TabIndex = 16;
@@ -266,7 +290,7 @@
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(189, 160);
+            this.lblAge.Location = new System.Drawing.Point(218, 160);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(29, 13);
             this.lblAge.TabIndex = 17;
@@ -274,7 +298,7 @@
             // 
             // btnTakePic
             // 
-            this.btnTakePic.Location = new System.Drawing.Point(209, 124);
+            this.btnTakePic.Location = new System.Drawing.Point(238, 124);
             this.btnTakePic.Name = "btnTakePic";
             this.btnTakePic.Size = new System.Drawing.Size(90, 23);
             this.btnTakePic.TabIndex = 18;
@@ -285,7 +309,7 @@
             // 
             this.grpbGender.Controls.Add(this.rabF);
             this.grpbGender.Controls.Add(this.rabM);
-            this.grpbGender.Location = new System.Drawing.Point(192, 209);
+            this.grpbGender.Location = new System.Drawing.Point(221, 209);
             this.grpbGender.Name = "grpbGender";
             this.grpbGender.Size = new System.Drawing.Size(107, 30);
             this.grpbGender.TabIndex = 19;
@@ -316,7 +340,7 @@
             // 
             // btnProceed
             // 
-            this.btnProceed.Location = new System.Drawing.Point(209, 252);
+            this.btnProceed.Location = new System.Drawing.Point(238, 252);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(90, 23);
             this.btnProceed.TabIndex = 20;
@@ -364,23 +388,43 @@
             this.ttAgroRatingInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttAgroRatingInfo.ToolTipTitle = "Info about Agro Rating";
             // 
-            // procedureToolStripMenuItem
+            // editDelGuardiansToolStripMenuItem
             // 
-            this.procedureToolStripMenuItem.Name = "procedureToolStripMenuItem";
-            this.procedureToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.procedureToolStripMenuItem.Text = "Procedures";
+            this.editDelGuardiansToolStripMenuItem.Name = "editDelGuardiansToolStripMenuItem";
+            this.editDelGuardiansToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.editDelGuardiansToolStripMenuItem.Text = "Edit\\Del Guardians";
             // 
-            // ownersToolStripMenuItem
+            // editDelProceduresToolStripMenuItem
             // 
-            this.ownersToolStripMenuItem.Name = "ownersToolStripMenuItem";
-            this.ownersToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.ownersToolStripMenuItem.Text = "Owners";
+            this.editDelProceduresToolStripMenuItem.Name = "editDelProceduresToolStripMenuItem";
+            this.editDelProceduresToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.editDelProceduresToolStripMenuItem.Text = "Record Procedure";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editDelAnimalsToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(62, 20);
+            this.toolStripMenuItem1.Text = "Animals";
+            // 
+            // editDelAnimalsToolStripMenuItem
+            // 
+            this.editDelAnimalsToolStripMenuItem.Name = "editDelAnimalsToolStripMenuItem";
+            this.editDelAnimalsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.editDelAnimalsToolStripMenuItem.Text = "Edit/Del Animals";
+            // 
+            // editDelProcedureToolStripMenuItem
+            // 
+            this.editDelProcedureToolStripMenuItem.Name = "editDelProcedureToolStripMenuItem";
+            this.editDelProcedureToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.editDelProcedureToolStripMenuItem.Text = "Edit\\Del Procedure";
             // 
             // iShelter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(317, 308);
+            this.ClientSize = new System.Drawing.Size(359, 308);
             this.Controls.Add(this.picbAgroRatingInfo);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.probAnimal);
@@ -462,6 +506,11 @@
         private System.Windows.Forms.ToolTip ttAgroRatingInfo;
         private System.Windows.Forms.ToolStripMenuItem procedureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ownersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editDelGuardiansToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem editDelProceduresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editDelAnimalsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editDelProcedureToolStripMenuItem;
     }
 }
 

@@ -15,5 +15,26 @@ namespace iShelter
         {
             InitializeComponent();
         }
+
+        private void btnAdopt_Click(object sender, EventArgs e)
+        {
+            DialogResult result = DialogResult.OK;
+            this.Dispose();
+        }
+
+        private void btnGuardian_Click(object sender, EventArgs e)
+        {
+            //Hides the menu and displays frmGuardianDetails
+            frmGuardianDetails guardian = new frmGuardianDetails();
+            this.Visible = false;
+            DialogResult result = guardian.ShowDialog();
+            this.Visible = true;
+
+            //frmGuardianDetails returns a value if this value is "OK" then the guardian button gets disabled to prevent 
+            //another guardian entry for the same animal
+            if (result == DialogResult.OK)
+                btnGuardian.Enabled = false;
+           
+        }
     }
 }

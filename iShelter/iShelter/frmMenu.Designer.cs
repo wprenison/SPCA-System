@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOwner = new System.Windows.Forms.Button();
+            this.btnGuardian = new System.Windows.Forms.Button();
             this.btnProcedure = new System.Windows.Forms.Button();
             this.btnAdopt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnOwner
+            // btnGuardian
             // 
-            this.btnOwner.Location = new System.Drawing.Point(18, 26);
-            this.btnOwner.Name = "btnOwner";
-            this.btnOwner.Size = new System.Drawing.Size(75, 23);
-            this.btnOwner.TabIndex = 0;
-            this.btnOwner.Text = "Owner";
-            this.btnOwner.UseVisualStyleBackColor = true;
+            this.btnGuardian.Location = new System.Drawing.Point(18, 26);
+            this.btnGuardian.Name = "btnGuardian";
+            this.btnGuardian.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardian.TabIndex = 0;
+            this.btnGuardian.Text = "Guardian";
+            this.btnGuardian.UseVisualStyleBackColor = true;
+            this.btnGuardian.Click += new System.EventHandler(this.btnGuardian_Click);
             // 
             // btnProcedure
             // 
@@ -59,6 +60,7 @@
             this.btnAdopt.TabIndex = 2;
             this.btnAdopt.Text = "Adopt";
             this.btnAdopt.UseVisualStyleBackColor = true;
+            this.btnAdopt.Click += new System.EventHandler(this.btnAdopt_Click);
             // 
             // frmMenu
             // 
@@ -67,7 +69,7 @@
             this.ClientSize = new System.Drawing.Size(272, 65);
             this.Controls.Add(this.btnAdopt);
             this.Controls.Add(this.btnProcedure);
-            this.Controls.Add(this.btnOwner);
+            this.Controls.Add(this.btnGuardian);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -78,7 +80,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnOwner;
+        private System.Windows.Forms.Button btnGuardian;
         private System.Windows.Forms.Button btnProcedure;
         private System.Windows.Forms.Button btnAdopt;
     }
