@@ -93,6 +93,9 @@
     <EmbeddedResource Include="frmProcedureDetails.resx">
       <DependentUpon>frmProcedureDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportSpecificAnimal.resx">
+      <DependentUpon>frmReportSpecificAnimal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

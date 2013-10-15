@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGuardianDetails));
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtbFirstName = new System.Windows.Forms.TextBox();
             this.txtbLastName = new System.Windows.Forms.TextBox();
@@ -164,6 +165,7 @@
             this.Controls.Add(this.txtbFirstName);
             this.Controls.Add(this.lblFirstName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGuardianDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmGuardianDetails";

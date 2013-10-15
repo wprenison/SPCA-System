@@ -26,9 +26,9 @@ namespace iShelter
         {
             //Hides the menu and displays frmGuardianDetails
             frmGuardianDetails guardian = new frmGuardianDetails();
-            this.Visible = false;
+            //this.Visible = false;
             DialogResult result = guardian.ShowDialog();
-            this.Visible = true;
+            //this.Visible = true;
 
             //frmGuardianDetails returns a value if this value is "OK" then the guardian button gets disabled to prevent 
             //another guardian entry for the same animal
@@ -40,9 +40,9 @@ namespace iShelter
         private void btnProcedure_Click(object sender, EventArgs e)
         {
             frmProcedureDetails procedure = new frmProcedureDetails();
-            this.Visible = false;
+            //this.Visible = false;
             DialogResult result = procedure.ShowDialog();
-            this.Visible = true;
+            //this.Visible = true;
 
             //frmProcedureDetails returns a value if this value is "OK" then the procedurebutton gets disabled to prevent 
             //another guardian entry for the same animal

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProcedureDetails));
             this.lblCancel = new System.Windows.Forms.Button();
             this.btnProceed = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -38,10 +39,10 @@
             this.lblProcedureID = new System.Windows.Forms.Label();
             this.txtbVetID = new System.Windows.Forms.TextBox();
             this.lblVetID = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picbAnimal = new System.Windows.Forms.PictureBox();
             this.wmtxtbSearchTerm = new wmgCMS.WaterMarkTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCancel
@@ -138,13 +139,14 @@
             this.lblVetID.TabIndex = 9;
             this.lblVetID.Text = "Vetenarian:";
             // 
-            // pictureBox1
+            // picbAnimal
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(27, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 74);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.picbAnimal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picbAnimal.Location = new System.Drawing.Point(27, 38);
+            this.picbAnimal.Name = "picbAnimal";
+            this.picbAnimal.Size = new System.Drawing.Size(82, 74);
+            this.picbAnimal.TabIndex = 11;
+            this.picbAnimal.TabStop = false;
             // 
             // wmtxtbSearchTerm
             // 
@@ -168,7 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 222);
             this.Controls.Add(this.wmtxtbSearchTerm);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picbAnimal);
             this.Controls.Add(this.txtbVetID);
             this.Controls.Add(this.lblVetID);
             this.Controls.Add(this.txtbProcedureID);
@@ -180,12 +182,13 @@
             this.Controls.Add(this.btnProceed);
             this.Controls.Add(this.lblCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProcedureDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProcedureDetails";
             this.Load += new System.EventHandler(this.frmProcedureDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +206,7 @@
         private System.Windows.Forms.Label lblProcedureID;
         private System.Windows.Forms.TextBox txtbVetID;
         private System.Windows.Forms.Label lblVetID;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picbAnimal;
         private wmgCMS.WaterMarkTextBox wmtxtbSearchTerm;
     }
 }
