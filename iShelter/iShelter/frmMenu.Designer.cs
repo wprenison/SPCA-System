@@ -51,6 +51,7 @@
             this.btnProcedure.TabIndex = 1;
             this.btnProcedure.Text = "Procedure";
             this.btnProcedure.UseVisualStyleBackColor = true;
+            this.btnProcedure.Click += new System.EventHandler(this.btnProcedure_Click);
             // 
             // btnAdopt
             // 

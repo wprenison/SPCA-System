@@ -36,5 +36,18 @@ namespace iShelter
                 btnGuardian.Enabled = false;
            
         }
+
+        private void btnProcedure_Click(object sender, EventArgs e)
+        {
+            frmProcedureDetails procedure = new frmProcedureDetails();
+            this.Visible = false;
+            DialogResult result = procedure.ShowDialog();
+            this.Visible = true;
+
+            //frmProcedureDetails returns a value if this value is "OK" then the procedurebutton gets disabled to prevent 
+            //another guardian entry for the same animal
+            if (result == DialogResult.OK)
+                btnProcedure.Enabled = false;
+        }
     }
 }
