@@ -49,5 +49,10 @@ namespace iShelter
             if (result == DialogResult.OK)
                 btnProcedure.Enabled = false;
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
     }
 }

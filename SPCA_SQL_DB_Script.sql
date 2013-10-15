@@ -111,13 +111,11 @@ VALUES(1,1),
 
 CREATE TABLE tblProcedureOp
 (
+ProcedureOpID int IDENTITY(1,1) PRIMARY KEY,
 ProcedureID int FOREIGN KEY REFERENCES tblProcedures(ProcedureID),
 AnimalID int FOREIGN KEY REFERENCES	tblAnimals(AnimalID),
-VetID int FOREIGN KEY REFERENCES tblVets(VetID),
-ProcedureOpID int PRIMARY KEY(AnimalID, VetID)
+VetID int FOREIGN KEY REFERENCES tblVets(VetID)
 )
-select *
-from tblVets
 
 INSERT INTO tblProcedureOp(ProcedureID, AnimalID, VetID)
 VALUES(1,2,1),

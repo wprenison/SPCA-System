@@ -31,6 +31,7 @@
             this.btnGuardian = new System.Windows.Forms.Button();
             this.btnProcedure = new System.Windows.Forms.Button();
             this.btnAdopt = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGuardian
@@ -63,11 +64,22 @@
             this.btnAdopt.UseVisualStyleBackColor = true;
             this.btnAdopt.Click += new System.EventHandler(this.btnAdopt_Click);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(97, 55);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 65);
+            this.ClientSize = new System.Drawing.Size(269, 86);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdopt);
             this.Controls.Add(this.btnProcedure);
             this.Controls.Add(this.btnGuardian);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Button btnGuardian;
         private System.Windows.Forms.Button btnProcedure;
         private System.Windows.Forms.Button btnAdopt;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

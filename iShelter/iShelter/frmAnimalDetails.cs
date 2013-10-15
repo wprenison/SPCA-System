@@ -19,14 +19,12 @@ namespace iShelter
         private void btnProceed_Click(object sender, EventArgs e)
         {
             frmMenu menu = new frmMenu();
-            this.Visible = false;
             DialogResult result = menu.ShowDialog();
 
             if (result == DialogResult.OK || result == DialogResult.Cancel)
-            {
-                menu.Dispose();
-                this.Visible = true;
-            }
+               menu.Dispose();
+                
+            
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
