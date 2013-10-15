@@ -68,9 +68,9 @@
             this.lblInjuries = new System.Windows.Forms.Label();
             this.txtbNotes = new System.Windows.Forms.TextBox();
             this.lblNotes = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtRoomNo = new System.Windows.Forms.MaskedTextBox();
             this.lblRoomNo = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtAge = new System.Windows.Forms.MaskedTextBox();
             this.lblAge = new System.Windows.Forms.Label();
             this.btnTakePic = new System.Windows.Forms.Button();
             this.grpbGender = new System.Windows.Forms.GroupBox();
@@ -78,10 +78,10 @@
             this.rabM = new System.Windows.Forms.RadioButton();
             this.btnProceed = new System.Windows.Forms.Button();
             this.lblAgroRating = new System.Windows.Forms.Label();
-            this.probAnimal = new System.Windows.Forms.ProgressBar();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.picbAgroRatingInfo = new System.Windows.Forms.PictureBox();
             this.ttAgroRatingInfo = new System.Windows.Forms.ToolTip(this.components);
+            this.cbNuetered = new System.Windows.Forms.CheckBox();
             this.mnsAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).BeginInit();
             this.grpbGender.SuspendLayout();
@@ -389,12 +389,14 @@
             this.lblNotes.TabIndex = 13;
             this.lblNotes.Text = "Notes:";
             // 
-            // maskedTextBox1
+            // mtxtRoomNo
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(279, 183);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(49, 20);
-            this.maskedTextBox1.TabIndex = 14;
+            this.mtxtRoomNo.Location = new System.Drawing.Point(279, 183);
+            this.mtxtRoomNo.Mask = "000";
+            this.mtxtRoomNo.Name = "mtxtRoomNo";
+            this.mtxtRoomNo.PromptChar = '#';
+            this.mtxtRoomNo.Size = new System.Drawing.Size(49, 20);
+            this.mtxtRoomNo.TabIndex = 14;
             // 
             // lblRoomNo
             // 
@@ -405,12 +407,14 @@
             this.lblRoomNo.TabIndex = 15;
             this.lblRoomNo.Text = "Room No:";
             // 
-            // maskedTextBox2
+            // mtxtAge
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(279, 157);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(49, 20);
-            this.maskedTextBox2.TabIndex = 16;
+            this.mtxtAge.Location = new System.Drawing.Point(279, 157);
+            this.mtxtAge.Mask = "00";
+            this.mtxtAge.Name = "mtxtAge";
+            this.mtxtAge.PromptChar = '#';
+            this.mtxtAge.Size = new System.Drawing.Size(49, 20);
+            this.mtxtAge.TabIndex = 16;
             // 
             // lblAge
             // 
@@ -465,7 +469,7 @@
             // 
             // btnProceed
             // 
-            this.btnProceed.Location = new System.Drawing.Point(238, 252);
+            this.btnProceed.Location = new System.Drawing.Point(238, 280);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(90, 23);
             this.btnProceed.TabIndex = 20;
@@ -481,13 +485,6 @@
             this.lblAgroRating.Size = new System.Drawing.Size(66, 13);
             this.lblAgroRating.TabIndex = 21;
             this.lblAgroRating.Text = "Agro Rating:";
-            // 
-            // probAnimal
-            // 
-            this.probAnimal.Location = new System.Drawing.Point(0, 297);
-            this.probAnimal.Name = "probAnimal";
-            this.probAnimal.Size = new System.Drawing.Size(317, 12);
-            this.probAnimal.TabIndex = 22;
             // 
             // numericUpDown1
             // 
@@ -513,22 +510,32 @@
             this.ttAgroRatingInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ttAgroRatingInfo.ToolTipTitle = "Info about Agro Rating";
             // 
+            // cbNuetered
+            // 
+            this.cbNuetered.AutoSize = true;
+            this.cbNuetered.Location = new System.Drawing.Point(221, 256);
+            this.cbNuetered.Name = "cbNuetered";
+            this.cbNuetered.Size = new System.Drawing.Size(70, 17);
+            this.cbNuetered.TabIndex = 25;
+            this.cbNuetered.Text = "Nuetered";
+            this.cbNuetered.UseVisualStyleBackColor = true;
+            // 
             // iShelter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 308);
+            this.ClientSize = new System.Drawing.Size(359, 313);
+            this.Controls.Add(this.cbNuetered);
             this.Controls.Add(this.picbAgroRatingInfo);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.probAnimal);
             this.Controls.Add(this.lblAgroRating);
             this.Controls.Add(this.btnProceed);
             this.Controls.Add(this.grpbGender);
             this.Controls.Add(this.btnTakePic);
             this.Controls.Add(this.lblAge);
-            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.mtxtAge);
             this.Controls.Add(this.lblRoomNo);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mtxtRoomNo);
             this.Controls.Add(this.lblNotes);
             this.Controls.Add(this.txtbNotes);
             this.Controls.Add(this.lblInjuries);
@@ -582,9 +589,9 @@
         private System.Windows.Forms.Label lblInjuries;
         private System.Windows.Forms.TextBox txtbNotes;
         private System.Windows.Forms.Label lblNotes;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtxtRoomNo;
         private System.Windows.Forms.Label lblRoomNo;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox mtxtAge;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Button btnTakePic;
         private System.Windows.Forms.GroupBox grpbGender;
@@ -593,7 +600,6 @@
         private System.Windows.Forms.Button btnProceed;
         private System.Windows.Forms.ToolStripMenuItem mnuReports;
         private System.Windows.Forms.Label lblAgroRating;
-        private System.Windows.Forms.ProgressBar probAnimal;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.PictureBox picbAgroRatingInfo;
         private System.Windows.Forms.ToolTip ttAgroRatingInfo;
@@ -615,6 +621,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuiGuardians;
         private System.Windows.Forms.ToolStripMenuItem mnuiSpecificGuardian;
         private System.Windows.Forms.ToolStripMenuItem mnuiProcedures;
+        private System.Windows.Forms.CheckBox cbNuetered;
     }
 }
 
