@@ -128,3 +128,8 @@ VALUES(1,2,1),
 (7,7,3),
 (7,12,4)
 
+select*
+from tblAnimals
+
+delete from tblAnimals
+where AnimalID = 28

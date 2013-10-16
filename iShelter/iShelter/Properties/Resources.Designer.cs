@@ -59,14 +59,5 @@ namespace iShelter.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Data Source=SHADOWPC;Initial Catalog=Prog_Assignment3;Integrated Security=True.
-        /// </summary>
-        internal static string DbConnString {
-            get {
-                return ResourceManager.GetString("DbConnString", resourceCulture);
-            }
-        }
     }
 }

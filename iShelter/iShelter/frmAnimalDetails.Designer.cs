@@ -78,14 +78,14 @@
             this.rabM = new System.Windows.Forms.RadioButton();
             this.btnProceed = new System.Windows.Forms.Button();
             this.lblAgroRating = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudAgroRating = new System.Windows.Forms.NumericUpDown();
             this.picbAgroRatingInfo = new System.Windows.Forms.PictureBox();
             this.ttAgroRatingInfo = new System.Windows.Forms.ToolTip(this.components);
             this.cbNuetered = new System.Windows.Forms.CheckBox();
             this.mnsAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).BeginInit();
             this.grpbGender.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgroRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbAgroRatingInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -278,6 +278,7 @@
             // 
             // picbAnimal
             // 
+            this.picbAnimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picbAnimal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picbAnimal.Location = new System.Drawing.Point(242, 40);
             this.picbAnimal.Name = "picbAnimal";
@@ -305,12 +306,13 @@
             // 
             this.cmbSpecies.FormattingEnabled = true;
             this.cmbSpecies.Items.AddRange(new object[] {
+            "Bird",
             "Canine",
-            "Feline",
-            "Bird"});
+            "Feline"});
             this.cmbSpecies.Location = new System.Drawing.Point(61, 66);
             this.cmbSpecies.Name = "cmbSpecies";
             this.cmbSpecies.Size = new System.Drawing.Size(121, 21);
+            this.cmbSpecies.Sorted = true;
             this.cmbSpecies.TabIndex = 4;
             // 
             // lblSpecies
@@ -433,6 +435,7 @@
             this.btnTakePic.TabIndex = 18;
             this.btnTakePic.Text = "Take Picture";
             this.btnTakePic.UseVisualStyleBackColor = true;
+            this.btnTakePic.Click += new System.EventHandler(this.btnTakePic_Click);
             // 
             // grpbGender
             // 
@@ -486,12 +489,17 @@
             this.lblAgroRating.TabIndex = 21;
             this.lblAgroRating.Text = "Agro Rating:";
             // 
-            // numericUpDown1
+            // nudAgroRating
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(131, 254);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(28, 20);
-            this.numericUpDown1.TabIndex = 23;
+            this.nudAgroRating.Location = new System.Drawing.Point(131, 254);
+            this.nudAgroRating.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.nudAgroRating.Name = "nudAgroRating";
+            this.nudAgroRating.Size = new System.Drawing.Size(28, 20);
+            this.nudAgroRating.TabIndex = 23;
             // 
             // picbAgroRatingInfo
             // 
@@ -527,7 +535,7 @@
             this.ClientSize = new System.Drawing.Size(359, 313);
             this.Controls.Add(this.cbNuetered);
             this.Controls.Add(this.picbAgroRatingInfo);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nudAgroRating);
             this.Controls.Add(this.lblAgroRating);
             this.Controls.Add(this.btnProceed);
             this.Controls.Add(this.grpbGender);
@@ -561,7 +569,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).EndInit();
             this.grpbGender.ResumeLayout(false);
             this.grpbGender.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAgroRating)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbAgroRatingInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -600,7 +608,7 @@
         private System.Windows.Forms.Button btnProceed;
         private System.Windows.Forms.ToolStripMenuItem mnuReports;
         private System.Windows.Forms.Label lblAgroRating;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudAgroRating;
         private System.Windows.Forms.PictureBox picbAgroRatingInfo;
         private System.Windows.Forms.ToolTip ttAgroRatingInfo;
         private System.Windows.Forms.ToolStripMenuItem mnuProcedures;
