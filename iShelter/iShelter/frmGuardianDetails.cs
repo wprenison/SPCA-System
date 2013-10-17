@@ -156,5 +156,11 @@ namespace iShelter
                 }                
             }            
         }
+
+        private void btnGuardianExists_Click(object sender, EventArgs e)
+        {
+            frmSearchRecord search = new frmSearchRecord("GuardianDetails");
+            search.ShowDialog();
+        }
     }
 }

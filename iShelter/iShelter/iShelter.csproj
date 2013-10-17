@@ -67,11 +67,11 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProcedureDetails.cs">
+    <Compile Include="frmSearchRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProcedureDetails.Designer.cs">
-      <DependentUpon>frmProcedureDetails.cs</DependentUpon>
+    <Compile Include="frmSearchRecord.Designer.cs">
+      <DependentUpon>frmSearchRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReportSpecificAnimal.cs">
       <SubType>Form</SubType>
@@ -96,8 +96,8 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProcedureDetails.resx">
-      <DependentUpon>frmProcedureDetails.cs</DependentUpon>
+    <EmbeddedResource Include="frmSearchRecord.resx">
+      <DependentUpon>frmSearchRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportSpecificAnimal.resx">
       <DependentUpon>frmReportSpecificAnimal.cs</DependentUpon>

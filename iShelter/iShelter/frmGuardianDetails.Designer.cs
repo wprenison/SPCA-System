@@ -41,12 +41,13 @@
             this.lblDob = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnProceed = new System.Windows.Forms.Button();
+            this.btnGuardianExists = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(13, 23);
+            this.lblFirstName.Location = new System.Drawing.Point(12, 46);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(60, 13);
             this.lblFirstName.TabIndex = 0;
@@ -54,7 +55,7 @@
             // 
             // txtbFirstName
             // 
-            this.txtbFirstName.Location = new System.Drawing.Point(90, 20);
+            this.txtbFirstName.Location = new System.Drawing.Point(89, 43);
             this.txtbFirstName.Name = "txtbFirstName";
             this.txtbFirstName.Size = new System.Drawing.Size(134, 20);
             this.txtbFirstName.TabIndex = 1;
@@ -62,7 +63,7 @@
             // 
             // txtbLastName
             // 
-            this.txtbLastName.Location = new System.Drawing.Point(90, 46);
+            this.txtbLastName.Location = new System.Drawing.Point(89, 69);
             this.txtbLastName.Name = "txtbLastName";
             this.txtbLastName.Size = new System.Drawing.Size(134, 20);
             this.txtbLastName.TabIndex = 3;
@@ -71,7 +72,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(13, 49);
+            this.lblLastName.Location = new System.Drawing.Point(12, 72);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(61, 13);
             this.lblLastName.TabIndex = 2;
@@ -80,7 +81,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(13, 101);
+            this.lblAddress.Location = new System.Drawing.Point(12, 124);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(48, 13);
             this.lblAddress.TabIndex = 4;
@@ -88,7 +89,7 @@
             // 
             // txtbAddress
             // 
-            this.txtbAddress.Location = new System.Drawing.Point(90, 98);
+            this.txtbAddress.Location = new System.Drawing.Point(89, 121);
             this.txtbAddress.Multiline = true;
             this.txtbAddress.Name = "txtbAddress";
             this.txtbAddress.Size = new System.Drawing.Size(134, 53);
@@ -98,7 +99,7 @@
             // lblTel
             // 
             this.lblTel.AutoSize = true;
-            this.lblTel.Location = new System.Drawing.Point(13, 75);
+            this.lblTel.Location = new System.Drawing.Point(12, 98);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(42, 13);
             this.lblTel.TabIndex = 6;
@@ -106,7 +107,7 @@
             // 
             // mtxtTelNo
             // 
-            this.mtxtTelNo.Location = new System.Drawing.Point(90, 72);
+            this.mtxtTelNo.Location = new System.Drawing.Point(89, 95);
             this.mtxtTelNo.Name = "mtxtTelNo";
             this.mtxtTelNo.Size = new System.Drawing.Size(134, 20);
             this.mtxtTelNo.TabIndex = 7;
@@ -114,7 +115,7 @@
             // dtpDateOfBirth
             // 
             this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDateOfBirth.Location = new System.Drawing.Point(90, 161);
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(89, 184);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
             this.dtpDateOfBirth.Size = new System.Drawing.Size(134, 20);
             this.dtpDateOfBirth.TabIndex = 8;
@@ -122,7 +123,7 @@
             // lblDob
             // 
             this.lblDob.AutoSize = true;
-            this.lblDob.Location = new System.Drawing.Point(13, 164);
+            this.lblDob.Location = new System.Drawing.Point(12, 187);
             this.lblDob.Name = "lblDob";
             this.lblDob.Size = new System.Drawing.Size(71, 13);
             this.lblDob.TabIndex = 9;
@@ -130,7 +131,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(13, 191);
+            this.btnCancel.Location = new System.Drawing.Point(12, 214);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 10;
@@ -140,7 +141,7 @@
             // 
             // btnProceed
             // 
-            this.btnProceed.Location = new System.Drawing.Point(149, 191);
+            this.btnProceed.Location = new System.Drawing.Point(148, 214);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(75, 23);
             this.btnProceed.TabIndex = 11;
@@ -148,11 +149,22 @@
             this.btnProceed.UseVisualStyleBackColor = true;
             this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
+            // btnGuardianExists
+            // 
+            this.btnGuardianExists.Location = new System.Drawing.Point(15, 10);
+            this.btnGuardianExists.Name = "btnGuardianExists";
+            this.btnGuardianExists.Size = new System.Drawing.Size(208, 23);
+            this.btnGuardianExists.TabIndex = 12;
+            this.btnGuardianExists.Text = "Guardian Already Registered";
+            this.btnGuardianExists.UseVisualStyleBackColor = true;
+            this.btnGuardianExists.Click += new System.EventHandler(this.btnGuardianExists_Click);
+            // 
             // frmGuardianDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(247, 226);
+            this.ClientSize = new System.Drawing.Size(247, 245);
+            this.Controls.Add(this.btnGuardianExists);
             this.Controls.Add(this.btnProceed);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblDob);
@@ -189,5 +201,6 @@
         private System.Windows.Forms.Label lblDob;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnProceed;
+        private System.Windows.Forms.Button btnGuardianExists;
     }
 }

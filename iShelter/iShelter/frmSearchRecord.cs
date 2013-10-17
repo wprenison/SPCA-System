@@ -9,21 +9,28 @@ using System.Windows.Forms;
 
 namespace iShelter
 {
-    public partial class frmProcedureDetails : Form
+    public partial class frmSearchRecord : Form
     {
-        public frmProcedureDetails()
+        public frmSearchRecord(string frmChoice)
         {
             InitializeComponent();
-        }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
+            //Uses parameter recieved to decide what the frm does and which extra controls are shown
+            if (frmChoice == "ProcedureDetails")
+            {
+                pnlProcedureDetails.Visible = true;
+                cmbSearchCategory.Visible = true;
+            }
+            else if (frmChoice == "GuardianDetails")
+            {
+                pnlProcedureDetails.Visible = false;
+                cmbSearchCategory.Visible = false;
+                pnlSearch.Location = new System.Drawing.Point(0, -3);
+                this.Size = new System.Drawing.Size(262, 254);
+               // btnCancel.BringToFront();
+                wmtxtbSearchTerm.WaterMarkText = "Search Name, Last Name, Tel No";
 
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            }
         }
 
         private void lblCancel_Click(object sender, EventArgs e)
