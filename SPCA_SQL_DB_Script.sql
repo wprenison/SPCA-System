@@ -7,7 +7,7 @@ IF OBJECT_ID('dbo.tblVets', 'U') IS NOT NULL DROP TABLE tblVets;
 
 CREATE TABLE tblGuardians
 (
-GarduianID int IDENTITY(1,1) PRIMARY KEY,
+GuardianID int IDENTITY(1,1) PRIMARY KEY,
 FirstName varchar(20),
 LastName varchar(30),
 DateOfBirth date,
@@ -96,7 +96,7 @@ VALUES('Danni', 'Benoure', '19900712', '0781697540', '97 Kromboom Rd, Rondebosch
 
 CREATE TABLE tblRecievePatient
 (
-GuardianID int FOREIGN KEY REFERENCES tblGuardians(GarduianID) NOT NULL,
+GuardianID int FOREIGN KEY REFERENCES tblGuardians(GuardianID) NOT NULL,
 AnimalID int FOREIGN KEY REFERENCES tblAnimals(AnimalID) NOT NULL,
 RecievePatientID int PRIMARY KEY(GuardianID, AnimalID)
 )
@@ -127,9 +127,3 @@ VALUES(1,2,1),
 (3,2,2),
 (7,7,3),
 (7,12,4)
-
-select*
-from tblAnimals
-
-delete from tblAnimals
-where AnimalID = 28

@@ -5,5 +5,8 @@
     <Setting Name="DbConnString" Type="System.String" Scope="User">
       <Value Profile="(Default)">Data Source=SHADOWPC;Initial Catalog=Prog_Assignment3;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="AnimalID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

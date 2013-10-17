@@ -37,7 +37,7 @@
             this.txtbAddress = new System.Windows.Forms.TextBox();
             this.lblTel = new System.Windows.Forms.Label();
             this.mtxtTelNo = new System.Windows.Forms.MaskedTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.lblDob = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnProceed = new System.Windows.Forms.Button();
@@ -111,12 +111,13 @@
             this.mtxtTelNo.Size = new System.Drawing.Size(134, 20);
             this.mtxtTelNo.TabIndex = 7;
             // 
-            // dateTimePicker1
+            // dtpDateOfBirth
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(90, 161);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(134, 20);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(90, 161);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(134, 20);
+            this.dtpDateOfBirth.TabIndex = 8;
             // 
             // lblDob
             // 
@@ -155,7 +156,7 @@
             this.Controls.Add(this.btnProceed);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblDob);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpDateOfBirth);
             this.Controls.Add(this.mtxtTelNo);
             this.Controls.Add(this.lblTel);
             this.Controls.Add(this.txtbAddress);
@@ -184,7 +185,7 @@
         private System.Windows.Forms.TextBox txtbAddress;
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.MaskedTextBox mtxtTelNo;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
         private System.Windows.Forms.Label lblDob;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnProceed;

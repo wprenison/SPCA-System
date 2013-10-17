@@ -34,5 +34,17 @@ namespace iShelter.Properties {
                 this["DbConnString"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AnimalID {
+            get {
+                return ((string)(this["AnimalID"]));
+            }
+            set {
+                this["AnimalID"] = value;
+            }
+        }
     }
 }

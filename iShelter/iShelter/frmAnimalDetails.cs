@@ -46,7 +46,7 @@ namespace iShelter
             else
             {
                 //Used to modify the error msg acordingly
-                string errorMsg = "The following fiel was not completed: ";
+                string errorMsg = "The following field was not completed: ";
 
                 if (validationResult == 0)
                     errorMsg = errorMsg + "Name";
@@ -75,8 +75,10 @@ namespace iShelter
                 
                 try
                 {
+                    //Creates & Opens connection to db
                     SqlConnection sqlConn = new SqlConnection(Properties.Settings.Default.DbConnString);
                     sqlConn.Open();
+                    //Prepares sql string using parameters and ensures null values are inserted as the db type null
                     string sql = "INSERT INTO tblAnimals (Name, Species, Breed, DateRecieved, Illnesses, Injuries, Notes, RoomNo, Neutered, EstimatedAge, AgroRating)" +
                                    " VALUES (@Name, @Species, @Breed, @DateRecieved, @Illnesses, @Injuries, @Notes, @RoomNo, @Neutered, @EstimatedAge, @AgroRating)";
 
@@ -113,11 +115,38 @@ namespace iShelter
 
                     sqlCmd.Parameters.Add("@EstimatedAge", SqlDbType.Int).Value = mtxtAge.Text;
                     sqlCmd.Parameters.Add("@AgroRating", SqlDbType.Int).Value = nudAgroRating.Value.ToString();
-
+                    //Executes insert query
                     sqlCmd.ExecuteNonQuery();
-                    sqlConn.Close();
+                    sqlConn.Close();                   
 
                     MessageBox.Show("Animal Succesfully Added", "Info");
+
+                    //Get the animalID of the animal just added to the db
+                    try
+                    {
+                        string animalID = "";
+
+                        //prepare sql string
+                        string sqlAnimalID = "SELECT AnimalID FROM tblAnimals";
+
+                        //Opens connection to db and populates the data reader
+                        sqlConn.Open();
+                        sqlCmd = new SqlCommand(sqlAnimalID, sqlConn);
+                        SqlDataReader reader = sqlCmd.ExecuteReader();
+                        reader.Read();
+                        while (reader.Read())
+                        {
+                            animalID = reader[0].ToString();
+                        }
+                        reader.Close();
+                        sqlConn.Close();
+
+                        Properties.Settings.Default.AnimalID = animalID;
+                    }
+                    catch (System.Exception ex)
+                    {
+                        MessageBox.Show("An Error occured when finding the animalID: " + ex.Message);
+                    }
 
                     //Change forms and dispose of the new one depending on a return value recieved
                     //Adopt btn returns OK, Cancel button and closing cross returns Cancel
@@ -126,11 +155,12 @@ namespace iShelter
 
                     if (result == DialogResult.OK || result == DialogResult.Cancel)
                         menu.Dispose();
+
                 }
                 catch (System.Exception ex)
                 {
                     MessageBox.Show("An Error ocurred: " + ex.Message);
-                }
+                }                
                 
             }
                 
