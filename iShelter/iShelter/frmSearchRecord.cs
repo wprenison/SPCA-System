@@ -42,33 +42,63 @@ namespace iShelter
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
-            //Validates that a value has been selected for all fields
-            string[] reqFields = { txtbAnimalID.Text, txtbProcedureID.Text, txtbVetID.Text };
-
-            //Uses a validation class
-            ValidationCalculator validator = new ValidationCalculator();
-            int result = validator.valCompleted(reqFields);
-            string invalidField;
-           // MessageBox.Show("Val Result: " + result);
-            switch (result)
+            if (this.Text == "GuardianDetails")
             {
-                case 0: invalidField = "Animal ID";
-                    break;
-                case 1: invalidField = "Procedure ID";
-                    break;
-                case 2: invalidField = "Vetenarian ID";
-                    break;
-                default: invalidField = "Error the invalid field could not be determined";
-                    break;
-            }
 
-            if (result == -1)
-            {
-                this.DialogResult = DialogResult.OK;
-                this.Dispose();
             }
             else
-                MessageBox.Show("A selection has not been made for the following field: " + invalidField, "Error");            
+            {
+                //Validates that a value has been selected for all fields
+                string[] reqFields = { txtbAnimalID.Text, txtbProcedureID.Text, txtbVetID.Text };
+
+                //Uses a validation class
+                ValidationCalculator validator = new ValidationCalculator();
+                int result = validator.valCompleted(reqFields);
+                string invalidField;
+                // MessageBox.Show("Val Result: " + result);
+                switch (result)
+                {
+                    case 0: invalidField = "Animal ID";
+                        break;
+                    case 1: invalidField = "Procedure ID";
+                        break;
+                    case 2: invalidField = "Vetenarian ID";
+                        break;
+                    default: invalidField = "Error the invalid field could not be determined";
+                        break;
+                }
+
+                //Proceeds to insert data into db if validation was successfull
+                if (result == -1)
+                {
+                    try
+                    {
+                        //prepare sql string
+                        string sql = "INSERT INTO tblProcedureOp (AnimalID, ProcedureID, VetID)" +
+                                        "VALUES(" + txtbAnimalID.Text + ", " + txtbProcedureID.Text + ", " + txtbVetID.Text + ")";
+
+                        //Creates & Opens db Connection
+                        SqlConnection sqlConn = new SqlConnection(Properties.Settings.Default.DbConnString);
+                        sqlConn.Open();
+
+                        //Creates & Executes command then closes db connection
+                        SqlCommand sqlCmd = new SqlCommand(sql, sqlConn);
+                        sqlCmd.ExecuteNonQuery();
+                        sqlConn.Close();
+
+                        MessageBox.Show("Procedure Operation Successfully Added", "Info");
+
+                        this.DialogResult = DialogResult.OK;
+                        this.Dispose();
+                    }
+                    catch (System.Exception ex)
+                    {
+                        MessageBox.Show("An Error occured when trying to insert the procedure operation into the DataBase: " + ex.Message);
+                    }
+                }
+                else
+                    MessageBox.Show("A selection has not been made for the following field: " + invalidField, "Error");
+            }
         }
 
         private void frmProcedureDetails_Load(object sender, EventArgs e)

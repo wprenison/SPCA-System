@@ -117,8 +117,9 @@ namespace iShelter
                     sqlCmd.Parameters.Add("@AgroRating", SqlDbType.Int).Value = nudAgroRating.Value.ToString();
                     //Executes insert query
                     sqlCmd.ExecuteNonQuery();
-                    sqlConn.Close();                   
+                    sqlConn.Close();
 
+                    clearAllFields();
                     MessageBox.Show("Animal Succesfully Added", "Info");
 
                     //Get the animalID of the animal just added to the db
@@ -165,6 +166,22 @@ namespace iShelter
             }
                 
             
+        }
+
+        private void clearAllFields()
+        {
+            txtbName.Clear();
+            cmbSpecies.SelectedIndex = 1;
+            txtbBreed.Clear();
+            txtbIllnesses.Clear();
+            txtbInjuries.Clear();
+            txtbNotes.Clear();
+            mtxtAge.Clear();
+            mtxtRoomNo.Clear();
+            rabF.Checked = false;
+            rabM.Checked = false;
+            cbNuetered.Checked = false;
+            nudAgroRating.Value = 0;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
