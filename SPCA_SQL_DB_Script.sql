@@ -1,7 +1,8 @@
 
-IF OBJECT_ID('dbo.tblGarduians', 'U') IS NOT NULL DROP TABLE tblGarduians;
-IF OBJECT_ID('dbo.tblAnimals', 'U') IS NOT NULL DROP TABLE tblAnimals;
 IF OBJECT_ID('dbo.tblProceureOp', 'U') IS NOT NULL DROP TABLE tblProcedureOp;
+IF OBJECT_ID('dbo.tblRecievePatient', 'U') IS NOT NULL DROP TABLE tblRecievePatient;
+IF OBJECT_ID('dbo.tblAnimals', 'U') IS NOT NULL DROP TABLE tblAnimals;
+IF OBJECT_ID('dbo.tblGuardians', 'U') IS NOT NULL DROP TABLE tblGuardians;
 IF OBJECT_ID('dbo.tblProcedures', 'U') IS NOT NULL DROP TABLE tblProcedures;
 IF OBJECT_ID('dbo.tblVets', 'U') IS NOT NULL DROP TABLE tblVets;
 
