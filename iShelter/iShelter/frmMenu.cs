@@ -39,7 +39,7 @@ namespace iShelter
 
         private void btnProcedure_Click(object sender, EventArgs e)
         {
-            frmSearchRecord procedure = new frmSearchRecord("ProcedureDetails");
+            frmSearchRecord procedure = new frmSearchRecord("ProcedureDetails", "Menu");
             //this.Visible = false;
             DialogResult result = procedure.ShowDialog();
             //this.Visible = true;

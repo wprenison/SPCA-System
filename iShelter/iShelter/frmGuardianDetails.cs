@@ -159,8 +159,14 @@ namespace iShelter
 
         private void btnGuardianExists_Click(object sender, EventArgs e)
         {
-            frmSearchRecord search = new frmSearchRecord("GuardianDetails");
-            search.ShowDialog();
+            frmSearchRecord search = new frmSearchRecord("GuardianDetails", "GuardianDetails");
+            DialogResult result = search.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Dispose();
+            }
         }
     }
 }

@@ -39,7 +39,7 @@ VALUES ('Amputation', 'Removal of a limb'),
 ('Object Removal', 'Removal of object in the stomach'),
 ('Vacinations', 'Rabies, tenis, ect injections'),
 ('Lethal Injection', 'Puting animal down, only to be performed if animal is in suffering conditions')
-
+drop table tblAnimals
 CREATE TABLE tblAnimals
 (
 AnimalID int IDENTITY(1,1) PRIMARY KEY,
@@ -53,7 +53,9 @@ Notes varchar(100),
 RoomNo int,
 Neutered bit,
 EstimatedAge int,
-AgroRating int
+AgroRating int,
+PhotoDir varchar(50),
+GuardianID int FOREIGN KEY REFERENCES tblGuardians(GuardianID)
 )
 
 --AgroRating on a scale pf 0 - 5
@@ -93,12 +95,12 @@ VALUES('Danni', 'Benoure', '19900712', '0781697540', '97 Kromboom Rd, Rondebosch
 ('Alecia', 'Stenhouse', '19870501', '0836337521', '12 Keurkjtie Close, Vredekloof, 7942', 'Bsc Vet'),
 ('Alexsis', 'Berminger', '19660612', '0785423691', '42 Clear Water Drive, Somerset West 2256', 'Masters Vet'),
 ('Rhonwen', 'Renison', '19780410', '0825641792', '101 Loop St, Cape Town, 8001', 'Dip Med') 
-
+drop table tblRecievePatient
 CREATE TABLE tblRecievePatient
 (
+RecievePatientID int IDENTITY(1,1) PRIMARY KEY(GuardianID, AnimalID),
 GuardianID int FOREIGN KEY REFERENCES tblGuardians(GuardianID) NOT NULL,
-AnimalID int FOREIGN KEY REFERENCES tblAnimals(AnimalID) NOT NULL,
-RecievePatientID int PRIMARY KEY(GuardianID, AnimalID)
+AnimalID int FOREIGN KEY REFERENCES tblAnimals(AnimalID) NOT NULL
 )
 
 INSERT INTO tblRecievePatient(GuardianID, AnimalID)
@@ -108,7 +110,7 @@ VALUES(1,1),
 (4,7),
 (5,9),
 (2,11)
-
+drop table tblProcedureOp
 CREATE TABLE tblProcedureOp
 (
 ProcedureOpID int IDENTITY(1,1) PRIMARY KEY,

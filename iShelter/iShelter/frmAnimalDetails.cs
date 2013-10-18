@@ -197,7 +197,7 @@ namespace iShelter
 
         private void mnuiRecordProcedure_Click(object sender, EventArgs e)
         {
-            frmSearchRecord recordProcedure = new frmSearchRecord("ProcedureDetails");
+            frmSearchRecord recordProcedure = new frmSearchRecord("ProcedureDetails", "ToolStripMenu");
             recordProcedure.ShowDialog();
         }
     }

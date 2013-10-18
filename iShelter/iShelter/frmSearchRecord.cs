@@ -12,7 +12,7 @@ namespace iShelter
 {
     public partial class frmSearchRecord : Form
     {
-        public frmSearchRecord(string frmChoice)
+        public frmSearchRecord(string frmChoice, string parent)
         {
             InitializeComponent();
 
@@ -33,6 +33,13 @@ namespace iShelter
                 wmtxtbSearchTerm.WaterMarkText = "Search Name, Last Name, Tel No";
 
             }
+
+            if (parent == "Menu")
+            {
+                cmbSearchCategory.Items.RemoveAt(0);
+                txtbAnimalID.Text = Properties.Settings.Default.AnimalID;
+                wmtxtbSearchTerm.WaterMarkText = "Search Procedure ID, Procedure Name";
+            }
         }
 
         private void lblCancel_Click(object sender, EventArgs e)
@@ -42,8 +49,35 @@ namespace iShelter
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
-            if (this.Text == "GuardianDetails")
+            if (this.Text == "Registered Guardians")
             {
+                //Gets the guardian ID of the selected record
+                var selectedRecord = dgvSearchTbl.SelectedCells;
+                string guardianID = selectedRecord[0].Value.ToString();
+
+                try
+                {
+                    //Updates the guardian ID for the animal
+                    //prepares sql string
+                    string sql = "UPDATE tblAnimals SET GuardianID = " + guardianID + " WHERE AnimalID = " + Properties.Settings.Default.AnimalID;
+
+                    //Creates & Opens db Connection
+                    SqlConnection sqlConn = new SqlConnection(Properties.Settings.Default.DbConnString);
+                    sqlConn.Open();
+
+                    //Creates & Executes command
+                    SqlCommand sqlCmd = new SqlCommand(sql, sqlConn);
+                    sqlCmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Guardian Successfully linked to Animal", "Info");
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Dispose();
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show("An Error occured while trying to update tblAnimals with a guardian ID: " + ex.Message);
+                }
 
             }
             else
@@ -67,6 +101,7 @@ namespace iShelter
                     default: invalidField = "Error the invalid field could not be determined";
                         break;
                 }
+
 
                 //Proceeds to insert data into db if validation was successfull
                 if (result == -1)
@@ -100,6 +135,9 @@ namespace iShelter
                     MessageBox.Show("A selection has not been made for the following field: " + invalidField, "Error");
             }
         }
+        
+        
+        
 
         private void frmProcedureDetails_Load(object sender, EventArgs e)
         {
@@ -109,7 +147,7 @@ namespace iShelter
 
             //Checks which table to load into the gridView and adds the appropriate tbl to the sql string
             if (this.Text == "Registered Guardians")
-                sql = "SELECT FirstName, LastName, Tel FROM tblGuardians";
+                sql = "SELECT GuardianID, FirstName, LastName, Tel FROM tblGuardians";
             else if (cmbSearchCategory.SelectedItem.ToString() == "Animals")
                 sql = "SELECT AnimalID, Name, Species, Breed FROM tblAnimals";
             else if (cmbSearchCategory.SelectedItem.ToString() == "Procedures")
