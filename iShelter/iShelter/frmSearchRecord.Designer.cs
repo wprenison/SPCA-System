@@ -40,13 +40,13 @@
             this.lblAnimalID = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.cmbSearchCategory = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSearchTbl = new System.Windows.Forms.DataGridView();
             this.btnProceed = new System.Windows.Forms.Button();
             this.wmtxtbSearchTerm = new wmgCMS.WaterMarkTextBox();
             this.pnlProcedureDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).BeginInit();
             this.pnlSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchTbl)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -137,11 +137,11 @@
             // 
             this.pnlSearch.Controls.Add(this.wmtxtbSearchTerm);
             this.pnlSearch.Controls.Add(this.cmbSearchCategory);
-            this.pnlSearch.Controls.Add(this.dataGridView1);
+            this.pnlSearch.Controls.Add(this.dgvSearchTbl);
             this.pnlSearch.Controls.Add(this.btnProceed);
             this.pnlSearch.Location = new System.Drawing.Point(138, -3);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(252, 231);
+            this.pnlSearch.Size = new System.Drawing.Size(383, 231);
             this.pnlSearch.TabIndex = 14;
             // 
             // cmbSearchCategory
@@ -151,27 +151,34 @@
             "Animals",
             "Procedures",
             "Vetenarians"});
-            this.cmbSearchCategory.Location = new System.Drawing.Point(125, 8);
+            this.cmbSearchCategory.Location = new System.Drawing.Point(251, 9);
             this.cmbSearchCategory.Name = "cmbSearchCategory";
             this.cmbSearchCategory.Size = new System.Drawing.Size(121, 21);
             this.cmbSearchCategory.TabIndex = 15;
+            this.cmbSearchCategory.SelectedIndexChanged += new System.EventHandler(this.cmbSearchCategory_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // dgvSearchTbl
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 35);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 14;
+            this.dgvSearchTbl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvSearchTbl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSearchTbl.Location = new System.Drawing.Point(6, 35);
+            this.dgvSearchTbl.MultiSelect = false;
+            this.dgvSearchTbl.Name = "dgvSearchTbl";
+            this.dgvSearchTbl.ReadOnly = true;
+            this.dgvSearchTbl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSearchTbl.Size = new System.Drawing.Size(366, 150);
+            this.dgvSearchTbl.TabIndex = 14;
+            this.dgvSearchTbl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchTbl_CellClick);
             // 
             // btnProceed
             // 
-            this.btnProceed.Location = new System.Drawing.Point(171, 199);
+            this.btnProceed.Location = new System.Drawing.Point(297, 199);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(75, 23);
             this.btnProceed.TabIndex = 13;
             this.btnProceed.Text = "Proceed";
             this.btnProceed.UseVisualStyleBackColor = true;
+            this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
             // wmtxtbSearchTerm
             // 
@@ -184,7 +191,7 @@
             this.wmtxtbSearchTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.wmtxtbSearchTerm.Location = new System.Drawing.Point(6, 9);
             this.wmtxtbSearchTerm.Name = "wmtxtbSearchTerm";
-            this.wmtxtbSearchTerm.Size = new System.Drawing.Size(113, 20);
+            this.wmtxtbSearchTerm.Size = new System.Drawing.Size(239, 20);
             this.wmtxtbSearchTerm.TabIndex = 16;
             this.wmtxtbSearchTerm.WaterMarkColor = System.Drawing.Color.Gray;
             this.wmtxtbSearchTerm.WaterMarkText = "Search";
@@ -193,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 225);
+            this.ClientSize = new System.Drawing.Size(522, 225);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.pnlSearch);
             this.Controls.Add(this.pnlProcedureDetails);
@@ -201,14 +208,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSearchRecord";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmProcedureDetails";
+            this.Text = "Procedure Details";
             this.Load += new System.EventHandler(this.frmProcedureDetails_Load);
             this.pnlProcedureDetails.ResumeLayout(false);
             this.pnlProcedureDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).EndInit();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchTbl)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,7 +234,7 @@
         private System.Windows.Forms.Panel pnlSearch;
         private wmgCMS.WaterMarkTextBox wmtxtbSearchTerm;
         private System.Windows.Forms.ComboBox cmbSearchCategory;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSearchTbl;
         private System.Windows.Forms.Button btnProceed;
     }
 }

@@ -177,5 +177,11 @@ namespace iShelter
             Image pic = picbAnimal.Image;
             webcam.Stop();
         }
+
+        private void mnuiRecordProcedure_Click(object sender, EventArgs e)
+        {
+            frmSearchRecord recordProcedure = new frmSearchRecord("ProcedureDetails");
+            recordProcedure.ShowDialog();
+        }
     }
 }

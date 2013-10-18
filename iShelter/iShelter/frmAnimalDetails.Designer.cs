@@ -161,6 +161,7 @@
             this.mnuiRecordProcedure.Name = "mnuiRecordProcedure";
             this.mnuiRecordProcedure.Size = new System.Drawing.Size(173, 22);
             this.mnuiRecordProcedure.Text = "Record Procedure";
+            this.mnuiRecordProcedure.Click += new System.EventHandler(this.mnuiRecordProcedure_Click);
             // 
             // mnuiEditProcedure
             // 
