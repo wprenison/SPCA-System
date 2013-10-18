@@ -54,7 +54,7 @@
             this.btnCancel.Location = new System.Drawing.Point(12, 196);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 0;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.lblCancel_Click);
@@ -146,7 +146,6 @@
             // 
             // cmbSearchCategory
             // 
-            this.cmbSearchCategory.FormattingEnabled = true;
             this.cmbSearchCategory.Items.AddRange(new object[] {
             "Animals",
             "Procedures",
@@ -154,7 +153,7 @@
             this.cmbSearchCategory.Location = new System.Drawing.Point(251, 9);
             this.cmbSearchCategory.Name = "cmbSearchCategory";
             this.cmbSearchCategory.Size = new System.Drawing.Size(121, 21);
-            this.cmbSearchCategory.TabIndex = 15;
+            this.cmbSearchCategory.TabIndex = 1;
             this.cmbSearchCategory.SelectedIndexChanged += new System.EventHandler(this.cmbSearchCategory_SelectedIndexChanged);
             // 
             // dgvSearchTbl
@@ -167,7 +166,7 @@
             this.dgvSearchTbl.ReadOnly = true;
             this.dgvSearchTbl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSearchTbl.Size = new System.Drawing.Size(366, 150);
-            this.dgvSearchTbl.TabIndex = 14;
+            this.dgvSearchTbl.TabIndex = 2;
             this.dgvSearchTbl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchTbl_CellClick);
             // 
             // btnProceed
@@ -175,7 +174,7 @@
             this.btnProceed.Location = new System.Drawing.Point(297, 199);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(75, 23);
-            this.btnProceed.TabIndex = 13;
+            this.btnProceed.TabIndex = 4;
             this.btnProceed.Text = "Proceed";
             this.btnProceed.UseVisualStyleBackColor = true;
             this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
@@ -192,9 +191,10 @@
             this.wmtxtbSearchTerm.Location = new System.Drawing.Point(6, 9);
             this.wmtxtbSearchTerm.Name = "wmtxtbSearchTerm";
             this.wmtxtbSearchTerm.Size = new System.Drawing.Size(239, 20);
-            this.wmtxtbSearchTerm.TabIndex = 16;
+            this.wmtxtbSearchTerm.TabIndex = 0;
             this.wmtxtbSearchTerm.WaterMarkColor = System.Drawing.Color.Gray;
             this.wmtxtbSearchTerm.WaterMarkText = "Search";
+            this.wmtxtbSearchTerm.TextChanged += new System.EventHandler(this.wmtxtbSearchTerm_TextChanged);
             // 
             // frmSearchRecord
             // 

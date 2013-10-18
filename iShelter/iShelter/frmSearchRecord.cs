@@ -12,6 +12,8 @@ namespace iShelter
 {
     public partial class frmSearchRecord : Form
     {
+        DataSet dbTable;
+
         public frmSearchRecord(string frmChoice, string parent)
         {
             InitializeComponent();
@@ -164,7 +166,7 @@ namespace iShelter
             SqlDataAdapter dbAdapter = new SqlDataAdapter(sql, sqlConn);
 
             //Create and Fill dataset
-            DataSet dbTable = new DataSet();
+            dbTable = new DataSet();
             dbAdapter.Fill(dbTable);
 
             //Set data source for the grid view
@@ -218,6 +220,75 @@ namespace iShelter
                     txtbVetID.Text = selectedCells[0].Value.ToString();
                 }              
 
+            }
+        }
+
+        private void wmtxtbSearchTerm_TextChanged(object sender, EventArgs e)
+        {
+            DataView dvFiltering = new DataView(dbTable.Tables[0]);
+
+            //Filters records base on search term and category selected
+            if (wmtxtbSearchTerm.Text != "")
+            {
+                if (this.Text == "Registered Guardians")
+                {
+                    //Uses a dataView object to filter trough records then updates the data source of the dataGridView
+                    //In this manner no data is altered in the DataSet and can be returned to original state if nothing is being searched
+                    try
+                    {
+                        dvFiltering.RowFilter = "GuardianID = " + wmtxtbSearchTerm.Text +  "OR Tel LIKE '" + wmtxtbSearchTerm.Text + "%'";
+                        dgvSearchTbl.DataSource = dvFiltering;
+                    }
+                    catch (EvaluateException)
+                    {
+                        dvFiltering.RowFilter = "FirstName LIKE '" + wmtxtbSearchTerm.Text + "%' OR LastName LIKE '" + wmtxtbSearchTerm.Text + "%'";
+                        dgvSearchTbl.DataSource = dvFiltering;
+                    }
+                }
+                else if (cmbSearchCategory.SelectedItem.ToString() == "Animals")
+                {
+                    try
+                    {
+                        dvFiltering.RowFilter = "AnimalID = " + wmtxtbSearchTerm.Text;
+                        dgvSearchTbl.DataSource = dvFiltering;
+                    }
+                    catch (EvaluateException)
+                    {
+                        dvFiltering.RowFilter = "Name LIKE '" + wmtxtbSearchTerm.Text + "%'";
+                        dgvSearchTbl.DataSource = dvFiltering;
+                    }
+                }
+                else if (cmbSearchCategory.SelectedItem.ToString() == "Procedures")
+                {
+                    try
+                    {
+                        dvFiltering.RowFilter = "ProcedureID = " + wmtxtbSearchTerm.Text;
+                        dgvSearchTbl.DataSource = dvFiltering;
+                    }
+                    catch (EvaluateException)
+                    {
+                        dvFiltering.RowFilter = "Name LIKE '" + wmtxtbSearchTerm.Text + "%'";
+                        dgvSearchTbl.DataSource = dvFiltering;
+                    }
+                }
+                else if (cmbSearchCategory.SelectedItem.ToString() == "Vetenarians")
+                {
+                    //Filters according to prefferance
+                    try
+                    {
+                        dvFiltering.RowFilter = "VetID = " + wmtxtbSearchTerm.Text;                       
+                        dgvSearchTbl.DataSource = dvFiltering;
+                    }
+                    catch (EvaluateException)
+                    {
+                        dvFiltering.RowFilter = "FirstName LIKE '" + wmtxtbSearchTerm.Text + "%' OR LastName LIKE '" + wmtxtbSearchTerm.Text + "%'";
+                        dgvSearchTbl.DataSource = dvFiltering;                        
+                    }
+                }
+            }
+            else
+            {
+                dgvSearchTbl.DataSource = dbTable.Tables[0];
             }
         }
 

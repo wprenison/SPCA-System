@@ -82,6 +82,7 @@
             this.picbAgroRatingInfo = new System.Windows.Forms.PictureBox();
             this.ttAgroRatingInfo = new System.Windows.Forms.ToolTip(this.components);
             this.cbNuetered = new System.Windows.Forms.CheckBox();
+            this.editDelProcedureTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).BeginInit();
             this.grpbGender.SuspendLayout();
@@ -151,7 +152,8 @@
             // 
             this.mnuProcedures.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuiRecordProcedure,
-            this.mnuiEditProcedure});
+            this.mnuiEditProcedure,
+            this.editDelProcedureTypeToolStripMenuItem});
             this.mnuProcedures.Name = "mnuProcedures";
             this.mnuProcedures.Size = new System.Drawing.Size(78, 20);
             this.mnuProcedures.Text = "Procedures";
@@ -159,14 +161,14 @@
             // mnuiRecordProcedure
             // 
             this.mnuiRecordProcedure.Name = "mnuiRecordProcedure";
-            this.mnuiRecordProcedure.Size = new System.Drawing.Size(173, 22);
+            this.mnuiRecordProcedure.Size = new System.Drawing.Size(202, 22);
             this.mnuiRecordProcedure.Text = "Record Procedure";
             this.mnuiRecordProcedure.Click += new System.EventHandler(this.mnuiRecordProcedure_Click);
             // 
             // mnuiEditProcedure
             // 
             this.mnuiEditProcedure.Name = "mnuiEditProcedure";
-            this.mnuiEditProcedure.Size = new System.Drawing.Size(173, 22);
+            this.mnuiEditProcedure.Size = new System.Drawing.Size(202, 22);
             this.mnuiEditProcedure.Text = "Edit\\Del Procedure";
             // 
             // mnuReports
@@ -187,7 +189,7 @@
             this.mnuiNotNuetered,
             this.mnuiProcessedPer});
             this.mnuiAnimals.Name = "mnuiAnimals";
-            this.mnuiAnimals.Size = new System.Drawing.Size(133, 22);
+            this.mnuiAnimals.Size = new System.Drawing.Size(152, 22);
             this.mnuiAnimals.Text = "Animals";
             // 
             // mnuiSpecificAnimal
@@ -241,7 +243,7 @@
             this.mnuiGuardians.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuiSpecificGuardian});
             this.mnuiGuardians.Name = "mnuiGuardians";
-            this.mnuiGuardians.Size = new System.Drawing.Size(133, 22);
+            this.mnuiGuardians.Size = new System.Drawing.Size(152, 22);
             this.mnuiGuardians.Text = "Guardians";
             // 
             // mnuiSpecificGuardian
@@ -253,7 +255,7 @@
             // mnuiProcedures
             // 
             this.mnuiProcedures.Name = "mnuiProcedures";
-            this.mnuiProcedures.Size = new System.Drawing.Size(133, 22);
+            this.mnuiProcedures.Size = new System.Drawing.Size(152, 22);
             this.mnuiProcedures.Text = "Procedures";
             // 
             // mnuHelp
@@ -301,7 +303,7 @@
             this.txtbName.Location = new System.Drawing.Point(61, 40);
             this.txtbName.Name = "txtbName";
             this.txtbName.Size = new System.Drawing.Size(121, 20);
-            this.txtbName.TabIndex = 3;
+            this.txtbName.TabIndex = 0;
             // 
             // cmbSpecies
             // 
@@ -314,7 +316,7 @@
             this.cmbSpecies.Name = "cmbSpecies";
             this.cmbSpecies.Size = new System.Drawing.Size(121, 21);
             this.cmbSpecies.Sorted = true;
-            this.cmbSpecies.TabIndex = 4;
+            this.cmbSpecies.TabIndex = 1;
             // 
             // lblSpecies
             // 
@@ -330,7 +332,7 @@
             this.txtbBreed.Location = new System.Drawing.Point(61, 94);
             this.txtbBreed.Name = "txtbBreed";
             this.txtbBreed.Size = new System.Drawing.Size(121, 20);
-            this.txtbBreed.TabIndex = 6;
+            this.txtbBreed.TabIndex = 2;
             // 
             // lblBreed
             // 
@@ -347,7 +349,7 @@
             this.txtbIllnesses.Multiline = true;
             this.txtbIllnesses.Name = "txtbIllnesses";
             this.txtbIllnesses.Size = new System.Drawing.Size(121, 30);
-            this.txtbIllnesses.TabIndex = 8;
+            this.txtbIllnesses.TabIndex = 3;
             // 
             // lblIllnesses
             // 
@@ -364,7 +366,7 @@
             this.txtbInjuries.Multiline = true;
             this.txtbInjuries.Name = "txtbInjuries";
             this.txtbInjuries.Size = new System.Drawing.Size(121, 30);
-            this.txtbInjuries.TabIndex = 10;
+            this.txtbInjuries.TabIndex = 4;
             // 
             // lblInjuries
             // 
@@ -381,7 +383,7 @@
             this.txtbNotes.Multiline = true;
             this.txtbNotes.Name = "txtbNotes";
             this.txtbNotes.Size = new System.Drawing.Size(121, 53);
-            this.txtbNotes.TabIndex = 12;
+            this.txtbNotes.TabIndex = 5;
             // 
             // lblNotes
             // 
@@ -399,7 +401,7 @@
             this.mtxtRoomNo.Name = "mtxtRoomNo";
             this.mtxtRoomNo.PromptChar = '#';
             this.mtxtRoomNo.Size = new System.Drawing.Size(49, 20);
-            this.mtxtRoomNo.TabIndex = 14;
+            this.mtxtRoomNo.TabIndex = 8;
             // 
             // lblRoomNo
             // 
@@ -417,7 +419,7 @@
             this.mtxtAge.Name = "mtxtAge";
             this.mtxtAge.PromptChar = '#';
             this.mtxtAge.Size = new System.Drawing.Size(49, 20);
-            this.mtxtAge.TabIndex = 16;
+            this.mtxtAge.TabIndex = 7;
             // 
             // lblAge
             // 
@@ -433,7 +435,7 @@
             this.btnTakePic.Location = new System.Drawing.Point(238, 124);
             this.btnTakePic.Name = "btnTakePic";
             this.btnTakePic.Size = new System.Drawing.Size(90, 23);
-            this.btnTakePic.TabIndex = 18;
+            this.btnTakePic.TabIndex = 6;
             this.btnTakePic.Text = "Take Picture";
             this.btnTakePic.UseVisualStyleBackColor = true;
             this.btnTakePic.Click += new System.EventHandler(this.btnTakePic_Click);
@@ -445,7 +447,7 @@
             this.grpbGender.Location = new System.Drawing.Point(221, 209);
             this.grpbGender.Name = "grpbGender";
             this.grpbGender.Size = new System.Drawing.Size(107, 30);
-            this.grpbGender.TabIndex = 19;
+            this.grpbGender.TabIndex = 9;
             this.grpbGender.TabStop = false;
             this.grpbGender.Text = "Gender";
             // 
@@ -476,7 +478,7 @@
             this.btnProceed.Location = new System.Drawing.Point(238, 280);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(90, 23);
-            this.btnProceed.TabIndex = 20;
+            this.btnProceed.TabIndex = 12;
             this.btnProceed.Text = "Proceed";
             this.btnProceed.UseVisualStyleBackColor = true;
             this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
@@ -500,7 +502,7 @@
             0});
             this.nudAgroRating.Name = "nudAgroRating";
             this.nudAgroRating.Size = new System.Drawing.Size(28, 20);
-            this.nudAgroRating.TabIndex = 23;
+            this.nudAgroRating.TabIndex = 10;
             // 
             // picbAgroRatingInfo
             // 
@@ -525,9 +527,15 @@
             this.cbNuetered.Location = new System.Drawing.Point(221, 256);
             this.cbNuetered.Name = "cbNuetered";
             this.cbNuetered.Size = new System.Drawing.Size(70, 17);
-            this.cbNuetered.TabIndex = 25;
+            this.cbNuetered.TabIndex = 11;
             this.cbNuetered.Text = "Nuetered";
             this.cbNuetered.UseVisualStyleBackColor = true;
+            // 
+            // editDelProcedureTypeToolStripMenuItem
+            // 
+            this.editDelProcedureTypeToolStripMenuItem.Name = "editDelProcedureTypeToolStripMenuItem";
+            this.editDelProcedureTypeToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.editDelProcedureTypeToolStripMenuItem.Text = "Edit\\Del Procedure Type";
             // 
             // iShelter
             // 
@@ -631,6 +639,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuiSpecificGuardian;
         private System.Windows.Forms.ToolStripMenuItem mnuiProcedures;
         private System.Windows.Forms.CheckBox cbNuetered;
+        private System.Windows.Forms.ToolStripMenuItem editDelProcedureTypeToolStripMenuItem;
     }
 }
 
