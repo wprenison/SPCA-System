@@ -137,9 +137,6 @@ namespace iShelter
                     MessageBox.Show("A selection has not been made for the following field: " + invalidField, "Error");
             }
         }
-        
-        
-        
 
         private void frmProcedureDetails_Load(object sender, EventArgs e)
         {

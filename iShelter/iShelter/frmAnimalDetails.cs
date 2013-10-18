@@ -200,5 +200,11 @@ namespace iShelter
             frmSearchRecord recordProcedure = new frmSearchRecord("ProcedureDetails", "ToolStripMenu");
             recordProcedure.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmReportTest reportTest = new frmReportTest();
+            reportTest.ShowDialog();
+        }
     }
 }
