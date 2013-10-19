@@ -79,14 +79,21 @@ namespace iShelter
                     SqlConnection sqlConn = new SqlConnection(Properties.Settings.Default.DbConnString);
                     sqlConn.Open();
                     //Prepares sql string using parameters and ensures null values are inserted as the db type null
-                    string sql = "INSERT INTO tblAnimals (Name, Species, Breed, DateRecieved, Illnesses, Injuries, Notes, RoomNo, Neutered, EstimatedAge, AgroRating)" +
-                                   " VALUES (@Name, @Species, @Breed, @DateRecieved, @Illnesses, @Injuries, @Notes, @RoomNo, @Neutered, @EstimatedAge, @AgroRating)";
+                    string sql = "INSERT INTO tblAnimals (Name, Species, Breed, Gender, DateRecieved, Illnesses, Injuries, Notes, RoomNo, Neutered, EstimatedAge, AgroRating)" +
+                                   " VALUES (@Name, @Species, @Breed, @Gender, @DateRecieved, @Illnesses, @Injuries, @Notes, @RoomNo, @Neutered, @EstimatedAge, @AgroRating)";
 
                     SqlCommand sqlCmd = new SqlCommand(sql, sqlConn);
 
                     sqlCmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = txtbName.Text;
                     sqlCmd.Parameters.Add("@Species", SqlDbType.VarChar).Value = cmbSpecies.SelectedItem.ToString();
                     sqlCmd.Parameters.Add("@Breed", SqlDbType.VarChar).Value = txtbBreed.Text;
+
+                    //Check Which gender has been selected
+                    if (rabM.Checked)
+                        sqlCmd.Parameters.Add("@Gender", SqlDbType.Char).Value = 'M';
+                    else
+                        sqlCmd.Parameters.Add("@Gender", SqlDbType.Char).Value = 'F';
+
                     sqlCmd.Parameters.Add("@DateRecieved", SqlDbType.Date).Value = DateTime.Now.ToString();
 
                     //Check for null values
@@ -201,7 +208,7 @@ namespace iShelter
             recordProcedure.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void mnuiSpecificAnimal_Click(object sender, EventArgs e)
         {
             frmReportTest reportTest = new frmReportTest();
             reportTest.ShowDialog();

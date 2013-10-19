@@ -40,6 +40,7 @@
             this.mnuProcedures = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiRecordProcedure = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiEditProcedure = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDelProcedureTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiAnimals = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiSpecificAnimal = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,8 +83,6 @@
             this.picbAgroRatingInfo = new System.Windows.Forms.PictureBox();
             this.ttAgroRatingInfo = new System.Windows.Forms.ToolTip(this.components);
             this.cbNuetered = new System.Windows.Forms.CheckBox();
-            this.editDelProcedureTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.mnsAnimal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).BeginInit();
             this.grpbGender.SuspendLayout();
@@ -172,6 +171,12 @@
             this.mnuiEditProcedure.Size = new System.Drawing.Size(202, 22);
             this.mnuiEditProcedure.Text = "Edit\\Del Procedure";
             // 
+            // editDelProcedureTypeToolStripMenuItem
+            // 
+            this.editDelProcedureTypeToolStripMenuItem.Name = "editDelProcedureTypeToolStripMenuItem";
+            this.editDelProcedureTypeToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.editDelProcedureTypeToolStripMenuItem.Text = "Edit\\Del Procedure Type";
+            // 
             // mnuReports
             // 
             this.mnuReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -198,6 +203,7 @@
             this.mnuiSpecificAnimal.Name = "mnuiSpecificAnimal";
             this.mnuiSpecificAnimal.Size = new System.Drawing.Size(190, 22);
             this.mnuiSpecificAnimal.Text = "Specific Animal";
+            this.mnuiSpecificAnimal.Click += new System.EventHandler(this.mnuiSpecificAnimal_Click);
             // 
             // mnuiAdopted
             // 
@@ -532,28 +538,11 @@
             this.cbNuetered.Text = "Nuetered";
             this.cbNuetered.UseVisualStyleBackColor = true;
             // 
-            // editDelProcedureTypeToolStripMenuItem
-            // 
-            this.editDelProcedureTypeToolStripMenuItem.Name = "editDelProcedureTypeToolStripMenuItem";
-            this.editDelProcedureTypeToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.editDelProcedureTypeToolStripMenuItem.Text = "Edit\\Del Procedure Type";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(106, 279);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // iShelter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 313);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.cbNuetered);
             this.Controls.Add(this.picbAgroRatingInfo);
             this.Controls.Add(this.nudAgroRating);
@@ -652,7 +641,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuiProcedures;
         private System.Windows.Forms.CheckBox cbNuetered;
         private System.Windows.Forms.ToolStripMenuItem editDelProcedureTypeToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
     }
 }
 

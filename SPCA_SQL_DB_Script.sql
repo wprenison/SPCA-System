@@ -14,7 +14,6 @@ LastName varchar(30),
 DateOfBirth date,
 Tel varchar(13),
 ResAddress varchar(100)
---RecievePatientID int FOREIGN KEY REFERENCES tblRecievePatient(RecievePatientID)
 )
 
 INSERT INTO tblGuardians (FirstName, LastName, DateOfBirth, Tel, ResAddress)
@@ -47,6 +46,7 @@ AnimalID int IDENTITY(1,1) PRIMARY KEY,
 Name varchar(20),
 Species varchar(20),
 Breed varchar(20),
+Gender char(1),
 DateRecieved date,
 Illnesses varchar(50),
 Injuries varchar(50),
@@ -65,20 +65,20 @@ GuardianID int FOREIGN KEY REFERENCES tblGuardians(GuardianID)
 -- agro towards people = 3 or 4
 -- agro towards everyone = 5
 
-INSERT INTO tblAnimals(Name, Species, Breed, DateRecieved, Illnesses, Injuries, Notes, RoomNo, Neutered, EstimatedAge, AgroRating)
-VALUES ('Cloe', 'Canine', 'Dushond', '20131012', null, 'Broken Leg', null, 105, 1,3,0),
-('Rocket', 'Canine', 'Rotviler', '20120517', 'Malnutrition', null,null,207,0,2,2),
-('Storm', 'Feline', 'Savana', '20100416', null, null, 'Neutering required', 201, 0,1,0),
-('Genna', 'Canine', 'Labradour', '20130517', 'Ear infection', null, 'Drop required hourly', 107, 1, 8, 0),
-('Kissy', 'Feline', null, '20130421', 'Tooth abesis', null, 'Not eating, and limping', 104, 1, 13, 0),
-('Kitten', 'Feline', 'Tourtise Shell', '20131225', null , 'Burnt and broken bone', 'Vacinations needed', 103,0,3,5),
-('Candy', 'Canine', 'Poodle', '20130718', null, 'Snake bite', 'Speacial low carb food', 102,1,5,1),
-('Milo', 'Canine', 'Jack Russle', '20130514', null, 'Cuts', null, 231, 0, 3, 5),
-('Chanel', 'Canine', 'Labradour', '20120510', 'Cancer', null, 'Leg cancer', 201, 1, 9, 0),
-('Pepper', 'Canine', 'Labradour Mix', '20130621', null, null, 'Very cold', 101, 0, 3, 1),
-('Charlie', 'Bird', 'Ring Neck', '20130308', null, null, 'Afraid of bags', 103, null, 1, 3),
-('Elu', ' Bird', 'Electus', '20130704', null, 'Broken Wing', null, 106, null, 3, 5),
-('Lumen', 'Bird', 'Ring Neck', '20130411', null, null, 'Tendancy to pluck', 144, null, 1, 0) 
+INSERT INTO tblAnimals(Name, Species, Breed,Gender, DateRecieved, Illnesses, Injuries, Notes, RoomNo, Neutered, EstimatedAge, AgroRating, GuardianID)
+VALUES ('Cloe', 'Canine', 'Dushond','F', '20131012', null, 'Broken Leg', null, 105, 1,3,0,1),
+('Rocket', 'Canine', 'Rotviler','M', '20120517', 'Malnutrition', null,null,207,0,2,2,null),
+('Storm', 'Feline', 'Savana','F', '20100416', null, null, 'Neutering required', 201, 0,1,0,null),
+('Genna', 'Canine', 'Labradour','F', '20130517', 'Ear infection', null, 'Drop required hourly', 107, 1, 8, 0,2),
+('Kissy', 'Feline', 'Savana','F', '20130421', 'Tooth abesis', null, 'Not eating, and limping', 104, 1, 13, 0,3),
+('Kitten', 'Feline', 'Tourtise Shell','F', '20131225', null , 'Burnt and broken bone', 'Vacinations needed', 103,0,3,5,null),
+('Candy', 'Canine', 'Poodle','F', '20130718', null, 'Snake bite', 'Speacial low carb food', 102,1,5,1,4),
+('Milo', 'Canine', 'Jack Russle','M', '20130514', null, 'Cuts', null, 231, 0, 3, 5,null),
+('Chanel', 'Canine', 'Labradour','F', '20120510', 'Cancer', null, 'Leg cancer', 201, 1, 9, 0,5),
+('Pepper', 'Canine', 'Labradour Mix','M', '20130621', null, null, 'Very cold', 101, 0, 3, 1,null),
+('Charlie', 'Bird', 'Ring Neck','M', '20130308', null, null, 'Afraid of bags', 103, null, 1, 3,2),
+('Elu', ' Bird', 'Electus','M', '20130704', null, 'Broken Wing', null, 106, null, 3, 5,null),
+('Lumen', 'Bird', 'Ring Neck','F', '20130411', null, null, 'Tendancy to pluck', 144, null, 1, 0,null) 
 
 CREATE TABLE tblVets
 (
@@ -97,20 +97,20 @@ VALUES('Danni', 'Benoure', '19900712', '0781697540', '97 Kromboom Rd, Rondebosch
 ('Alexsis', 'Berminger', '19660612', '0785423691', '42 Clear Water Drive, Somerset West 2256', 'Masters Vet'),
 ('Rhonwen', 'Renison', '19780410', '0825641792', '101 Loop St, Cape Town, 8001', 'Dip Med') 
 
-CREATE TABLE tblRecievePatient
-(
-RecievePatientID int IDENTITY(1,1) PRIMARY KEY(GuardianID, AnimalID),
-GuardianID int FOREIGN KEY REFERENCES tblGuardians(GuardianID) NOT NULL,
-AnimalID int FOREIGN KEY REFERENCES tblAnimals(AnimalID) NOT NULL
-)
+--CREATE TABLE tblRecievePatient
+--(
+--RecievePatientID int IDENTITY(1,1) PRIMARY KEY(GuardianID, AnimalID),
+--GuardianID int FOREIGN KEY REFERENCES tblGuardians(GuardianID) NOT NULL,
+--AnimalID int FOREIGN KEY REFERENCES tblAnimals(AnimalID) NOT NULL
+--)
 
-INSERT INTO tblRecievePatient(GuardianID, AnimalID)
-VALUES(1,1),
-(2,4),
-(3,5),
-(4,7),
-(5,9),
-(2,11)
+--INSERT INTO tblRecievePatient(GuardianID, AnimalID)
+--VALUES(1,1),
+--(2,4),
+--(3,5),
+--(4,7),
+--(5,9),
+--(2,11)
 
 CREATE TABLE tblProcedureOp
 (

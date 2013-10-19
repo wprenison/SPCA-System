@@ -46,5 +46,15 @@ namespace iShelter.Properties {
                 this["AnimalID"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SHADOWPC;Initial Catalog=Prog_Assignment3;Integrated Security=True")]
+        public string Prog_Assignment3ConnectionString {
+            get {
+                return ((string)(this["Prog_Assignment3ConnectionString"]));
+            }
+        }
     }
 }

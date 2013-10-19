@@ -81,7 +81,8 @@
             this.wmtxtbSearchTerm.Size = new System.Drawing.Size(239, 20);
             this.wmtxtbSearchTerm.TabIndex = 20;
             this.wmtxtbSearchTerm.WaterMarkColor = System.Drawing.Color.Gray;
-            this.wmtxtbSearchTerm.WaterMarkText = "Search";
+            this.wmtxtbSearchTerm.WaterMarkText = "Search Animal ID, Name";
+            this.wmtxtbSearchTerm.TextChanged += new System.EventHandler(this.wmtxtbSearchTerm_TextChanged);
             // 
             // frmReportTest
             // 
@@ -92,7 +93,9 @@
             this.Controls.Add(this.picbAnimal);
             this.Controls.Add(this.dgvReport);
             this.Controls.Add(this.btnGenPDF);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmReportTest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportTest";
             this.Load += new System.EventHandler(this.frmReportTest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();

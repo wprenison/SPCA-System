@@ -241,6 +241,12 @@ namespace iShelter
                         dvFiltering.RowFilter = "FirstName LIKE '" + wmtxtbSearchTerm.Text + "%' OR LastName LIKE '" + wmtxtbSearchTerm.Text + "%'";
                         dgvSearchTbl.DataSource = dvFiltering;
                     }
+                    catch (SyntaxErrorException see)
+                    {
+                        wmtxtbSearchTerm.Clear();
+                        dgvSearchTbl.DataSource = dbTable.Tables[0];
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message);
+                    }
                 }
                 else if (cmbSearchCategory.SelectedItem.ToString() == "Animals")
                 {
@@ -253,6 +259,12 @@ namespace iShelter
                     {
                         dvFiltering.RowFilter = "Name LIKE '" + wmtxtbSearchTerm.Text + "%'";
                         dgvSearchTbl.DataSource = dvFiltering;
+                    }
+                    catch (SyntaxErrorException see)
+                    {
+                        wmtxtbSearchTerm.Clear();
+                        dgvSearchTbl.DataSource = dbTable.Tables[0];
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message);
                     }
                 }
                 else if (cmbSearchCategory.SelectedItem.ToString() == "Procedures")
@@ -267,6 +279,12 @@ namespace iShelter
                         dvFiltering.RowFilter = "Name LIKE '" + wmtxtbSearchTerm.Text + "%'";
                         dgvSearchTbl.DataSource = dvFiltering;
                     }
+                    catch (SyntaxErrorException see)
+                    {
+                        wmtxtbSearchTerm.Clear();
+                        dgvSearchTbl.DataSource = dbTable.Tables[0];
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message);
+                    }
                 }
                 else if (cmbSearchCategory.SelectedItem.ToString() == "Vetenarians")
                 {
@@ -280,6 +298,12 @@ namespace iShelter
                     {
                         dvFiltering.RowFilter = "FirstName LIKE '" + wmtxtbSearchTerm.Text + "%' OR LastName LIKE '" + wmtxtbSearchTerm.Text + "%'";
                         dgvSearchTbl.DataSource = dvFiltering;                        
+                    }
+                    catch (SyntaxErrorException see)
+                    {
+                        wmtxtbSearchTerm.Clear();
+                        dgvSearchTbl.DataSource = dbTable.Tables[0];
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message);
                     }
                 }
             }
