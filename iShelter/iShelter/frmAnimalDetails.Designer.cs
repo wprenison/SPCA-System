@@ -82,6 +82,9 @@
             this.ttWebcamPower = new System.Windows.Forms.ToolTip(this.components);
             this.picbWebcamOnOff = new System.Windows.Forms.PictureBox();
             this.picbAnimal = new System.Windows.Forms.PictureBox();
+            this.lblWebcam = new System.Windows.Forms.Label();
+            this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblOnOff = new System.Windows.Forms.Label();
             this.mnsAnimal.SuspendLayout();
             this.grpbGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgroRating)).BeginInit();
@@ -116,14 +119,14 @@
             // mnuiOptions
             // 
             this.mnuiOptions.Name = "mnuiOptions";
-            this.mnuiOptions.Size = new System.Drawing.Size(116, 22);
+            this.mnuiOptions.Size = new System.Drawing.Size(152, 22);
             this.mnuiOptions.Text = "Options";
             this.mnuiOptions.Click += new System.EventHandler(this.mnuiOptions_Click);
             // 
             // mnuiExit
             // 
             this.mnuiExit.Name = "mnuiExit";
-            this.mnuiExit.Size = new System.Drawing.Size(116, 22);
+            this.mnuiExit.Size = new System.Drawing.Size(152, 22);
             this.mnuiExit.Text = "Exit";
             this.mnuiExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -143,7 +146,7 @@
             this.mnuiNotNuetered,
             this.mnuiProcessedPer});
             this.mnuiAnimals.Name = "mnuiAnimals";
-            this.mnuiAnimals.Size = new System.Drawing.Size(117, 22);
+            this.mnuiAnimals.Size = new System.Drawing.Size(152, 22);
             this.mnuiAnimals.Text = "Animals";
             // 
             // mnuiSpecificAnimal
@@ -256,7 +259,8 @@
             // 
             this.mnuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuiAbout,
-            this.mnuiHelp});
+            this.mnuiHelp,
+            this.readMeToolStripMenuItem});
             this.mnuHelp.Name = "mnuHelp";
             this.mnuHelp.Size = new System.Drawing.Size(44, 20);
             this.mnuHelp.Text = "Help";
@@ -264,15 +268,16 @@
             // mnuiAbout
             // 
             this.mnuiAbout.Name = "mnuiAbout";
-            this.mnuiAbout.Size = new System.Drawing.Size(114, 22);
+            this.mnuiAbout.Size = new System.Drawing.Size(152, 22);
             this.mnuiAbout.Text = "About";
             this.mnuiAbout.Click += new System.EventHandler(this.mnuiAbout_Click);
             // 
             // mnuiHelp
             // 
             this.mnuiHelp.Name = "mnuiHelp";
-            this.mnuiHelp.Size = new System.Drawing.Size(114, 22);
+            this.mnuiHelp.Size = new System.Drawing.Size(152, 22);
             this.mnuiHelp.Text = "Help F1";
+            this.mnuiHelp.Click += new System.EventHandler(this.mnuiHelp_Click);
             // 
             // lblName
             // 
@@ -537,14 +542,43 @@
             this.picbAnimal.Location = new System.Drawing.Point(242, 40);
             this.picbAnimal.Name = "picbAnimal";
             this.picbAnimal.Size = new System.Drawing.Size(82, 74);
+            this.picbAnimal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picbAnimal.TabIndex = 1;
             this.picbAnimal.TabStop = false;
+            // 
+            // lblWebcam
+            // 
+            this.lblWebcam.AutoSize = true;
+            this.lblWebcam.Location = new System.Drawing.Point(259, 25);
+            this.lblWebcam.Name = "lblWebcam";
+            this.lblWebcam.Size = new System.Drawing.Size(50, 13);
+            this.lblWebcam.TabIndex = 26;
+            this.lblWebcam.Text = "Webcam";
+            // 
+            // readMeToolStripMenuItem
+            // 
+            this.readMeToolStripMenuItem.Name = "readMeToolStripMenuItem";
+            this.readMeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.readMeToolStripMenuItem.Text = "Read Me";
+            this.readMeToolStripMenuItem.Click += new System.EventHandler(this.readMeToolStripMenuItem_Click);
+            // 
+            // lblOnOff
+            // 
+            this.lblOnOff.AutoSize = true;
+            this.lblOnOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F);
+            this.lblOnOff.Location = new System.Drawing.Point(223, 113);
+            this.lblOnOff.Name = "lblOnOff";
+            this.lblOnOff.Size = new System.Drawing.Size(15, 9);
+            this.lblOnOff.TabIndex = 27;
+            this.lblOnOff.Text = "Off";
             // 
             // iShelter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 313);
+            this.Controls.Add(this.lblOnOff);
+            this.Controls.Add(this.lblWebcam);
             this.Controls.Add(this.picbWebcamOnOff);
             this.Controls.Add(this.cbNuetered);
             this.Controls.Add(this.picbAgroRatingInfo);
@@ -645,6 +679,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnuiEditProcedures;
         private System.Windows.Forms.ToolStripMenuItem mnuiEditProcedureTypes;
         private System.Windows.Forms.ToolStripMenuItem mnuiEditVets;
+        private System.Windows.Forms.Label lblWebcam;
+        private System.Windows.Forms.ToolStripMenuItem readMeToolStripMenuItem;
+        private System.Windows.Forms.Label lblOnOff;
     }
 }
 

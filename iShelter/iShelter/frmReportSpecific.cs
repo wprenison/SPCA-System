@@ -49,20 +49,27 @@ namespace iShelter
             //Perpare sql string
             string sql = "SELECT * FROM tblAnimals";
 
-            //Create & Open Connection
-            SqlConnection sqlConn = new SqlConnection(Properties.Settings.Default.DbConnString);
-            sqlConn.Open();
+            try
+            {
+                //Create & Open Connection
+                SqlConnection sqlConn = new SqlConnection(Properties.Settings.Default.DbConnString);
+                sqlConn.Open();
 
-            //Create a data adapter to fill a dataset
-            SqlDataAdapter dbAdapter = new SqlDataAdapter(sql, sqlConn);
+                //Create a data adapter to fill a dataset
+                SqlDataAdapter dbAdapter = new SqlDataAdapter(sql, sqlConn);
 
-            // Fill dataset
-            dbAdapter.Fill(dbTable);
+                // Fill dataset
+                dbAdapter.Fill(dbTable);
 
-            //Set data source for the grid view
-            dgvReport.DataSource = dbTable.Tables[0];
+                //Set data source for the grid view
+                dgvReport.DataSource = dbTable.Tables[0];
 
-            sqlConn.Close();
+                sqlConn.Close();
+            }
+            catch (SystemException se)
+            {
+                MessageBox.Show("An Error occured while trying to load the table tblAnimals: " + se.Message);
+            }
 
             //Edit Columns visibility
             dgvReport.Columns[4].Visible = false;
@@ -76,6 +83,10 @@ namespace iShelter
             dgvReport.Columns[12].Visible = false;
             dgvReport.Columns[13].Visible = false;
             dgvReport.Columns[14].Visible = false;
+
+            //Set orignal pic box image
+            string photoDir = dgvReport[13, 0].Value.ToString();
+            picbAnimal.ImageLocation = @Properties.Settings.Default.SaveLocation + @photoDir;
 
         }
 
@@ -155,7 +166,7 @@ namespace iShelter
 
             //Insert Title
             Paragraph title = new Paragraph("Specific Animal Report", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14f, iTextSharp.text.Font.BOLD));
-            title.IndentationLeft = 215f;
+            title.IndentationLeft = 195f;
             doc.Add(title);
 
             //Rule trough
@@ -173,8 +184,8 @@ namespace iShelter
 
             //Animal Pic
             iTextSharp.text.Image animalPic = iTextSharp.text.Image.GetInstance(@Properties.Settings.Default.SaveLocation + photoDir);
-            animalPic.ScalePercent(75f);
-            animalPic.SetAbsolutePosition(doc.PageSize.Width - 320f, doc.PageSize.Height - 240f);
+            animalPic.ScaleAbsolute(82f, 74f);
+            animalPic.SetAbsolutePosition(doc.PageSize.Width - 350f, doc.PageSize.Height - 255f);
             doc.Add(animalPic);
 
             PdfPTable descDetailsTable = new PdfPTable(3);

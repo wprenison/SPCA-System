@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportDates));
             this.lblInstructionMsg = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.dtpDay = new System.Windows.Forms.DateTimePicker();
@@ -92,6 +93,7 @@
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.lblInstructionMsg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReportDates";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Report Dates";

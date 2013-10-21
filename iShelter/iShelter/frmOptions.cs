@@ -39,5 +39,20 @@ namespace iShelter
             else
                 MessageBox.Show("Please enter a Database Connection String");
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            //Mostly for testing purposes ect
+            //Clears saved settings when the program is run again its as if was ran for the very first time on that computer
+            //The user or it tech will be prompted for the app settings
+            Properties.Settings.Default.DbConnString = "";
+            Properties.Settings.Default.SaveLocation = "";
+            Properties.Settings.Default.Save();
+        }
     }
 }

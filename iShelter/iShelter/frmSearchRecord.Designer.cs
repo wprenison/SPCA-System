@@ -39,10 +39,10 @@
             this.txtbAnimalID = new System.Windows.Forms.TextBox();
             this.lblAnimalID = new System.Windows.Forms.Label();
             this.pnlSearch = new System.Windows.Forms.Panel();
+            this.wmtxtbSearchTerm = new wmgCMS.WaterMarkTextBox();
             this.cmbSearchCategory = new System.Windows.Forms.ComboBox();
             this.dgvSearchTbl = new System.Windows.Forms.DataGridView();
             this.btnProceed = new System.Windows.Forms.Button();
-            this.wmtxtbSearchTerm = new wmgCMS.WaterMarkTextBox();
             this.pnlProcedureDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).BeginInit();
             this.pnlSearch.SuspendLayout();
@@ -79,6 +79,7 @@
             this.picbAnimal.Location = new System.Drawing.Point(28, 12);
             this.picbAnimal.Name = "picbAnimal";
             this.picbAnimal.Size = new System.Drawing.Size(82, 74);
+            this.picbAnimal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picbAnimal.TabIndex = 18;
             this.picbAnimal.TabStop = false;
             // 
@@ -144,6 +145,19 @@
             this.pnlSearch.Size = new System.Drawing.Size(383, 231);
             this.pnlSearch.TabIndex = 14;
             // 
+            // wmtxtbSearchTerm
+            // 
+            this.wmtxtbSearchTerm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.wmtxtbSearchTerm.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.wmtxtbSearchTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.wmtxtbSearchTerm.Location = new System.Drawing.Point(6, 9);
+            this.wmtxtbSearchTerm.Name = "wmtxtbSearchTerm";
+            this.wmtxtbSearchTerm.Size = new System.Drawing.Size(239, 20);
+            this.wmtxtbSearchTerm.TabIndex = 0;
+            this.wmtxtbSearchTerm.WaterMarkColor = System.Drawing.Color.Gray;
+            this.wmtxtbSearchTerm.WaterMarkText = "Search";
+            this.wmtxtbSearchTerm.TextChanged += new System.EventHandler(this.wmtxtbSearchTerm_TextChanged);
+            // 
             // cmbSearchCategory
             // 
             this.cmbSearchCategory.Items.AddRange(new object[] {
@@ -178,19 +192,6 @@
             this.btnProceed.Text = "Proceed";
             this.btnProceed.UseVisualStyleBackColor = true;
             this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
-            // 
-            // wmtxtbSearchTerm
-            // 
-            this.wmtxtbSearchTerm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.wmtxtbSearchTerm.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.wmtxtbSearchTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.wmtxtbSearchTerm.Location = new System.Drawing.Point(6, 9);
-            this.wmtxtbSearchTerm.Name = "wmtxtbSearchTerm";
-            this.wmtxtbSearchTerm.Size = new System.Drawing.Size(239, 20);
-            this.wmtxtbSearchTerm.TabIndex = 0;
-            this.wmtxtbSearchTerm.WaterMarkColor = System.Drawing.Color.Gray;
-            this.wmtxtbSearchTerm.WaterMarkText = "Search";
-            this.wmtxtbSearchTerm.TextChanged += new System.EventHandler(this.wmtxtbSearchTerm_TextChanged);
             // 
             // frmSearchRecord
             // 

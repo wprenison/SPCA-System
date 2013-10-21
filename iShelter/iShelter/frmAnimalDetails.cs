@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using WinFormCharpWebCam;
 using WebCam_Capture;
+using System.Diagnostics;
 
 namespace iShelter
 {
@@ -160,6 +161,30 @@ namespace iShelter
                         MessageBox.Show("An Error occured when finding the animalID: " + ex.Message);
                     }
 
+                    //Add the directory for the photo if one was taken
+                    if(pic != null)
+                    {
+                        //Save image in directory
+                        pic.Save(@Properties.Settings.Default.SaveLocation + @"\animalsPics\Animal" + @Properties.Settings.Default.AnimalID + ".jpg");
+
+                        try
+                        {
+                            //Insert image direct into db
+                            //Prepare sql string
+                            string sqlPhotoDir = @"UPDATE tblAnimals SET PhotoDir = '\animalsPics\Animal" + Properties.Settings.Default.AnimalID + ".jpg' WHERE AnimalID = " + Properties.Settings.Default.AnimalID;
+
+                            //Prepare command
+                            sqlCmd = new SqlCommand(sqlPhotoDir, sqlConn);
+
+                            sqlConn.Open();
+                            sqlCmd.ExecuteNonQuery();
+                        }
+                        catch (SystemException se)
+                        {
+                            MessageBox.Show("An error occured while trying to insert the photoDir of tblAnimals: " + se.Message);
+                        }
+                    }
+
                     //Change forms and dispose of the new one depending on a return value recieved
                     //Adopt btn returns OK, Cancel button and closing cross returns Cancel
                     frmMenu menu = new frmMenu();
@@ -223,12 +248,14 @@ namespace iShelter
             if (webcamToggle == 0)
             {
                 webcam.Start();
+                lblOnOff.Text = "On";
                 webcamToggle = 1;
             }
             else if (webcamToggle == 1)
             {
                 webcam.Stop();
                 picbAnimal.Image = null;
+                lblOnOff.Text = "Off";
                 webcamToggle = 0;
             }
         }
@@ -296,9 +323,8 @@ namespace iShelter
 
         private void mnuiAbout_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.DbConnString = "";
-            Properties.Settings.Default.SaveLocation = "";
-            Properties.Settings.Default.Save();
+            string about = "         This Program was developed by Weylin Renison\n\t\tiShelter v1.0\n\n\n\tCredit To External Open Source Libraries:\n\t\t iTextSharp for pdf\n\tWinFormCharpWebcam for webcam\n\twmgCMS for water mark Text Boxes\n\n\t\t21-10-2013";
+            MessageBox.Show(this, about, "About iShelter v1.0", MessageBoxButtons.OK);
         }
 
         private void animalsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -329,6 +355,16 @@ namespace iShelter
         {
             frmEditDel editDel = new frmEditDel("tblProcedures");
             editDel.ShowDialog();
+        }
+
+        private void mnuiHelp_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"..\..\Resources\Help F1.rtf");
+        }
+
+        private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"..\..\..\READ ME.rtf");
         }        
     }
 }

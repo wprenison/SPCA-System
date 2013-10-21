@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditDel));
             this.dgvEditDel = new System.Windows.Forms.DataGridView();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -86,9 +87,10 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvEditDel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEditDel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmEditDel";
+            this.Text = "Edit";
             this.Load += new System.EventHandler(this.frmEditDel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditDel)).EndInit();
             this.ResumeLayout(false);

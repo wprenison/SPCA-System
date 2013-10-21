@@ -41,6 +41,8 @@ namespace iShelter
             {
                 cmbSearchCategory.Items.RemoveAt(0);
                 txtbAnimalID.Text = Properties.Settings.Default.AnimalID;
+               // MessageBox.Show(@Properties.Settings.Default.SaveLocation + @"\animalsPics\Animal" + Properties.Settings.Default.AnimalID + ".jpg");
+                picbAnimal.ImageLocation = @Properties.Settings.Default.SaveLocation + @"\animalsPics\Animal" + Properties.Settings.Default.AnimalID + ".jpg"; 
                 wmtxtbSearchTerm.WaterMarkText = "Search Procedure ID, Procedure Name";
             }
         }
@@ -174,9 +176,13 @@ namespace iShelter
 
                 sqlConn.Close();
 
-                //Used to hide photoDir column if the animal table is selected
-                if (dbTable.Tables[0].TableName == "tblAnimals")
+                //Used to hide photoDir column if the animal table is selected & use that directory for pic box
+                if (dbTable.Tables[0].Columns[0].ColumnName == "AnimalID")
+                {
                     dgvSearchTbl.Columns[4].Visible = false;
+                    string PhotoDir = dgvSearchTbl[4, 0].Value.ToString();
+                    picbAnimal.ImageLocation = @Properties.Settings.Default.SaveLocation + @PhotoDir;
+                }
 
             }
             catch (SystemException se)
