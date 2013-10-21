@@ -32,15 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(iShelter));
             this.mnsAnimal = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuGuardians = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuiEditGuardians = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAnimals = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuiEditAnimals = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuProcedures = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuiRecordProcedure = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuiEditProcedure = new System.Windows.Forms.ToolStripMenuItem();
-            this.editDelProcedureTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiAnimals = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiSpecificAnimal = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,15 +41,18 @@
             this.mnuiNotNuetered = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiProcessedPer = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiMonth = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuiWeek = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiDay = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuiGuardians = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuiSpecificGuardian = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuiProcedures = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuProcedures = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiRecordProcedure = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiEditAnimals = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiEditGuardians = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiEditProcedures = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiEditProcedureTypes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuiEditVets = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.picbAnimal = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtbName = new System.Windows.Forms.TextBox();
             this.cmbSpecies = new System.Windows.Forms.ComboBox();
@@ -80,24 +76,27 @@
             this.btnProceed = new System.Windows.Forms.Button();
             this.lblAgroRating = new System.Windows.Forms.Label();
             this.nudAgroRating = new System.Windows.Forms.NumericUpDown();
-            this.picbAgroRatingInfo = new System.Windows.Forms.PictureBox();
             this.ttAgroRatingInfo = new System.Windows.Forms.ToolTip(this.components);
+            this.picbAgroRatingInfo = new System.Windows.Forms.PictureBox();
             this.cbNuetered = new System.Windows.Forms.CheckBox();
+            this.ttWebcamPower = new System.Windows.Forms.ToolTip(this.components);
+            this.picbWebcamOnOff = new System.Windows.Forms.PictureBox();
+            this.picbAnimal = new System.Windows.Forms.PictureBox();
             this.mnsAnimal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).BeginInit();
             this.grpbGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgroRating)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbAgroRatingInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbWebcamOnOff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).BeginInit();
             this.SuspendLayout();
             // 
             // mnsAnimal
             // 
             this.mnsAnimal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
-            this.mnuGuardians,
-            this.mnuAnimals,
-            this.mnuProcedures,
             this.mnuReports,
+            this.mnuProcedures,
+            this.editDelToolStripMenuItem,
             this.mnuHelp});
             this.mnsAnimal.Location = new System.Drawing.Point(0, 0);
             this.mnsAnimal.Name = "mnsAnimal";
@@ -108,81 +107,30 @@
             // mnuFile
             // 
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiOptions,
             this.mnuiExit});
             this.mnuFile.Name = "mnuFile";
             this.mnuFile.Size = new System.Drawing.Size(37, 20);
             this.mnuFile.Text = "File";
             // 
+            // mnuiOptions
+            // 
+            this.mnuiOptions.Name = "mnuiOptions";
+            this.mnuiOptions.Size = new System.Drawing.Size(116, 22);
+            this.mnuiOptions.Text = "Options";
+            this.mnuiOptions.Click += new System.EventHandler(this.mnuiOptions_Click);
+            // 
             // mnuiExit
             // 
             this.mnuiExit.Name = "mnuiExit";
-            this.mnuiExit.Size = new System.Drawing.Size(92, 22);
+            this.mnuiExit.Size = new System.Drawing.Size(116, 22);
             this.mnuiExit.Text = "Exit";
             this.mnuiExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // mnuGuardians
-            // 
-            this.mnuGuardians.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuiEditGuardians});
-            this.mnuGuardians.Name = "mnuGuardians";
-            this.mnuGuardians.Size = new System.Drawing.Size(72, 20);
-            this.mnuGuardians.Text = "Guardians";
-            // 
-            // mnuiEditGuardians
-            // 
-            this.mnuiEditGuardians.Name = "mnuiEditGuardians";
-            this.mnuiEditGuardians.Size = new System.Drawing.Size(172, 22);
-            this.mnuiEditGuardians.Text = "Edit\\Del Guardians";
-            // 
-            // mnuAnimals
-            // 
-            this.mnuAnimals.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuiEditAnimals});
-            this.mnuAnimals.Name = "mnuAnimals";
-            this.mnuAnimals.Size = new System.Drawing.Size(62, 20);
-            this.mnuAnimals.Text = "Animals";
-            // 
-            // mnuiEditAnimals
-            // 
-            this.mnuiEditAnimals.Name = "mnuiEditAnimals";
-            this.mnuiEditAnimals.Size = new System.Drawing.Size(162, 22);
-            this.mnuiEditAnimals.Text = "Edit/Del Animals";
-            // 
-            // mnuProcedures
-            // 
-            this.mnuProcedures.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuiRecordProcedure,
-            this.mnuiEditProcedure,
-            this.editDelProcedureTypeToolStripMenuItem});
-            this.mnuProcedures.Name = "mnuProcedures";
-            this.mnuProcedures.Size = new System.Drawing.Size(78, 20);
-            this.mnuProcedures.Text = "Procedures";
-            // 
-            // mnuiRecordProcedure
-            // 
-            this.mnuiRecordProcedure.Name = "mnuiRecordProcedure";
-            this.mnuiRecordProcedure.Size = new System.Drawing.Size(202, 22);
-            this.mnuiRecordProcedure.Text = "Record Procedure";
-            this.mnuiRecordProcedure.Click += new System.EventHandler(this.mnuiRecordProcedure_Click);
-            // 
-            // mnuiEditProcedure
-            // 
-            this.mnuiEditProcedure.Name = "mnuiEditProcedure";
-            this.mnuiEditProcedure.Size = new System.Drawing.Size(202, 22);
-            this.mnuiEditProcedure.Text = "Edit\\Del Procedure";
-            // 
-            // editDelProcedureTypeToolStripMenuItem
-            // 
-            this.editDelProcedureTypeToolStripMenuItem.Name = "editDelProcedureTypeToolStripMenuItem";
-            this.editDelProcedureTypeToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.editDelProcedureTypeToolStripMenuItem.Text = "Edit\\Del Procedure Type";
             // 
             // mnuReports
             // 
             this.mnuReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuiAnimals,
-            this.mnuiGuardians,
-            this.mnuiProcedures});
+            this.mnuiAnimals});
             this.mnuReports.Name = "mnuReports";
             this.mnuReports.Size = new System.Drawing.Size(59, 20);
             this.mnuReports.Text = "Reports";
@@ -195,7 +143,7 @@
             this.mnuiNotNuetered,
             this.mnuiProcessedPer});
             this.mnuiAnimals.Name = "mnuiAnimals";
-            this.mnuiAnimals.Size = new System.Drawing.Size(152, 22);
+            this.mnuiAnimals.Size = new System.Drawing.Size(117, 22);
             this.mnuiAnimals.Text = "Animals";
             // 
             // mnuiSpecificAnimal
@@ -210,18 +158,19 @@
             this.mnuiAdopted.Name = "mnuiAdopted";
             this.mnuiAdopted.Size = new System.Drawing.Size(190, 22);
             this.mnuiAdopted.Text = "Adopted";
+            this.mnuiAdopted.Click += new System.EventHandler(this.mnuiAdopted_Click);
             // 
             // mnuiNotNuetered
             // 
             this.mnuiNotNuetered.Name = "mnuiNotNuetered";
             this.mnuiNotNuetered.Size = new System.Drawing.Size(190, 22);
             this.mnuiNotNuetered.Text = "Not Nuetered";
+            this.mnuiNotNuetered.Click += new System.EventHandler(this.mnuiNotNuetered_Click);
             // 
             // mnuiProcessedPer
             // 
             this.mnuiProcessedPer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuiMonth,
-            this.mnuiWeek,
             this.mnuiDay});
             this.mnuiProcessedPer.Name = "mnuiProcessedPer";
             this.mnuiProcessedPer.Size = new System.Drawing.Size(190, 22);
@@ -232,38 +181,76 @@
             this.mnuiMonth.Name = "mnuiMonth";
             this.mnuiMonth.Size = new System.Drawing.Size(110, 22);
             this.mnuiMonth.Text = "Month";
-            // 
-            // mnuiWeek
-            // 
-            this.mnuiWeek.Name = "mnuiWeek";
-            this.mnuiWeek.Size = new System.Drawing.Size(110, 22);
-            this.mnuiWeek.Text = "Week";
+            this.mnuiMonth.Click += new System.EventHandler(this.mnuiMonth_Click);
             // 
             // mnuiDay
             // 
             this.mnuiDay.Name = "mnuiDay";
             this.mnuiDay.Size = new System.Drawing.Size(110, 22);
             this.mnuiDay.Text = "Day";
+            this.mnuiDay.Click += new System.EventHandler(this.mnuiDay_Click);
             // 
-            // mnuiGuardians
+            // mnuProcedures
             // 
-            this.mnuiGuardians.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuiSpecificGuardian});
-            this.mnuiGuardians.Name = "mnuiGuardians";
-            this.mnuiGuardians.Size = new System.Drawing.Size(152, 22);
-            this.mnuiGuardians.Text = "Guardians";
+            this.mnuProcedures.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiRecordProcedure});
+            this.mnuProcedures.Name = "mnuProcedures";
+            this.mnuProcedures.Size = new System.Drawing.Size(78, 20);
+            this.mnuProcedures.Text = "Procedures";
             // 
-            // mnuiSpecificGuardian
+            // mnuiRecordProcedure
             // 
-            this.mnuiSpecificGuardian.Name = "mnuiSpecificGuardian";
-            this.mnuiSpecificGuardian.Size = new System.Drawing.Size(166, 22);
-            this.mnuiSpecificGuardian.Text = "Specific Guardian";
+            this.mnuiRecordProcedure.Name = "mnuiRecordProcedure";
+            this.mnuiRecordProcedure.Size = new System.Drawing.Size(168, 22);
+            this.mnuiRecordProcedure.Text = "Record Procedure";
+            this.mnuiRecordProcedure.Click += new System.EventHandler(this.mnuiRecordProcedure_Click);
             // 
-            // mnuiProcedures
+            // editDelToolStripMenuItem
             // 
-            this.mnuiProcedures.Name = "mnuiProcedures";
-            this.mnuiProcedures.Size = new System.Drawing.Size(152, 22);
-            this.mnuiProcedures.Text = "Procedures";
+            this.editDelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuiEditAnimals,
+            this.mnuiEditGuardians,
+            this.mnuiEditProcedures,
+            this.mnuiEditProcedureTypes,
+            this.mnuiEditVets});
+            this.editDelToolStripMenuItem.Name = "editDelToolStripMenuItem";
+            this.editDelToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.editDelToolStripMenuItem.Text = "Edit/Del";
+            // 
+            // mnuiEditAnimals
+            // 
+            this.mnuiEditAnimals.Name = "mnuiEditAnimals";
+            this.mnuiEditAnimals.Size = new System.Drawing.Size(162, 22);
+            this.mnuiEditAnimals.Text = "Animals";
+            this.mnuiEditAnimals.Click += new System.EventHandler(this.animalsToolStripMenuItem_Click);
+            // 
+            // mnuiEditGuardians
+            // 
+            this.mnuiEditGuardians.Name = "mnuiEditGuardians";
+            this.mnuiEditGuardians.Size = new System.Drawing.Size(162, 22);
+            this.mnuiEditGuardians.Text = "Guardians";
+            this.mnuiEditGuardians.Click += new System.EventHandler(this.guardiansToolStripMenuItem_Click);
+            // 
+            // mnuiEditProcedures
+            // 
+            this.mnuiEditProcedures.Name = "mnuiEditProcedures";
+            this.mnuiEditProcedures.Size = new System.Drawing.Size(162, 22);
+            this.mnuiEditProcedures.Text = "Procedures";
+            this.mnuiEditProcedures.Click += new System.EventHandler(this.mnuiEditProcedures_Click);
+            // 
+            // mnuiEditProcedureTypes
+            // 
+            this.mnuiEditProcedureTypes.Name = "mnuiEditProcedureTypes";
+            this.mnuiEditProcedureTypes.Size = new System.Drawing.Size(162, 22);
+            this.mnuiEditProcedureTypes.Text = "Procedure Types";
+            this.mnuiEditProcedureTypes.Click += new System.EventHandler(this.mnuiEditProcedureTypes_Click);
+            // 
+            // mnuiEditVets
+            // 
+            this.mnuiEditVets.Name = "mnuiEditVets";
+            this.mnuiEditVets.Size = new System.Drawing.Size(162, 22);
+            this.mnuiEditVets.Text = "Vets";
+            this.mnuiEditVets.Click += new System.EventHandler(this.mnuiEditVets_Click);
             // 
             // mnuHelp
             // 
@@ -279,22 +266,13 @@
             this.mnuiAbout.Name = "mnuiAbout";
             this.mnuiAbout.Size = new System.Drawing.Size(114, 22);
             this.mnuiAbout.Text = "About";
+            this.mnuiAbout.Click += new System.EventHandler(this.mnuiAbout_Click);
             // 
             // mnuiHelp
             // 
             this.mnuiHelp.Name = "mnuiHelp";
             this.mnuiHelp.Size = new System.Drawing.Size(114, 22);
             this.mnuiHelp.Text = "Help F1";
-            // 
-            // picbAnimal
-            // 
-            this.picbAnimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picbAnimal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picbAnimal.Location = new System.Drawing.Point(242, 40);
-            this.picbAnimal.Name = "picbAnimal";
-            this.picbAnimal.Size = new System.Drawing.Size(82, 74);
-            this.picbAnimal.TabIndex = 1;
-            this.picbAnimal.TabStop = false;
             // 
             // lblName
             // 
@@ -314,7 +292,9 @@
             // 
             // cmbSpecies
             // 
+            this.cmbSpecies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSpecies.FormattingEnabled = true;
+            this.cmbSpecies.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmbSpecies.Items.AddRange(new object[] {
             "Bird",
             "Canine",
@@ -511,6 +491,11 @@
             this.nudAgroRating.Size = new System.Drawing.Size(28, 20);
             this.nudAgroRating.TabIndex = 10;
             // 
+            // ttAgroRatingInfo
+            // 
+            this.ttAgroRatingInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.ttAgroRatingInfo.ToolTipTitle = "Info about Agro Rating";
+            // 
             // picbAgroRatingInfo
             // 
             this.picbAgroRatingInfo.Image = ((System.Drawing.Image)(resources.GetObject("picbAgroRatingInfo.Image")));
@@ -523,11 +508,6 @@
             this.ttAgroRatingInfo.SetToolTip(this.picbAgroRatingInfo, "AgroRating on a scale 0 - 5\r\nNo agro = 0\r\nagro towards other animals = 1 or 2\r\nag" +
                     "ro towards people = 3 or 4\r\nagro towards everyone = 5");
             // 
-            // ttAgroRatingInfo
-            // 
-            this.ttAgroRatingInfo.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.ttAgroRatingInfo.ToolTipTitle = "Info about Agro Rating";
-            // 
             // cbNuetered
             // 
             this.cbNuetered.AutoSize = true;
@@ -538,11 +518,34 @@
             this.cbNuetered.Text = "Nuetered";
             this.cbNuetered.UseVisualStyleBackColor = true;
             // 
+            // picbWebcamOnOff
+            // 
+            this.picbWebcamOnOff.Image = global::iShelter.Properties.Resources.turn_on_off_switch_power;
+            this.picbWebcamOnOff.Location = new System.Drawing.Point(221, 94);
+            this.picbWebcamOnOff.Name = "picbWebcamOnOff";
+            this.picbWebcamOnOff.Size = new System.Drawing.Size(17, 20);
+            this.picbWebcamOnOff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picbWebcamOnOff.TabIndex = 25;
+            this.picbWebcamOnOff.TabStop = false;
+            this.ttWebcamPower.SetToolTip(this.picbWebcamOnOff, "Turns Webcam On\\Off");
+            this.picbWebcamOnOff.Click += new System.EventHandler(this.picbWebcamOnOff_Click);
+            // 
+            // picbAnimal
+            // 
+            this.picbAnimal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picbAnimal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picbAnimal.Location = new System.Drawing.Point(242, 40);
+            this.picbAnimal.Name = "picbAnimal";
+            this.picbAnimal.Size = new System.Drawing.Size(82, 74);
+            this.picbAnimal.TabIndex = 1;
+            this.picbAnimal.TabStop = false;
+            // 
             // iShelter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 313);
+            this.Controls.Add(this.picbWebcamOnOff);
             this.Controls.Add(this.cbNuetered);
             this.Controls.Add(this.picbAgroRatingInfo);
             this.Controls.Add(this.nudAgroRating);
@@ -574,13 +577,15 @@
             this.Name = "iShelter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iShelter";
+            this.Load += new System.EventHandler(this.iShelter_Load);
             this.mnsAnimal.ResumeLayout(false);
             this.mnsAnimal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).EndInit();
             this.grpbGender.ResumeLayout(false);
             this.grpbGender.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAgroRating)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbAgroRatingInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbWebcamOnOff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbAnimal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -622,25 +627,24 @@
         private System.Windows.Forms.PictureBox picbAgroRatingInfo;
         private System.Windows.Forms.ToolTip ttAgroRatingInfo;
         private System.Windows.Forms.ToolStripMenuItem mnuProcedures;
-        private System.Windows.Forms.ToolStripMenuItem mnuGuardians;
-        private System.Windows.Forms.ToolStripMenuItem mnuiEditGuardians;
-        private System.Windows.Forms.ToolStripMenuItem mnuAnimals;
         private System.Windows.Forms.ToolStripMenuItem mnuiRecordProcedure;
-        private System.Windows.Forms.ToolStripMenuItem mnuiEditAnimals;
-        private System.Windows.Forms.ToolStripMenuItem mnuiEditProcedure;
         private System.Windows.Forms.ToolStripMenuItem mnuiAnimals;
         private System.Windows.Forms.ToolStripMenuItem mnuiSpecificAnimal;
         private System.Windows.Forms.ToolStripMenuItem mnuiAdopted;
         private System.Windows.Forms.ToolStripMenuItem mnuiNotNuetered;
         private System.Windows.Forms.ToolStripMenuItem mnuiProcessedPer;
         private System.Windows.Forms.ToolStripMenuItem mnuiMonth;
-        private System.Windows.Forms.ToolStripMenuItem mnuiWeek;
         private System.Windows.Forms.ToolStripMenuItem mnuiDay;
-        private System.Windows.Forms.ToolStripMenuItem mnuiGuardians;
-        private System.Windows.Forms.ToolStripMenuItem mnuiSpecificGuardian;
-        private System.Windows.Forms.ToolStripMenuItem mnuiProcedures;
         private System.Windows.Forms.CheckBox cbNuetered;
-        private System.Windows.Forms.ToolStripMenuItem editDelProcedureTypeToolStripMenuItem;
+        private System.Windows.Forms.PictureBox picbWebcamOnOff;
+        private System.Windows.Forms.ToolTip ttWebcamPower;
+        private System.Windows.Forms.ToolStripMenuItem mnuiOptions;
+        private System.Windows.Forms.ToolStripMenuItem editDelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuiEditAnimals;
+        private System.Windows.Forms.ToolStripMenuItem mnuiEditGuardians;
+        private System.Windows.Forms.ToolStripMenuItem mnuiEditProcedures;
+        private System.Windows.Forms.ToolStripMenuItem mnuiEditProcedureTypes;
+        private System.Windows.Forms.ToolStripMenuItem mnuiEditVets;
     }
 }
 

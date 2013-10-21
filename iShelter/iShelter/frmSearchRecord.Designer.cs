@@ -181,10 +181,6 @@
             // 
             // wmtxtbSearchTerm
             // 
-            this.wmtxtbSearchTerm.AutoCompleteCustomSource.AddRange(new string[] {
-            "Bob",
-            "Bane",
-            "Blaze"});
             this.wmtxtbSearchTerm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.wmtxtbSearchTerm.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.wmtxtbSearchTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);

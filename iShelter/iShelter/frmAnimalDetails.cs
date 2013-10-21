@@ -14,19 +14,23 @@ namespace iShelter
 {
     public partial class iShelter : Form
     {
-        WebCam webcam;
+        //WebCam Object
+        WebCam webcam = new WebCam();
+        Image pic;
+        int webcamToggle = 0; //Toggle value used to det weither to switch cam on or off
+
         public iShelter()
         {
             InitializeComponent();
             //Set as default Canine
             cmbSpecies.SelectedIndex = 1;
 
-            //Webcam object
-            webcam = new WebCam();
+            //Set pic Box to use for webcam
             webcam.InitializeWebCam(ref picbAnimal);
-            webcam.ResolutionSetting();
-            webcam.Start();
+
         }
+
+        
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
@@ -198,7 +202,7 @@ namespace iShelter
 
         private void btnTakePic_Click(object sender, EventArgs e)
         {
-            Image pic = picbAnimal.Image;
+            pic = picbAnimal.Image;
             webcam.Stop();
         }
 
@@ -210,8 +214,121 @@ namespace iShelter
 
         private void mnuiSpecificAnimal_Click(object sender, EventArgs e)
         {
-            frmReportTest reportTest = new frmReportTest();
+            frmReportSpecific reportTest = new frmReportSpecific();
             reportTest.ShowDialog();
         }
+
+        private void picbWebcamOnOff_Click(object sender, EventArgs e)
+        {
+            if (webcamToggle == 0)
+            {
+                webcam.Start();
+                webcamToggle = 1;
+            }
+            else if (webcamToggle == 1)
+            {
+                webcam.Stop();
+                picbAnimal.Image = null;
+                webcamToggle = 0;
+            }
+        }
+
+        private void mnuiOptions_Click(object sender, EventArgs e)
+        {
+            frmOptions options = new frmOptions();
+            options.ShowDialog();
+        }
+
+        private void iShelter_Load(object sender, EventArgs e)
+        {
+            bool saveLocationSet = false;
+            bool dbConnStringSet = false;
+
+            //Forces a save Location be saved
+            if (Properties.Settings.Default.SaveLocation == "" || Properties.Settings.Default.DbConnString == "")
+            {
+                while (!saveLocationSet || !dbConnStringSet)
+                {
+                    MessageBox.Show("Please select a save location for any reports and animal photos\n And a database connection string");
+                    frmOptions options = new frmOptions();
+                    DialogResult result = options.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        saveLocationSet = true;
+                        dbConnStringSet = true;
+                    }
+                    else if (result == DialogResult.Cancel)
+                    {
+                        DialogResult exitResult = MessageBox.Show("Would you like to exit?", "Exit Confirm", MessageBoxButtons.YesNo);
+
+                        if (exitResult == DialogResult.Yes)
+                            Application.Exit();
+
+                    }
+                }
+            }
+        }
+
+        private void mnuiAdopted_Click(object sender, EventArgs e)
+        {
+            frmReportAnimals report = new frmReportAnimals("Adopted");
+            report.Show();
+        }
+
+        private void mnuiNotNuetered_Click(object sender, EventArgs e)
+        {
+            frmReportAnimals report = new frmReportAnimals("Neutered");
+            report.Show();
+        }
+
+        private void mnuiDay_Click(object sender, EventArgs e)
+        {
+            frmReportDates reportDates = new frmReportDates("Day");
+            reportDates.ShowDialog();
+        }
+
+        private void mnuiMonth_Click(object sender, EventArgs e)
+        {
+            frmReportDates reportDates = new frmReportDates("Month");
+            reportDates.ShowDialog();
+        }
+
+        private void mnuiAbout_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.DbConnString = "";
+            Properties.Settings.Default.SaveLocation = "";
+            Properties.Settings.Default.Save();
+        }
+
+        private void animalsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEditDel editDel = new frmEditDel("tblAnimals");
+            editDel.ShowDialog();
+        }
+
+        private void guardiansToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEditDel editDel = new frmEditDel("tblGuardians");
+            editDel.ShowDialog();
+        }
+
+        private void mnuiEditVets_Click(object sender, EventArgs e)
+        {
+            frmEditDel editDel = new frmEditDel("tblVets");
+            editDel.ShowDialog();
+        }
+
+        private void mnuiEditProcedures_Click(object sender, EventArgs e)
+        {
+            frmEditDel editDel = new frmEditDel("tblProcedureOp");
+            editDel.ShowDialog();
+        }
+
+        private void mnuiEditProcedureTypes_Click(object sender, EventArgs e)
+        {
+            frmEditDel editDel = new frmEditDel("tblProcedures");
+            editDel.ShowDialog();
+        }        
     }
 }

@@ -17,7 +17,6 @@ namespace iShelter
         public frmSearchRecord(string frmChoice, string parent)
         {
             InitializeComponent();
-
             //Uses parameter recieved to decide what the frm does and which extra controls are shown
             if (frmChoice == "ProcedureDetails")
             {
@@ -36,6 +35,8 @@ namespace iShelter
 
             }
 
+            //Removes animal option from cmbox when recording a procedure of a newly recorded animal
+            //In this way the animal id is already set for the procedure
             if (parent == "Menu")
             {
                 cmbSearchCategory.Items.RemoveAt(0);
@@ -148,36 +149,49 @@ namespace iShelter
             if (this.Text == "Registered Guardians")
                 sql = "SELECT GuardianID, FirstName, LastName, Tel FROM tblGuardians";
             else if (cmbSearchCategory.SelectedItem.ToString() == "Animals")
-                sql = "SELECT AnimalID, Name, Species, Breed FROM tblAnimals";
+                sql = "SELECT AnimalID, Name, Species, Breed, PhotoDir FROM tblAnimals";
             else if (cmbSearchCategory.SelectedItem.ToString() == "Procedures")
                 sql = "SELECT * FROM tblProcedures";
             else if (cmbSearchCategory.SelectedItem.ToString() == "Vetenarians")
                 sql = "SELECT VetID, FirstName, LastName FROM tblVets";
 
-            //Retriev the data for the gridView from the db
-            //Createing and opening db connection
-            SqlConnection sqlConn = new SqlConnection(Properties.Settings.Default.DbConnString);
-            sqlConn.Open();
+           try
+           {
+                //Retriev the data for the gridView from the db
+                //Createing and opening db connection
+                SqlConnection sqlConn = new SqlConnection(Properties.Settings.Default.DbConnString);
+                sqlConn.Open();
 
-            //Create a data adapter to fill a dataset
-            SqlDataAdapter dbAdapter = new SqlDataAdapter(sql, sqlConn);
+                //Create a data adapter to fill a dataset
+                SqlDataAdapter dbAdapter = new SqlDataAdapter(sql, sqlConn);
 
-            //Create and Fill dataset
-            dbTable = new DataSet();
-            dbAdapter.Fill(dbTable);
+                //Create and Fill dataset
+                dbTable = new DataSet();
+                dbAdapter.Fill(dbTable);
 
-            //Set data source for the grid view
-            dgvSearchTbl.DataSource = dbTable.Tables[0];
+                //Set data source for the grid view            
+                dgvSearchTbl.DataSource = dbTable.Tables[0];
 
-            sqlConn.Close();
+                sqlConn.Close();
+
+                //Used to hide photoDir column if the animal table is selected
+                if (dbTable.Tables[0].TableName == "tblAnimals")
+                    dgvSearchTbl.Columns[4].Visible = false;
+
+            }
+            catch (SystemException se)
+            {
+                MessageBox.Show("An Error occured while loading the table: " + this.Text + " - " + se.Message);
+            }
 
         }
 
         private void cmbSearchCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Sets auto complete source and watermark text for the search term box depending on which table was selected
             if (cmbSearchCategory.SelectedItem.ToString() == "Animals")
             {
-                wmtxtbSearchTerm.WaterMarkText = "Search Animal ID, Animal Name";
+                wmtxtbSearchTerm.WaterMarkText = "Search Animal ID, Animal Name";                          
             }
             else if (cmbSearchCategory.SelectedItem.ToString() == "Procedures")
             {
@@ -205,6 +219,7 @@ namespace iShelter
                 {
                     var selectedCells = dgvSearchTbl.SelectedCells;
                     txtbAnimalID.Text = selectedCells[0].Value.ToString();
+                    picbAnimal.ImageLocation = @Properties.Settings.Default.SaveLocation + selectedCells[4].Value.ToString();
                 }
                 else if (cmbSearchCategory.SelectedItem.ToString() == "Procedures")
                 {
@@ -241,11 +256,10 @@ namespace iShelter
                         dvFiltering.RowFilter = "FirstName LIKE '" + wmtxtbSearchTerm.Text + "%' OR LastName LIKE '" + wmtxtbSearchTerm.Text + "%'";
                         dgvSearchTbl.DataSource = dvFiltering;
                     }
-                    catch (SyntaxErrorException see)
+                    catch (SyntaxErrorException)
                     {
-                        wmtxtbSearchTerm.Clear();
-                        dgvSearchTbl.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message);
+                        dvFiltering.RowFilter = "FirstName LIKE '" + wmtxtbSearchTerm.Text + "%' OR LastName LIKE '" + wmtxtbSearchTerm.Text + "%'";
+                        dgvSearchTbl.DataSource = dvFiltering;
                     }
                 }
                 else if (cmbSearchCategory.SelectedItem.ToString() == "Animals")

@@ -1,6 +1,6 @@
 ﻿namespace iShelter
 {
-    partial class frmReportTest
+    partial class frmReportSpecific
     {
         /// <summary>
         /// Required designer variable.

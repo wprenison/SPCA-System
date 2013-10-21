@@ -63,22 +63,29 @@ GuardianID int FOREIGN KEY REFERENCES tblGuardians(GuardianID)
 -- No agro = 0
 -- agro towards other animals = 1 ro 2
 -- agro towards people = 3 or 4
--- agro towards everyone = 5
+-- agro towards everyone = 5 
 
-INSERT INTO tblAnimals(Name, Species, Breed,Gender, DateRecieved, Illnesses, Injuries, Notes, RoomNo, Neutered, EstimatedAge, AgroRating, GuardianID)
-VALUES ('Cloe', 'Canine', 'Dushond','F', '20131012', null, 'Broken Leg', null, 105, 1,3,0,1),
-('Rocket', 'Canine', 'Rotviler','M', '20120517', 'Malnutrition', null,null,207,0,2,2,null),
-('Storm', 'Feline', 'Savana','F', '20100416', null, null, 'Neutering required', 201, 0,1,0,null),
-('Genna', 'Canine', 'Labradour','F', '20130517', 'Ear infection', null, 'Drop required hourly', 107, 1, 8, 0,2),
-('Kissy', 'Feline', 'Savana','F', '20130421', 'Tooth abesis', null, 'Not eating, and limping', 104, 1, 13, 0,3),
-('Kitten', 'Feline', 'Tourtise Shell','F', '20131225', null , 'Burnt and broken bone', 'Vacinations needed', 103,0,3,5,null),
-('Candy', 'Canine', 'Poodle','F', '20130718', null, 'Snake bite', 'Speacial low carb food', 102,1,5,1,4),
-('Milo', 'Canine', 'Jack Russle','M', '20130514', null, 'Cuts', null, 231, 0, 3, 5,null),
-('Chanel', 'Canine', 'Labradour','F', '20120510', 'Cancer', null, 'Leg cancer', 201, 1, 9, 0,5),
-('Pepper', 'Canine', 'Labradour Mix','M', '20130621', null, null, 'Very cold', 101, 0, 3, 1,null),
-('Charlie', 'Bird', 'Ring Neck','M', '20130308', null, null, 'Afraid of bags', 103, null, 1, 3,2),
-('Elu', ' Bird', 'Electus','M', '20130704', null, 'Broken Wing', null, 106, null, 3, 5,null),
-('Lumen', 'Bird', 'Ring Neck','F', '20130411', null, null, 'Tendancy to pluck', 144, null, 1, 0,null) 
+INSERT INTO tblAnimals(Name, Species, Breed,Gender, DateRecieved, Illnesses, Injuries, Notes, RoomNo, Neutered, EstimatedAge, AgroRating, PhotoDir, GuardianID)
+VALUES ('Cloe', 'Canine', 'Dachshund','F', '20131012', null, 'Broken Leg', null, 105, 1,3,0,'\animalsPics\Animal1.jpg',1),
+('Rocket', 'Canine', 'Rottweiler','M', '20120517', 'Malnutrition', null,null,207,0,2,2,'\animalsPics\Animal2.jpg',null),
+('Storm', 'Feline', 'Savannah','F', '20100416', null, null, 'Neutering required', 201, 0,1,0,'\animalsPics\Animal3.jpg',null),
+('Genna', 'Canine', 'Labradour','F', '20130517', 'Ear infection', null, 'Drop required hourly', 107, 1, 8, 0,'\animalsPics\Animal4.jpg',2),
+('Kissy', 'Feline', 'Savana','F', '20130421', 'Tooth abesis', null, 'Not eating, and limping', 104, 1, 13, 0,'\animalsPics\Animal5.jpg',3),
+('Kitten', 'Feline', 'Tourtise Shell','F', '20131225', null , 'Burnt and broken bone', 'Vacinations needed', 103,0,3,5,'\animalsPics\Animal6.jpg',null),
+('Candy', 'Canine', 'Poodle','F', '20130718', null, 'Snake bite', 'Speacial low carb food', 102,1,5,1,'\animalsPics\Animal7.jpg',4),
+('Milo', 'Canine', 'Jack Russle','M', '20130514', null, 'Cuts', null, 231, 0, 3, 5,'\animalsPics\Animal8.jpg',null),
+('Chanel', 'Canine', 'Labradour','F', '20120510', 'Cancer', null, 'Leg cancer', 201, 1, 9, 0,'\animalsPics\Animal9.jpg',5),
+('Pepper', 'Canine', 'Labradour Mix','M', '20130621', null, null, 'Very cold', 101, 0, 3, 1,'\animalsPics\Animal10.jpg',null),
+('Charlie', 'Bird', 'Ring Neck','M', '20130308', null, null, 'Afraid of bags', 103, null, 1, 3,'\animalsPics\Animal11.jpg',2),
+('Elu', ' Bird', 'Electus','M', '20130704', null, 'Broken Wing', null, 106, null, 3, 5,'\animalsPics\Animal12.jpg',null),
+('Lumen', 'Bird', 'Ring Neck','F', '20130411', null, null, 'Tendancy to pluck', 144, null, 1, 0,'\animalsPics\Animal13.jpg',null),
+('Sam', 'Canine', 'Newfoundland', 'M', '20130511', null, null, null, 147, 1,6,0, '\animalsPics\Animal14.jpg', 1),
+('Rosebud', 'Bird', 'Electus', 'F', '20131012', null, null, 'Nails must be clipped, aggressive to males', 105, null, 3, 4, '\animalsPics\Animal15.jpg', 4),
+('Steve', 'Feline', 'Mix', 'M', '20100416', null, 'Fighting wounds', 'Stitches', 108, 1, 8, 3, '\animalsPics\Animal16.jpg', null),
+('Gabby', 'Canine', 'Great Dane', 'F', '20130520', null, 'Split paw', 'Stitches', 118, 1, 3, 2, '\animalsPics\Animal17.jpg', 5),
+('Ted', 'Feline', 'Scottish Fold', 'M', '20120304', 'Tumour', null, 'Awaiting test results', 183, 0, 10, 3, '\animalsPics\Animal18.jpg', 3),
+('Jessie', 'Canine', 'Irish Wolfhound', 'F', '20130702', null, null, 'Vacinations needed', 178, 1, 1, 0, '\animalsPics\Animal19.jpg', 2),
+('Pooch', 'Canine', 'Greyhound', 'M', '20130809', 'pancreatitis', null, 'Science diet', 182, 1, 10, 0, '\animalsPics\Animal20.jpg', 3)
 
 CREATE TABLE tblVets
 (

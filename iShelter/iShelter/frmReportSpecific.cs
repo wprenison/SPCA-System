@@ -14,29 +14,35 @@ using System.Diagnostics;
 
 namespace iShelter
 {
-    public partial class frmReportTest : Form
+    public partial class frmReportSpecific : Form
     {
-        public frmReportTest()
+        public frmReportSpecific()
         {
             InitializeComponent();
         }
         DataSet dbTable = new DataSet();
 
-        string animalID;
-        string name;
-        string species;
-        string breed;
-        string gender;
-        string dateRecieved;
-        string illnesses;
-        string injuries;
-        string notes;
-        string roomNo;
-        string neutered;
-        string age;
-        string agroRating;
-        string photoDir;
-        string guardianID;
+        private string animalID;
+        private string name;
+        private string species;
+        private string breed;
+        private string gender;
+        private DateTime dateRecieved;
+        private string illnesses;
+        private string injuries;
+        private string notes;
+        private string roomNo;
+        private string neutered;
+        private string age;
+        private string agroRating;
+        private string photoDir;
+        private string guardianID;
+
+        private string firstName;
+        private string lastName;
+        private DateTime dob;
+        private string tel;
+        private string resAddress;
 
         private void frmReportTest_Load(object sender, EventArgs e)
         {
@@ -77,13 +83,13 @@ namespace iShelter
         {
             var selectedCells = dgvReport.SelectedCells;
 
-            //Retrieve required report data
+            //Retrieve required animal report data
             animalID = selectedCells[0].Value.ToString();
             name = selectedCells[1].Value.ToString();
             species = selectedCells[2].Value.ToString();
             breed = selectedCells[3].Value.ToString();
             gender = selectedCells[4].Value.ToString();
-            dateRecieved = selectedCells[5].Value.ToString();
+            dateRecieved = DateTime.Parse(selectedCells[5].Value.ToString());
             illnesses = selectedCells[6].Value.ToString();
             injuries = selectedCells[7].Value.ToString();
             notes = selectedCells[8].Value.ToString();
@@ -93,13 +99,41 @@ namespace iShelter
             agroRating = selectedCells[12].Value.ToString();
             photoDir = selectedCells[13].Value.ToString();
             guardianID = selectedCells[14].Value.ToString();
+
+            //Set picture box img of current selected animal
+            picbAnimal.ImageLocation = @Properties.Settings.Default.SaveLocation + photoDir;
+
+            //Checks id the animal has a guardian and obtains that guardians needed details
+            if (guardianID != "")
+            {                
+                //prepare sql string to pull guardian's details
+                string sql = "SELECT * FROM tblGuardians WHERE GuardianID = " + guardianID;
+
+                //Create & open db connection
+                SqlConnection sqlConn = new SqlConnection(Properties.Settings.Default.DbConnString);
+                sqlConn.Open();
+
+                //Creates reader, command and executes it                
+                SqlCommand sqlCmd = new SqlCommand(sql, sqlConn);
+                SqlDataReader reader = sqlCmd.ExecuteReader();
+
+                reader.Read();
+                firstName = reader[1].ToString();
+                lastName = reader[2].ToString();
+                dob = DateTime.Parse(reader[3].ToString());
+                tel = reader[4].ToString();
+                resAddress = reader[5].ToString();
+
+                reader.Close();
+                sqlConn.Close();
+            }
         }
 
         private void btnGenPDF_Click(object sender, EventArgs e)
         {
            //Create and Write pdf file with the paragraph from the para textbox
             Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
-            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(@"C:\Users\Shadow\Documents\iShelterReports\Animal" + animalID + "Report.pdf", FileMode.Create));
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(@Properties.Settings.Default.SaveLocation + @"\Animal" + animalID + "Report.pdf", FileMode.Create));
             doc.Open();
             writer.ClearTextWrap();
 
@@ -108,9 +142,9 @@ namespace iShelter
             bgPic.Alignment = iTextSharp.text.Image.UNDERLYING;
             bgPic.ScalePercent(300f);
             doc.Add(bgPic);*/
-
+            
             //Insert Logo img
-            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(@"D:\VC Work\C#\Semester2\Assignment3\SPCA-System\Logo.jpg");
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(@"..\..\Resources\Logo.jpg");
             logo.ScalePercent(30f);
             doc.Add(logo);
 
@@ -132,9 +166,16 @@ namespace iShelter
             string line1 = string.Format("\n\n{0,-65}{1,-70}{2,-65}\n", "Animal ID: " + animalID, "", "Agro Rating: " + agroRating);
             string line2 = string.Format("{0,-65}{1,-55}{2,-65}\n", "Name: " + name, "Species: " + species, "Breed: " + breed);
             string line3 = string.Format("{0,-72}{1,-59}{2,-65}\n", "Age: " + age, "Gender: F", "Nuetered: " + neutered);
-            string line4 = "________________________________________________________________________________________\n";
-            Chunk animalDetails = new Chunk(line1 + line2 + line3 + line4);
+            string line4 = string.Format("{0,-72}{1,-50}\n","", "Date Recieved: " + dateRecieved.ToShortDateString());
+            string line5 = "________________________________________________________________________________________\n\n\n";
+            Chunk animalDetails = new Chunk(line1 + line2 + line3 + line4 + line5);
             doc.Add(animalDetails);
+
+            //Animal Pic
+            iTextSharp.text.Image animalPic = iTextSharp.text.Image.GetInstance(@Properties.Settings.Default.SaveLocation + photoDir);
+            animalPic.ScalePercent(75f);
+            animalPic.SetAbsolutePosition(doc.PageSize.Width - 320f, doc.PageSize.Height - 240f);
+            doc.Add(animalPic);
 
             PdfPTable descDetailsTable = new PdfPTable(3);
             iTextSharp.text.Font headingFont = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14f, iTextSharp.text.Font.BOLD);
@@ -154,16 +195,41 @@ namespace iShelter
 
             doc.Add(descDetailsTable);
             
-            //Animal Pic
-            iTextSharp.text.Image animalPic = iTextSharp.text.Image.GetInstance(@"D:\VC Work\C#\Semester2\Assignment3\SPCA-System\Logo.jpg");
-            animalPic.ScalePercent(30f);
-            animalPic.SetAbsolutePosition(doc.PageSize.Width - 320f, doc.PageSize.Height - 240f);
-            doc.Add(animalPic);
+            //Inserts guardian info if the animal has a guardian
+            if (guardianID != "")
+            {
+                Chunk gline0 = new Chunk("________________________________________________________________________________________\n");
+                doc.Add(gline0);
+
+                //Insert heading
+                Paragraph title2 = new Paragraph("\n\nGuardian Details", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14f, iTextSharp.text.Font.BOLD));
+                title2.IndentationLeft = 230f;
+                doc.Add(title2);
+                
+                string gline1 = string.Format("\n\n{0,-60}{1,-40}{2,-55}\n", "Guardian ID: " + guardianID, "First Name: " + firstName, "Last Name: " + lastName);
+                string gline2 = string.Format("{0,-53}{1,-55}\n", "Date Of Birth: " + dob.ToShortDateString(), "Tel: " + tel);
+                string gline3 = "\nRes Address: " + resAddress + "\n\n";
+                string gline4 = "________________________________________________________________________________________\n\n";
+                Chunk guardianDetails = new Chunk(gline1 + gline2 + gline3 + gline4);
+                doc.Add(guardianDetails);
+            }
+            else
+            {
+                Chunk gline0 = new Chunk("________________________________________________________________________________________\n");
+                doc.Add(gline0);
+
+                //Insert heading
+                Paragraph title3 = new Paragraph("\nNo Guardian", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14f, iTextSharp.text.Font.BOLD));
+                title3.IndentationLeft = 250f;
+                doc.Add(title3);
+            }
+
+            
             
             doc.Close();
 
             //Open Report
-            Process.Start(@"C:\Users\Shadow\Documents\iShelterReports\Animal" + animalID + "Report.pdf");
+            Process.Start(@Properties.Settings.Default.SaveLocation + @"\Animal" + animalID + "Report.pdf");
         }
 
         private void wmtxtbSearchTerm_TextChanged(object sender, EventArgs e)
