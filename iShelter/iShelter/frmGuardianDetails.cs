@@ -142,17 +142,17 @@ namespace iShelter
                         }
                         catch (System.Exception ex)
                         {
-                            MessageBox.Show("An Error occured while inserting data into link tblRecievedPatient: " + ex.Message);
+                            MessageBox.Show("An Error occured while inserting data into link tblRecievedPatient: " + ex.Message, "Error");
                         }
                     }
                     catch (System.Exception ex)
                     {
-                        MessageBox.Show("An error occured while retriving new guardian ID: " + ex.Message);
+                        MessageBox.Show("An error occured while retriving new guardian ID: " + ex.Message, "Error");
                     }
                 }
                 catch(System.Exception ex)
                 {
-                    MessageBox.Show("An Error occured while trying to insert guardian data into the DataBase: " + ex.Message);
+                    MessageBox.Show("An Error occured while trying to insert guardian data into the DataBase: " + ex.Message, "Error");
                 }                
             }            
         }

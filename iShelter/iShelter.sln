@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iShelter", "iShelter\iShelter.csproj", "{729B7AA2-3136-4AF9-9371-79CCA4B632DC}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{92A5918E-B398-46AE-A66C-C0F03787D2A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,14 @@ Global
 		{729B7AA2-3136-4AF9-9371-79CCA4B632DC}.Release|Mixed Platforms.Build.0 = Release|x86
 		{729B7AA2-3136-4AF9-9371-79CCA4B632DC}.Release|x86.ActiveCfg = Release|x86
 		{729B7AA2-3136-4AF9-9371-79CCA4B632DC}.Release|x86.Build.0 = Release|x86
+		{92A5918E-B398-46AE-A66C-C0F03787D2A2}.Debug|Any CPU.ActiveCfg = Debug
+		{92A5918E-B398-46AE-A66C-C0F03787D2A2}.Debug|Mixed Platforms.ActiveCfg = Release
+		{92A5918E-B398-46AE-A66C-C0F03787D2A2}.Debug|Mixed Platforms.Build.0 = Release
+		{92A5918E-B398-46AE-A66C-C0F03787D2A2}.Debug|x86.ActiveCfg = Debug
+		{92A5918E-B398-46AE-A66C-C0F03787D2A2}.Release|Any CPU.ActiveCfg = Release
+		{92A5918E-B398-46AE-A66C-C0F03787D2A2}.Release|Mixed Platforms.ActiveCfg = Release
+		{92A5918E-B398-46AE-A66C-C0F03787D2A2}.Release|Mixed Platforms.Build.0 = Release
+		{92A5918E-B398-46AE-A66C-C0F03787D2A2}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

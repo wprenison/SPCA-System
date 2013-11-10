@@ -81,7 +81,7 @@ namespace iShelter
                 }
                 catch (System.Exception ex)
                 {
-                    MessageBox.Show("An Error occured while trying to update tblAnimals with a guardian ID: " + ex.Message);
+                    MessageBox.Show("An Error occured while trying to update tblAnimals with a guardian ID: " + ex.Message, "Error");
                 }
 
             }
@@ -133,7 +133,7 @@ namespace iShelter
                     }
                     catch (System.Exception ex)
                     {
-                        MessageBox.Show("An Error occured when trying to insert the procedure operation into the DataBase: " + ex.Message);
+                        MessageBox.Show("An Error occured when trying to insert the procedure operation into the DataBase: " + ex.Message, "Error");
                     }
                 }
                 else
@@ -187,7 +187,7 @@ namespace iShelter
             }
             catch (SystemException se)
             {
-                MessageBox.Show("An Error occured while loading the table: " + this.Text + " - " + se.Message);
+                MessageBox.Show("An Error occured while loading the table: " + this.Text + " - " + se.Message, "Error");
             }
 
         }
@@ -284,7 +284,7 @@ namespace iShelter
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvSearchTbl.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message);
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
                     }
                 }
                 else if (cmbSearchCategory.SelectedItem.ToString() == "Procedures")
@@ -303,7 +303,7 @@ namespace iShelter
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvSearchTbl.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message);
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
                     }
                 }
                 else if (cmbSearchCategory.SelectedItem.ToString() == "Vetenarians")
@@ -323,7 +323,7 @@ namespace iShelter
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvSearchTbl.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message);
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
                     }
                 }
             }

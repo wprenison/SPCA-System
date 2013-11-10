@@ -158,7 +158,7 @@ namespace iShelter
                     }
                     catch (System.Exception ex)
                     {
-                        MessageBox.Show("An Error occured when finding the animalID: " + ex.Message);
+                        MessageBox.Show("An Error occured when finding the animalID: " + ex.Message, "Error");
                     }
 
                     //Add the directory for the photo if one was taken
@@ -181,7 +181,7 @@ namespace iShelter
                         }
                         catch (SystemException se)
                         {
-                            MessageBox.Show("An error occured while trying to insert the photoDir of tblAnimals: " + se.Message);
+                            MessageBox.Show("An error occured while trying to insert the photoDir of tblAnimals: " + se.Message, "Error");
                         }
                     }
 
@@ -196,7 +196,7 @@ namespace iShelter
                 }
                 catch (System.Exception ex)
                 {
-                    MessageBox.Show("An Error ocurred: " + ex.Message);
+                    MessageBox.Show("An Error ocurred: " + ex.Message, "Error");
                 }                
                 
             }
@@ -276,7 +276,7 @@ namespace iShelter
             {
                 while (!saveLocationSet || !dbConnStringSet)
                 {
-                    MessageBox.Show("Please select a save location for any reports and animal photos\n And a database connection string");
+                    MessageBox.Show("Please select a save location for any reports and animal photos\n And a database connection string", "Info");
                     frmOptions options = new frmOptions();
                     DialogResult result = options.ShowDialog();
 
@@ -291,6 +291,7 @@ namespace iShelter
 
                         if (exitResult == DialogResult.Yes)
                             Application.Exit();
+                     
 
                     }
                 }
@@ -323,8 +324,8 @@ namespace iShelter
 
         private void mnuiAbout_Click(object sender, EventArgs e)
         {
-            string about = "         This Program was developed by Weylin Renison\n\t\tiShelter v1.0\n\n\n\tCredit To External Open Source Libraries:\n\t\t iTextSharp for pdf\n\tWinFormCharpWebcam for webcam\n\twmgCMS for water mark Text Boxes\n\n\t\t21-10-2013";
-            MessageBox.Show(this, about, "About iShelter v1.0", MessageBoxButtons.OK);
+            string about = "         This Program was developed by Weylin Renison\n\t\tiShelter v1.0\n\n\n\tCredit To External Open Source Libraries:\n\t\t iTextSharp for pdf\n\tWinFormCharpWebcam for webcam\n\twmgCMS for water mark Text Boxes\n\n\t\t09-11-2013";
+            MessageBox.Show(this, about, "About iShelter v1.1", MessageBoxButtons.OK);
         }
 
         private void animalsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -359,12 +360,12 @@ namespace iShelter
 
         private void mnuiHelp_Click(object sender, EventArgs e)
         {
-            Process.Start(@"..\..\Resources\Help F1.rtf");
+            Process.Start(@"..\..\..\Documentation\iShelter User Manual.docx");
         }
 
         private void readMeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start(@"..\..\..\READ ME.rtf");
+            Process.Start(@"..\..\..\Documentation\READ ME.rtf");
         }        
     }
 }

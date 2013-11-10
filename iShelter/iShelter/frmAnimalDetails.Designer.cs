@@ -53,6 +53,7 @@
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuiHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblName = new System.Windows.Forms.Label();
             this.txtbName = new System.Windows.Forms.TextBox();
             this.cmbSpecies = new System.Windows.Forms.ComboBox();
@@ -83,7 +84,6 @@
             this.picbWebcamOnOff = new System.Windows.Forms.PictureBox();
             this.picbAnimal = new System.Windows.Forms.PictureBox();
             this.lblWebcam = new System.Windows.Forms.Label();
-            this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblOnOff = new System.Windows.Forms.Label();
             this.mnsAnimal.SuspendLayout();
             this.grpbGender.SuspendLayout();
@@ -119,14 +119,14 @@
             // mnuiOptions
             // 
             this.mnuiOptions.Name = "mnuiOptions";
-            this.mnuiOptions.Size = new System.Drawing.Size(152, 22);
+            this.mnuiOptions.Size = new System.Drawing.Size(116, 22);
             this.mnuiOptions.Text = "Options";
             this.mnuiOptions.Click += new System.EventHandler(this.mnuiOptions_Click);
             // 
             // mnuiExit
             // 
             this.mnuiExit.Name = "mnuiExit";
-            this.mnuiExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuiExit.Size = new System.Drawing.Size(116, 22);
             this.mnuiExit.Text = "Exit";
             this.mnuiExit.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -146,7 +146,7 @@
             this.mnuiNotNuetered,
             this.mnuiProcessedPer});
             this.mnuiAnimals.Name = "mnuiAnimals";
-            this.mnuiAnimals.Size = new System.Drawing.Size(152, 22);
+            this.mnuiAnimals.Size = new System.Drawing.Size(117, 22);
             this.mnuiAnimals.Text = "Animals";
             // 
             // mnuiSpecificAnimal
@@ -275,9 +275,17 @@
             // mnuiHelp
             // 
             this.mnuiHelp.Name = "mnuiHelp";
+            this.mnuiHelp.ShortcutKeys = System.Windows.Forms.Keys.F1;
             this.mnuiHelp.Size = new System.Drawing.Size(152, 22);
-            this.mnuiHelp.Text = "Help F1";
+            this.mnuiHelp.Text = "Help";
             this.mnuiHelp.Click += new System.EventHandler(this.mnuiHelp_Click);
+            // 
+            // readMeToolStripMenuItem
+            // 
+            this.readMeToolStripMenuItem.Name = "readMeToolStripMenuItem";
+            this.readMeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.readMeToolStripMenuItem.Text = "Read Me";
+            this.readMeToolStripMenuItem.Click += new System.EventHandler(this.readMeToolStripMenuItem_Click);
             // 
             // lblName
             // 
@@ -554,13 +562,6 @@
             this.lblWebcam.Size = new System.Drawing.Size(50, 13);
             this.lblWebcam.TabIndex = 26;
             this.lblWebcam.Text = "Webcam";
-            // 
-            // readMeToolStripMenuItem
-            // 
-            this.readMeToolStripMenuItem.Name = "readMeToolStripMenuItem";
-            this.readMeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.readMeToolStripMenuItem.Text = "Read Me";
-            this.readMeToolStripMenuItem.Click += new System.EventHandler(this.readMeToolStripMenuItem_Click);
             // 
             // lblOnOff
             // 
