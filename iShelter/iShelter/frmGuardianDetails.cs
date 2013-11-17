@@ -76,13 +76,13 @@ namespace iShelter
                              break;
                 }
 
-                MessageBox.Show("The following field was not completed: " + invalidField, "Error");
+                MessageBox.Show("The following field was not completed: " + invalidField, "iShelter || Error");
             }
             
             //Checks that the dob field has been changed if it hasnthen it checks that all fiedls have been completed befor setting the bool to true inorder to insert the data into the db
             if(dtpDateOfBirth.Value.Date == DateTime.Now.Date)
             {
-                MessageBox.Show("The Date Of Birth field has not been set.", "Error");
+                MessageBox.Show("The Date Of Birth field has not been set.", "iShelter || Error");
             }
             else if(invalidFieldNo == -1)
                 allFieldsValid = true;
@@ -104,7 +104,7 @@ namespace iShelter
                     sqlCmd.ExecuteNonQuery();
                     sqlConn.Close();
 
-                    MessageBox.Show("Guardian Details Successfully Added", "Info");
+                    MessageBox.Show("Guardian Details Successfully Added", "iShelter || Info");
 
                     //Returns a dialogue value and closes the current form to return to frmMenu
                     this.DialogResult = DialogResult.OK;
@@ -142,17 +142,17 @@ namespace iShelter
                         }
                         catch (System.Exception ex)
                         {
-                            MessageBox.Show("An Error occured while inserting data into link tblRecievedPatient: " + ex.Message, "Error");
+                            MessageBox.Show("An Error occured while inserting data into link tblRecievedPatient: " + ex.Message, "iShelter || Error");
                         }
                     }
                     catch (System.Exception ex)
                     {
-                        MessageBox.Show("An error occured while retriving new guardian ID: " + ex.Message, "Error");
+                        MessageBox.Show("An error occured while retriving new guardian ID: " + ex.Message, "iShelter || Error");
                     }
                 }
                 catch(System.Exception ex)
                 {
-                    MessageBox.Show("An Error occured while trying to insert guardian data into the DataBase: " + ex.Message, "Error");
+                    MessageBox.Show("An Error occured while trying to insert guardian data into the DataBase: " + ex.Message, "iShelter || Error");
                 }                
             }            
         }

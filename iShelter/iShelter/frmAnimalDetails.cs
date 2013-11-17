@@ -64,7 +64,7 @@ namespace iShelter
                 else
                     errorMsg = errorMsg + "Unknown";
 
-                MessageBox.Show(errorMsg, "Error");
+                MessageBox.Show(errorMsg, "iShelter || Error");
             }
 
             //Validates that a gender has been selected
@@ -73,7 +73,7 @@ namespace iShelter
             valGender = validator.valRadioButtonComplete(genderRads);
 
             if (!valGender)
-                MessageBox.Show("A gender was not selected", "Error");
+                MessageBox.Show("A gender was not selected", "iShelter || Error");
 
             if (allReqFilledIn && valGender)
             {
@@ -132,7 +132,7 @@ namespace iShelter
                     sqlConn.Close();
 
                     clearAllFields();
-                    MessageBox.Show("Animal Succesfully Added", "Info");
+                    MessageBox.Show("Animal Succesfully Added", "iShelter || Info");
 
                     //Get the animalID of the animal just added to the db
                     try
@@ -158,7 +158,7 @@ namespace iShelter
                     }
                     catch (System.Exception ex)
                     {
-                        MessageBox.Show("An Error occured when finding the animalID: " + ex.Message, "Error");
+                        MessageBox.Show("An Error occured when finding the animalID: " + ex.Message, "iShelter || Error");
                     }
 
                     //Add the directory for the photo if one was taken
@@ -181,7 +181,7 @@ namespace iShelter
                         }
                         catch (SystemException se)
                         {
-                            MessageBox.Show("An error occured while trying to insert the photoDir of tblAnimals: " + se.Message, "Error");
+                            MessageBox.Show("An error occured while trying to insert the photoDir of tblAnimals: " + se.Message, "iShelter || Error");
                         }
                     }
 
@@ -196,7 +196,7 @@ namespace iShelter
                 }
                 catch (System.Exception ex)
                 {
-                    MessageBox.Show("An Error ocurred: " + ex.Message, "Error");
+                    MessageBox.Show("An Error ocurred: " + ex.Message, "iShelter || Error");
                 }                
                 
             }
@@ -276,7 +276,7 @@ namespace iShelter
             {
                 while (!saveLocationSet || !dbConnStringSet)
                 {
-                    MessageBox.Show("Please select a save location for any reports and animal photos\n And a database connection string", "Info");
+                    MessageBox.Show("Please select a save location for any reports and animal photos\n And a database connection string", "iShelter || Info");
                     frmOptions options = new frmOptions();
                     DialogResult result = options.ShowDialog();
 

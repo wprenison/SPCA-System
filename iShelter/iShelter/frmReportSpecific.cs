@@ -68,7 +68,7 @@ namespace iShelter
             }
             catch (SystemException se)
             {
-                MessageBox.Show("An Error occured while trying to load the table tblAnimals: " + se.Message, "Error");
+                MessageBox.Show("An Error occured while trying to load the table tblAnimals: " + se.Message, "iShelter || Error");
             }
 
             //Edit Columns visibility
@@ -263,7 +263,7 @@ namespace iShelter
                 {
                     wmtxtbSearchTerm.Clear();
                     dgvReport.DataSource = dbTable.Tables[0];
-                    MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
+                    MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "iShelter || Error");
                 }
             }
         }

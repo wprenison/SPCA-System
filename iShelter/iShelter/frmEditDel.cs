@@ -60,7 +60,7 @@ namespace iShelter
             }
             catch (SystemException se)
             {
-                MessageBox.Show("An Error occured while loading the table: " + tblChoice + " - " + se.Message, "Error");
+                MessageBox.Show("An Error occured while loading the table: " + tblChoice + " - " + se.Message, "iShelter || Error");
             }
         }
 
@@ -76,7 +76,7 @@ namespace iShelter
             }
             catch (SystemException se)
             {
-                MessageBox.Show("An Error occured while Updating the table: " + tblChoice + " - " + se.Message, "Error");
+                MessageBox.Show("An Error occured while Updating the table: " + tblChoice + " - " + se.Message, "iShelter || Error");
             }
         }
 
@@ -110,7 +110,7 @@ namespace iShelter
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvEditDel.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "iShelter || Error");
                     }
                 }
                 else if (tblChoice == "tblGuardians")
@@ -147,7 +147,7 @@ namespace iShelter
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvEditDel.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "iShelter || Error");
                     }
                 }
                 else if (tblChoice == "tblProcedureOp")
@@ -170,13 +170,13 @@ namespace iShelter
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvEditDel.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + ee.Message, "Error");
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + ee.Message, "iShelter || Error");
                     }
                     catch (SyntaxErrorException see)
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvEditDel.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "iShelter || Error");
                     }
                 }
                 else if (tblChoice == "tblVets")
@@ -195,7 +195,7 @@ namespace iShelter
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvEditDel.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "iShelter || Error");
                     }
                 }
             }

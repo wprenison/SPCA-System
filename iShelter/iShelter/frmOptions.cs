@@ -37,7 +37,7 @@ namespace iShelter
                 this.DialogResult = DialogResult.OK;
             }
             else
-                MessageBox.Show("Please enter a Database Connection String", "Error");
+                MessageBox.Show("Please enter a Database Connection String", "iShelter || Error");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

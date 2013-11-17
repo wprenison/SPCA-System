@@ -74,14 +74,14 @@ namespace iShelter
                     SqlCommand sqlCmd = new SqlCommand(sql, sqlConn);
                     sqlCmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Guardian Successfully linked to Animal", "Info");
+                    MessageBox.Show("Guardian Successfully linked to Animal", "iShelter || Info");
 
                     this.DialogResult = DialogResult.OK;
                     this.Dispose();
                 }
                 catch (System.Exception ex)
                 {
-                    MessageBox.Show("An Error occured while trying to update tblAnimals with a guardian ID: " + ex.Message, "Error");
+                    MessageBox.Show("An Error occured while trying to update tblAnimals with a guardian ID: " + ex.Message, "iShelter || Error");
                 }
 
             }
@@ -126,18 +126,18 @@ namespace iShelter
                         sqlCmd.ExecuteNonQuery();
                         sqlConn.Close();
 
-                        MessageBox.Show("Procedure Operation Successfully Added", "Info");
+                        MessageBox.Show("Procedure Operation Successfully Added", "iShelter || Info");
 
                         this.DialogResult = DialogResult.OK;
                         this.Dispose();
                     }
                     catch (System.Exception ex)
                     {
-                        MessageBox.Show("An Error occured when trying to insert the procedure operation into the DataBase: " + ex.Message, "Error");
+                        MessageBox.Show("An Error occured when trying to insert the procedure operation into the DataBase: " + ex.Message, "iShelter || Error");
                     }
                 }
                 else
-                    MessageBox.Show("A selection has not been made for the following field: " + invalidField, "Error");
+                    MessageBox.Show("A selection has not been made for the following field: " + invalidField, "iShelter || Error");
             }
         }
 
@@ -187,7 +187,7 @@ namespace iShelter
             }
             catch (SystemException se)
             {
-                MessageBox.Show("An Error occured while loading the table: " + this.Text + " - " + se.Message, "Error");
+                MessageBox.Show("An Error occured while loading the table: " + this.Text + " - " + se.Message, "iShelter || Error");
             }
 
         }
@@ -284,7 +284,7 @@ namespace iShelter
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvSearchTbl.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "iShelter || Error");
                     }
                 }
                 else if (cmbSearchCategory.SelectedItem.ToString() == "Procedures")
@@ -303,7 +303,7 @@ namespace iShelter
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvSearchTbl.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "iShelter || Error");
                     }
                 }
                 else if (cmbSearchCategory.SelectedItem.ToString() == "Vetenarians")
@@ -323,7 +323,7 @@ namespace iShelter
                     {
                         wmtxtbSearchTerm.Clear();
                         dgvSearchTbl.DataSource = dbTable.Tables[0];
-                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "Error");
+                        MessageBox.Show("Error no field contains such syntax, please refrain from using it. : " + see.Message, "iShelter || Error");
                     }
                 }
             }
